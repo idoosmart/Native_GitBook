@@ -3878,7 +3878,7 @@ sdk.bridge.setupBridge(delegate: &lt;<span class="hljs-type">IDOBridgeDelegate</
 <h3 id="&#x4EE3;&#x7406;&#x5B9E;&#x73B0;">&#x4EE3;&#x7406;&#x5B9E;&#x73B0;</h3>
 <p>Swift:</p>
 <pre><code class="lang-swift"><span class="hljs-comment">// &#x5B9E;&#x73B0;&#x4EE3;&#x7406;</span>
-<span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">SomeClass</span>: <span class="hljs-title">IDOBleDelegate</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">SomeClass</span>: <span class="hljs-title">IDOBridgeDelegate</span> </span>{
 
   <span class="hljs-comment">// &#x5199;&#x6570;&#x636E;&#x5230;&#x84DD;&#x7259;&#x8BBE;&#x5907;</span>
   <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">registerWriteDataToBle</span><span class="hljs-params">(bleData: IDOBleData)</span></span> {
@@ -3916,7 +3916,8 @@ sdk.bridge.setupBridge(delegate: &lt;<span class="hljs-type">IDOBridgeDelegate</
 <pre><code class="lang-kotlin">
 
 </code></pre>
-<h3 id="&#x6865;&#x63A5;&#x84DD;&#x7259;&#x5E93;">&#x6865;&#x63A5;&#x84DD;&#x7259;&#x5E93;</h3>
+<h3 id="&#x6865;&#x63A5;&#x84DD;&#x7259;&#x5E93;&#xFF08;&#x5185;&#x90E8;&#xFF09;">&#x6865;&#x63A5;&#x84DD;&#x7259;&#x5E93;&#xFF08;&#x5185;&#x90E8;&#xFF09;</h3>
+<p>&#x4F7F;&#x7528;SDK&#x63D0;&#x4F9B;&#x7684;&#x84DD;&#x7259;&#x5E93;</p>
 <p>Swift:</p>
 <pre><code class="lang-swift"><span class="hljs-comment">// &#x5B9E;&#x73B0;&#x4EE3;&#x7406;</span>
 <span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">SomeClass</span>: <span class="hljs-title">IDOBleDelegate</span> </span>{
@@ -3931,7 +3932,7 @@ sdk.bridge.setupBridge(delegate: &lt;<span class="hljs-type">IDOBridgeDelegate</
     <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">receiveData</span><span class="hljs-params">(data: IDOReceiveData)</span></span> {
         <span class="hljs-keyword">if</span> data.data != <span class="hljs-literal">nil</span> {
             <span class="hljs-comment">// &#x84DD;&#x7259;&#x54CD;&#x5E94;&#x6570;&#x636E;</span>
-            sdk.bridge.receiveDataFromBle(data: data.data!, macAddress: data.macAddress, useSPP: data.spp ?? <span class="hljs-literal">false</span>)
+            sdk.bridge.receiveDataFromBle(data: data.data!, macAddress: data.macAddress)
         } <span class="hljs-keyword">else</span> {
             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;receiveData data is null&quot;</span>)
         }
@@ -3967,8 +3968,75 @@ sdk.bridge.setupBridge(delegate: &lt;<span class="hljs-type">IDOBridgeDelegate</
 <pre><code class="lang-kotlin">
 
 </code></pre>
+<h3 id="&#x6865;&#x63A5;&#x84DD;&#x7259;&#x5E93;&#xFF08;&#x5916;&#x90E8;&#xFF09;">&#x6865;&#x63A5;&#x84DD;&#x7259;&#x5E93;&#xFF08;&#x5916;&#x90E8;&#xFF09;</h3>
+<p>&#x4F7F;&#x7528;&#x975E;SDK&#x63D0;&#x4F9B;&#x7684;&#x84DD;&#x7259;&#x5E93;</p>
+<p>Swift:</p>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x5916;&#x90E8;&#x84DD;&#x7259;&#x5E93;&#x63A5;&#x5165;</span>
+
+<span class="hljs-comment">// 1&#x3001;&#x84DD;&#x7259;&#x8BBE;&#x5907;&#x8FDE;&#x63A5;&#x4E0E;&#x65AD;&#x5F00;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x8C03;&#x7528;SDK&#x76F8;&#x5E94;&#x65B9;&#x6CD5;&#xFF1A;</span>
+
+<span class="hljs-comment">// &#x6807;&#x8BB0;&#x8BBE;&#x5907;&#x5DF2;&#x8FDE;&#x63A5;</span>
+<span class="hljs-keyword">let</span> uniqueId = <span class="hljs-string">&quot;&#x84DD;&#x7259;&#x8BBE;&#x5907;&#x7684;mac&#x5730;&#x5740; &#x6216; uuid&quot;</span>
+sdk.bridge.markConnectedDevice(uniqueId: uniqueId, otaType: .<span class="hljs-keyword">none</span>, isBinded: <span class="hljs-literal">false</span>, deviceName: deviceModel.name) { rs <span class="hljs-keyword">in</span>
+
+}
+
+<span class="hljs-comment">// &#x6807;&#x8BB0;&#x8BBE;&#x5907;&#x5DF2;&#x65AD;&#x5F00;</span>
+sdk.bridge.markDisconnectedDevice(macAddress: <span class="hljs-keyword">self</span>.deviceModel?.macAddress, uuid: <span class="hljs-keyword">self</span>.deviceModel?.uuid) { rs <span class="hljs-keyword">in</span>
+
+}
+
+
+
+<span class="hljs-comment">// 2&#x3001;&#x53D1;&#x9001;&#x6570;&#x636E;&#xFF1A; &#x534F;&#x8BAE;&#x5E93;&#x6570;&#x636E; -&gt; &#x84DD;&#x7259;&#x8BBE;&#x5907;</span>
+<span class="hljs-comment">// &#x5728;&#x6865;&#x63A5;&#x4EE3;&#x7406;IDOBridgeDelegate&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;&#x5C06;&#x6536;&#x5230;&#x7684;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x84DD;&#x7259;&#x5E93;&#x53D1;&#x9001;&#xFF0C;&#x5E76;&#x5728;&#x53D1;&#x9001;&#x5B8C;&#x6210;&#x540E;&#x8C03;&#x7528;&#x5199;&#x5B8C;&#x6210;</span>
+<span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">SomeClass</span>: <span class="hljs-title">IDOBridgeDelegate</span> </span>{
+
+  <span class="hljs-comment">// &#x5199;&#x6570;&#x636E;&#x5230;&#x84DD;&#x7259;&#x8BBE;&#x5907;</span>
+  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">registerWriteDataToBle</span><span class="hljs-params">(bleData: IDOBleData)</span></span> {
+      <span class="hljs-keyword">if</span> bleData.data != <span class="hljs-literal">nil</span> {
+          <span class="hljs-keyword">var</span> tmpDevice: <span class="hljs-type">IDODeviceModel</span>?
+          <span class="hljs-keyword">if</span> deviceState != <span class="hljs-literal">nil</span> {
+              tmpDevice?.macAddress = deviceState?.macAddress
+              tmpDevice?.uuid = deviceState?.uuid
+          }
+          <span class="hljs-comment">// &#x8C03;&#x7528;&#x5916;&#x90E8;&#x84DD;&#x7259;&#x5E93; &#x53D1;&#x9001;&#x6570;&#x636E; &#xFF08;&#x65B9;&#x6CD5;&#x540D;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF09;</span>
+          <span class="hljs-type">SomeBleSDK</span>.writeData(data: bleData.data!, ...) { 
+            ... 
+          }
+       }
+    }
+    ...
+}
+
+<span class="hljs-comment">// 3&#x3001;&#x63A5;&#x6536;&#x6570;&#x636E;&#xFF1A;&#x84DD;&#x7259;&#x8BBE;&#x5907; -&gt; &#x534F;&#x8BAE;&#x5E93;</span>
+
+<span class="hljs-type">SomeBleSDK</span>:
+<span class="hljs-comment">// &#x4EC5;&#x4F9B;&#x53C2;&#x8003;</span>
+
+<span class="hljs-comment">// &#x53D1;&#x9001;&#x84DD;&#x7259;&#x6570;&#x636E;&#x5199;&#x5B8C;&#x6210;</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">writeState</span><span class="hljs-params">(state: SameBleWriteState)</span></span> {
+    <span class="hljs-keyword">if</span> state.type == .withResponse {
+        sdk.bridge.writeDataComplete()
+    }
+}
+
+<span class="hljs-comment">// &#x6536;&#x5230;&#x84DD;&#x7259;&#x54CD;&#x5E94;&#x6570;&#x636E;</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">receiveData</span><span class="hljs-params">(data: SomeDataClass)</span></span> {
+    <span class="hljs-keyword">if</span> data.data != <span class="hljs-literal">nil</span> {
+          <span class="hljs-comment">// &#x5C06;&#x6570;&#x636E;&#x53D1;&#x7ED9;&#x534F;&#x8BAE;&#x5E93;</span>
+        sdk.bridge.receiveDataFromBle(data: data.data!, macAddress: data.macAddress)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;receiveData data is null&quot;</span>)
+    }
+}
+</code></pre>
+<p>Kotlin:</p>
+<pre><code class="lang-kotlin">
+
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Modify Date:
-2023-12-01 09:55:18
+2023-12-07 16:30:35
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -4013,7 +4081,7 @@ sdk.bridge.setupBridge(delegate: &lt;<span class="hljs-type">IDOBridgeDelegate</
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDOSDK桥接说明","level":"1.3","depth":1,"next":{"title":"IDOSDK Alexa","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"previous":{"title":"IDOSDK蓝牙库","level":"1.2","depth":1,"path":"doc/IDOBluetooth.md","ref":"doc/IDOBluetooth.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"doc/IDOBridge.md","mtime":"2023-12-01T01:55:18.198Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-01T06:22:16.067Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"IDOSDK桥接说明","level":"1.3","depth":1,"next":{"title":"IDOSDK Alexa","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"previous":{"title":"IDOSDK蓝牙库","level":"1.2","depth":1,"path":"doc/IDOBluetooth.md","ref":"doc/IDOBluetooth.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"doc/IDOBridge.md","mtime":"2023-12-07T08:30:35.936Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-07T08:39:46.407Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
