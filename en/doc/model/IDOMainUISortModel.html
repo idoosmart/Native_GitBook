@@ -1808,6 +1808,188 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.8.63" data-path="../set/IDOSetUserInfo.html">
+            
+                <a href="../set/IDOSetUserInfo.html">
+            
+                    
+                    Set user information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.64" data-path="../set/IDOReboot.html">
+            
+                <a href="../set/IDOReboot.html">
+            
+                    
+                    Reboot the device
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.65" data-path="../set/IDOFactoryReset.html">
+            
+                <a href="../set/IDOFactoryReset.html">
+            
+                    
+                    Factory reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.66" data-path="../set/IDOFindDeviceStart.html">
+            
+                <a href="../set/IDOFindDeviceStart.html">
+            
+                    
+                    Control search device start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.67" data-path="../set/IDOFindDeviceStop.html">
+            
+                <a href="../set/IDOFindDeviceStop.html">
+            
+                    
+                    Control finding device ends
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.68" data-path="../set/IDOPhotoStart.html">
+            
+                <a href="../set/IDOPhotoStart.html">
+            
+                    
+                    Start taking photos (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.69" data-path="../set/IDOPhotoStop.html">
+            
+                <a href="../set/IDOPhotoStop.html">
+            
+                    
+                    End photo taking (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.70" data-path="../set/IDOSetHand.html">
+            
+                <a href="../set/IDOSetHand.html">
+            
+                    
+                    Set up left and right hands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.71" data-path="../set/IDOSetScreenBrightness.html">
+            
+                <a href="../set/IDOSetScreenBrightness.html">
+            
+                    
+                    Set screen brightness
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.72" data-path="../set/IDOOtaStart.html">
+            
+                <a href="../set/IDOOtaStart.html">
+            
+                    
+                    Enter upgrade mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.73" data-path="../set/IDOSetHeartRateInterval.html">
+            
+                <a href="../set/IDOSetHeartRateInterval.html">
+            
+                    
+                    Set heart rate zone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.74" data-path="../set/IDOSetCalorieDistanceGoal.html">
+            
+                <a href="../set/IDOSetCalorieDistanceGoal.html">
+            
+                    
+                    Set calorie and distance goals (set daily three rings)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.75" data-path="../set/IDOSetWalkRemind.html">
+            
+                <a href="../set/IDOSetWalkRemind.html">
+            
+                    
+                    Set reminders to move around
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.76" data-path="../set/IDOSetMenstruation.html">
+            
+                <a href="../set/IDOSetMenstruation.html">
+            
+                    
+                    Set menstrual period
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2346,9 +2528,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.11.21" data-path="IDODeviceNotificationModel.md">
+        <li class="chapter " data-level="1.5.11.21" data-path="IDODeviceNotificationModel.html">
             
-                <span>
+                <a href="IDODeviceNotificationModel.html">
             
                     
                     IDODeviceNotificationModel
@@ -3862,10 +4044,147 @@
 <td>Int</td>
 <td>Number of currently displayed list in firmware</td>
 </tr>
+<tr>
+<td>supportItems</td>
+<td>List<idomainuisortsupportitem><br>[IDOMainUISortSupportItem]</idomainuisortsupportitem></td>
+<td><a href="">IDOMainUISortSupportItem</a> set</td>
+</tr>
+<tr>
+<td>items</td>
+<td>List<idomainuisortitem><br>[IDOMainUISortItem]</idomainuisortitem></td>
+<td><a href="">IDOMainUISortItem</a> set</td>
+</tr>
+<tr>
+<td>locationX</td>
+<td>Int</td>
+<td>locationX <br>Start with 1</td>
+</tr>
+<tr>
+<td>locationY</td>
+<td>Int</td>
+<td>locationY <br>Start with 1</td>
+</tr>
+<tr>
+<td>sizeType</td>
+<td>Int</td>
+<td>Icon type <br>0: invalid <br>1: large <br>2: small</td>
+</tr>
+<tr>
+<td>widgetsType</td>
+<td>Int</td>
+<td>Refer to the list of widget types</td>
+</tr>
+</tbody>
+</table>
+<p><code>widgets_type</code>
+<code>List of widget types</code></p>
+<table>
+<thead>
+<tr>
+<th>&#x679A;&#x4E3E;&#x503C;</th>
+<th>&#x542B;&#x4E49;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Invalid</td>
+<td>1-100 is the small icon</td>
+</tr>
+<tr>
+<td>1</td>
+<td>The third ring (small icon)</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Steps</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Last activity</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Music</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Weather</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Heart rate</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Pressure</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Sleep</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Alexa</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Body temperature</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Blood oxygen</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>The timer</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Alarm clock</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Event reminder (current schedule reminder)</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Noise</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td>Electricity quantity</td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td>Telephone number (contact person)</td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td>Universal time</td>
+</tr>
 </tbody>
 </table>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Modify Date:
-2023-11-28 09:50:25
+2024-01-09 10:37:41
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -3910,7 +4229,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDOMainUISortModel","level":"1.5.11.52","depth":3,"next":{"title":"IDOMainUISortParamModel","level":"1.5.11.53","depth":3,"path":"doc/model/IDOMainUISortParamModel.md","ref":"doc/model/IDOMainUISortParamModel.md","articles":[]},"previous":{"title":"IDOMainUISortItem","level":"1.5.11.51","depth":3,"path":"doc/model/IDOMainUISortItem.md","ref":"doc/model/IDOMainUISortItem.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/model/IDOMainUISortModel.md","mtime":"2023-11-28T01:50:25.617Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-07T08:39:46.407Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"IDOMainUISortModel","level":"1.5.11.52","depth":3,"next":{"title":"IDOMainUISortParamModel","level":"1.5.11.53","depth":3,"path":"doc/model/IDOMainUISortParamModel.md","ref":"doc/model/IDOMainUISortParamModel.md","articles":[]},"previous":{"title":"IDOMainUISortItem","level":"1.5.11.51","depth":3,"path":"doc/model/IDOMainUISortItem.md","ref":"doc/model/IDOMainUISortItem.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/model/IDOMainUISortModel.md","mtime":"2024-01-09T02:37:41.695Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-16T07:15:30.680Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>

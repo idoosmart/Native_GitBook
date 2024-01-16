@@ -1808,6 +1808,188 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.8.63" data-path="set/IDOSetUserInfo.html">
+            
+                <a href="set/IDOSetUserInfo.html">
+            
+                    
+                    设置用户信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.64" data-path="set/IDOReboot.html">
+            
+                <a href="set/IDOReboot.html">
+            
+                    
+                    重启设备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.65" data-path="set/IDOFactoryReset.html">
+            
+                <a href="set/IDOFactoryReset.html">
+            
+                    
+                    恢复出厂设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.66" data-path="set/IDOFindDeviceStart.html">
+            
+                <a href="set/IDOFindDeviceStart.html">
+            
+                    
+                    控制寻找设备开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.67" data-path="set/IDOFindDeviceStop.html">
+            
+                <a href="set/IDOFindDeviceStop.html">
+            
+                    
+                    控制寻找设备结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.68" data-path="set/IDOPhotoStart.html">
+            
+                <a href="set/IDOPhotoStart.html">
+            
+                    
+                    开始拍照 (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.69" data-path="set/IDOPhotoStop.html">
+            
+                <a href="set/IDOPhotoStop.html">
+            
+                    
+                    结束拍照 (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.70" data-path="set/IDOSetHand.html">
+            
+                <a href="set/IDOSetHand.html">
+            
+                    
+                    设置左右手
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.71" data-path="set/IDOSetScreenBrightness.html">
+            
+                <a href="set/IDOSetScreenBrightness.html">
+            
+                    
+                    设置屏幕亮度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.72" data-path="set/IDOOtaStart.html">
+            
+                <a href="set/IDOOtaStart.html">
+            
+                    
+                    进入升级模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.73" data-path="set/IDOSetHeartRateInterval.html">
+            
+                <a href="set/IDOSetHeartRateInterval.html">
+            
+                    
+                    设置心率区间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.74" data-path="set/IDOSetCalorieDistanceGoal.html">
+            
+                <a href="set/IDOSetCalorieDistanceGoal.html">
+            
+                    
+                    设置卡路里和距离目标(设置日常三环)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.75" data-path="set/IDOSetWalkRemind.html">
+            
+                <a href="set/IDOSetWalkRemind.html">
+            
+                    
+                    设置走动提醒
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.76" data-path="set/IDOSetMenstruation.html">
+            
+                <a href="set/IDOSetMenstruation.html">
+            
+                    
+                    设置经期
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -3915,22 +4097,6 @@ sdk.ble.getBluetoothState {
 <span class="hljs-comment">// &#x5B9E;&#x73B0;&#x4EE3;&#x7406;</span>
 <span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">SomeClass</span>: <span class="hljs-title">IDOBleDelegate</span> </span>{
 
-      <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">writeState</span><span class="hljs-params">(state: IDOWriteStateModel)</span></span> {
-        <span class="hljs-keyword">if</span> state.state == <span class="hljs-literal">true</span> &amp;&amp; state.type == .withResponse {
-            <span class="hljs-comment">// &#x53D1;&#x9001;&#x84DD;&#x7259;&#x6570;&#x636E;&#x5B8C;&#x6210;</span>
-            sdk.bridge.writeDataComplete()
-        }
-    }
-
-    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">receiveData</span><span class="hljs-params">(data: IDOReceiveData)</span></span> {
-        <span class="hljs-keyword">if</span> data.data != <span class="hljs-literal">nil</span> {
-            <span class="hljs-comment">// &#x84DD;&#x7259;&#x54CD;&#x5E94;&#x6570;&#x636E;</span>
-            sdk.bridge.receiveDataFromBle(data: data.data!, macAddress: data.macAddress, useSPP: data.spp ?? <span class="hljs-literal">false</span>)
-        } <span class="hljs-keyword">else</span> {
-            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;receiveData data is null&quot;</span>)
-        }
-    }
-
     <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">scanResult</span><span class="hljs-params">(list: [IDODeviceModel]?)</span></span> {
        <span class="hljs-comment">// &#x626B;&#x63CF;&#x8BBE;&#x5907;&#x5217;&#x8868;</span>
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;scanResult list count:<span class="hljs-subst">\(String(describing: list?.<span class="hljs-built_in">count</span>)</span>)&quot;</span>)
@@ -3946,27 +4112,12 @@ sdk.ble.getBluetoothState {
         <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;on deviceState callback: <span class="hljs-subst">\(String(describing: state.state)</span>)&quot;</span>)
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">stateSPP</span><span class="hljs-params">(state: IDOSppStateModel)</span></span> {}
-
-    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">writeSPPCompleteState</span><span class="hljs-params">(btMacAddress: String)</span></span> {}
 }
 </code></pre>
 <p>Kotlin:</p>
 <pre><code class="lang-kotlin">
 <span class="hljs-comment">// &#x5B9E;&#x73B0;&#x4EE3;&#x7406;</span>
 <span class="hljs-keyword">private</span> <span class="hljs-variable"><span class="hljs-keyword">val</span> bleDelegate</span> = <span class="hljs-keyword">object</span> : IDOBleDelegate {
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">writeState</span><span class="hljs-params">(state: <span class="hljs-type">IDOWriteStateModel</span>)</span> {</span>
-
-    }
-
-    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">receiveData</span><span class="hljs-params">(data: <span class="hljs-type">IDOReceiveData</span>)</span> {</span>
-        <span class="hljs-keyword">if</span> (data.data != <span class="hljs-literal">null</span>) {
-            <span class="hljs-comment">// &#x84DD;&#x7259;&#x54CD;&#x5E94;&#x6570;&#x636E;</span>
-            sdk.bridge.receiveDataFromBle(data.data!!, data.macAddress, data.spp ?: <span class="hljs-literal">false</span>)
-        } <span class="hljs-keyword">else</span> {
-            print(<span class="hljs-string">&quot;receiveData data is null&quot;</span>)
-        }
-    }
 
     <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">scanResult</span><span class="hljs-params">(list: <span class="hljs-type">List&lt;IDOBleDeviceModel&gt;?</span>)</span> {</span>
         <span class="hljs-comment">//&#x626B;&#x63CF;&#x8BBE;&#x5907;&#x5217;&#x8868;</span>
@@ -3990,7 +4141,7 @@ sdk.ble.getBluetoothState {
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Modify Date:
-2023-12-01 09:55:18
+2023-12-28 10:02:26
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -4035,7 +4186,7 @@ sdk.ble.getBluetoothState {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDOSDK蓝牙库","level":"1.2","depth":1,"next":{"title":"IDOSDK桥接说明","level":"1.3","depth":1,"path":"doc/IDOBridge.md","ref":"doc/IDOBridge.md","articles":[]},"previous":{"title":"IDOSDK说明文档","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"doc/IDOBluetooth.md","mtime":"2023-12-01T01:55:18.196Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-07T08:39:46.407Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"IDOSDK蓝牙库","level":"1.2","depth":1,"next":{"title":"IDOSDK桥接说明","level":"1.3","depth":1,"path":"doc/IDOBridge.md","ref":"doc/IDOBridge.md","articles":[]},"previous":{"title":"IDOSDK说明文档","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"zh","gitbook":"*"},"file":{"path":"doc/IDOBluetooth.md","mtime":"2023-12-28T02:02:26.136Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-16T07:15:30.680Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>

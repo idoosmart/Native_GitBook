@@ -1808,6 +1808,188 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.8.63" data-path="../set/IDOSetUserInfo.html">
+            
+                <a href="../set/IDOSetUserInfo.html">
+            
+                    
+                    Set user information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.64" data-path="../set/IDOReboot.html">
+            
+                <a href="../set/IDOReboot.html">
+            
+                    
+                    Reboot the device
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.65" data-path="../set/IDOFactoryReset.html">
+            
+                <a href="../set/IDOFactoryReset.html">
+            
+                    
+                    Factory reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.66" data-path="../set/IDOFindDeviceStart.html">
+            
+                <a href="../set/IDOFindDeviceStart.html">
+            
+                    
+                    Control search device start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.67" data-path="../set/IDOFindDeviceStop.html">
+            
+                <a href="../set/IDOFindDeviceStop.html">
+            
+                    
+                    Control finding device ends
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.68" data-path="../set/IDOPhotoStart.html">
+            
+                <a href="../set/IDOPhotoStart.html">
+            
+                    
+                    Start taking photos (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.69" data-path="../set/IDOPhotoStop.html">
+            
+                <a href="../set/IDOPhotoStop.html">
+            
+                    
+                    End photo taking (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.70" data-path="../set/IDOSetHand.html">
+            
+                <a href="../set/IDOSetHand.html">
+            
+                    
+                    Set up left and right hands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.71" data-path="../set/IDOSetScreenBrightness.html">
+            
+                <a href="../set/IDOSetScreenBrightness.html">
+            
+                    
+                    Set screen brightness
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.72" data-path="../set/IDOOtaStart.html">
+            
+                <a href="../set/IDOOtaStart.html">
+            
+                    
+                    Enter upgrade mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.73" data-path="../set/IDOSetHeartRateInterval.html">
+            
+                <a href="../set/IDOSetHeartRateInterval.html">
+            
+                    
+                    Set heart rate zone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.74" data-path="../set/IDOSetCalorieDistanceGoal.html">
+            
+                <a href="../set/IDOSetCalorieDistanceGoal.html">
+            
+                    
+                    Set calorie and distance goals (set daily three rings)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.75" data-path="../set/IDOSetWalkRemind.html">
+            
+                <a href="../set/IDOSetWalkRemind.html">
+            
+                    
+                    Set reminders to move around
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.76" data-path="../set/IDOSetMenstruation.html">
+            
+                <a href="../set/IDOSetMenstruation.html">
+            
+                    
+                    Set menstrual period
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2346,9 +2528,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.11.21" data-path="../model/IDODeviceNotificationModel.md">
+        <li class="chapter " data-level="1.5.11.21" data-path="../model/IDODeviceNotificationModel.html">
             
-                <span>
+                <a href="../model/IDODeviceNotificationModel.html">
             
                     
                     IDODeviceNotificationModel
@@ -3899,7 +4081,7 @@
 <tr>
 <td>type</td>
 <td>int</td>
-<td>motion enumeration</td>
+<td><a href="../enum/IDOSportType.html">motion enumeration</a></td>
 </tr>
 <tr>
 <td>connect_app</td>
@@ -3924,7 +4106,7 @@
 <tr>
 <td>durations</td>
 <td>int</td>
-<td>Exercise duration <br>Unit: seconds</td>
+<td>Exercise duration<br>Unit: seconds<br><strong>End time description:</strong><br>Menu<strong><code>syncHealthSyncV3ActivityEndTimeUseUtcMode</code></strong>If it is not turned on, the exercise end time = start time + exercise duration&lt; br /&gt;After the menu <strong><code>syncHealthSyncV3ActivityEndTimeUseUtcMode</code></strong> is turned on, the exercise end time is passed through the fields <strong><code>end_month</code> &amp; <code>end_day</code> &amp; <code>end_hour</code> &amp; <code>end_minute</code> &amp; <code>end_year</code> &amp; <code>end_sec</code></strong></td>
 </tr>
 <tr>
 <td>calories</td>
@@ -4280,10 +4462,6 @@
 <td>avg_altitude</td>
 <td>int</td>
 <td>Average altitude in meters <br>-500 ~ 9000<br><code>getSupportSyncActivityDataAltitudeInfo</code>,<br> Valid when <code>setSupportSportPlan</code> &amp; <code>version</code>=0x30</td>
-<td></td>
-<td>act_count</td>
-<td>int</td>
-<td>Number of action details</td>
 </tr>
 <tr>
 <td>hr_data_vlaue</td>
@@ -4473,7 +4651,7 @@
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Modify Date:
-2023-11-29 16:48:10
+2023-12-28 11:10:20
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -4518,7 +4696,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Sync Activity Data","level":"1.5.9.1","depth":3,"next":{"title":"Sync Bp Data","level":"1.5.9.2","depth":3,"path":"doc/syncData/IDOSyncBpData.md","ref":"doc/syncData/IDOSyncBpData.md","articles":[]},"previous":{"title":"Sync Data","level":"1.5.9","depth":2,"path":"doc/syncData/IDOSyncData.md","ref":"doc/syncData/IDOSyncData.md","articles":[{"title":"Sync Activity Data","level":"1.5.9.1","depth":3,"path":"doc/syncData/IDOSyncActivityData.md","ref":"doc/syncData/IDOSyncActivityData.md","articles":[]},{"title":"Sync Bp Data","level":"1.5.9.2","depth":3,"path":"doc/syncData/IDOSyncBpData.md","ref":"doc/syncData/IDOSyncBpData.md","articles":[]},{"title":"Sync Gps Data","level":"1.5.9.3","depth":3,"path":"doc/syncData/IDOSyncGpsData.md","ref":"doc/syncData/IDOSyncGpsData.md","articles":[]},{"title":"Sync Hr Data","level":"1.5.9.4","depth":3,"path":"doc/syncData/IDOSyncHrData.md","ref":"doc/syncData/IDOSyncHrData.md","articles":[]},{"title":"Sync Hrv Data","level":"1.5.9.5","depth":3,"path":"doc/syncData/IDOSyncHrvData.md","ref":"doc/syncData/IDOSyncHrvData.md","articles":[]},{"title":"Sync Noise Data","level":"1.5.9.6","depth":3,"path":"doc/syncData/IDOSyncNoiseData.md","ref":"doc/syncData/IDOSyncNoiseData.md","articles":[]},{"title":"Sync Piven Data","level":"1.5.9.7","depth":3,"path":"doc/syncData/IDOSyncPivenData.md","ref":"doc/syncData/IDOSyncPivenData.md","articles":[]},{"title":"Sync Pressure","level":"1.5.9.8","depth":3,"path":"doc/syncData/IDOSyncPressure.md","ref":"doc/syncData/IDOSyncPressure.md","articles":[]},{"title":"Sync Respir Rate Data","level":"1.5.9.9","depth":3,"path":"doc/syncData/IDOSyncRespirRateData.md","ref":"doc/syncData/IDOSyncRespirRateData.md","articles":[]},{"title":"Sync Sleep Data","level":"1.5.9.10","depth":3,"path":"doc/syncData/IDOSyncSleepData.md","ref":"doc/syncData/IDOSyncSleepData.md","articles":[]},{"title":"Sync Spo 2 Data","level":"1.5.9.11","depth":3,"path":"doc/syncData/IDOSyncSpo2Data.md","ref":"doc/syncData/IDOSyncSpo2Data.md","articles":[]},{"title":"Sync Step Count","level":"1.5.9.12","depth":3,"path":"doc/syncData/IDOSyncStepCount.md","ref":"doc/syncData/IDOSyncStepCount.md","articles":[]},{"title":"Sync Swim Data","level":"1.5.9.13","depth":3,"path":"doc/syncData/IDOSyncSwimData.md","ref":"doc/syncData/IDOSyncSwimData.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/syncData/IDOSyncActivityData.md","mtime":"2023-11-29T08:48:10.924Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-07T08:39:46.407Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Sync Activity Data","level":"1.5.9.1","depth":3,"next":{"title":"Sync Bp Data","level":"1.5.9.2","depth":3,"path":"doc/syncData/IDOSyncBpData.md","ref":"doc/syncData/IDOSyncBpData.md","articles":[]},"previous":{"title":"Sync Data","level":"1.5.9","depth":2,"path":"doc/syncData/IDOSyncData.md","ref":"doc/syncData/IDOSyncData.md","articles":[{"title":"Sync Activity Data","level":"1.5.9.1","depth":3,"path":"doc/syncData/IDOSyncActivityData.md","ref":"doc/syncData/IDOSyncActivityData.md","articles":[]},{"title":"Sync Bp Data","level":"1.5.9.2","depth":3,"path":"doc/syncData/IDOSyncBpData.md","ref":"doc/syncData/IDOSyncBpData.md","articles":[]},{"title":"Sync Gps Data","level":"1.5.9.3","depth":3,"path":"doc/syncData/IDOSyncGpsData.md","ref":"doc/syncData/IDOSyncGpsData.md","articles":[]},{"title":"Sync Hr Data","level":"1.5.9.4","depth":3,"path":"doc/syncData/IDOSyncHrData.md","ref":"doc/syncData/IDOSyncHrData.md","articles":[]},{"title":"Sync Hrv Data","level":"1.5.9.5","depth":3,"path":"doc/syncData/IDOSyncHrvData.md","ref":"doc/syncData/IDOSyncHrvData.md","articles":[]},{"title":"Sync Noise Data","level":"1.5.9.6","depth":3,"path":"doc/syncData/IDOSyncNoiseData.md","ref":"doc/syncData/IDOSyncNoiseData.md","articles":[]},{"title":"Sync Piven Data","level":"1.5.9.7","depth":3,"path":"doc/syncData/IDOSyncPivenData.md","ref":"doc/syncData/IDOSyncPivenData.md","articles":[]},{"title":"Sync Pressure","level":"1.5.9.8","depth":3,"path":"doc/syncData/IDOSyncPressure.md","ref":"doc/syncData/IDOSyncPressure.md","articles":[]},{"title":"Sync Respir Rate Data","level":"1.5.9.9","depth":3,"path":"doc/syncData/IDOSyncRespirRateData.md","ref":"doc/syncData/IDOSyncRespirRateData.md","articles":[]},{"title":"Sync Sleep Data","level":"1.5.9.10","depth":3,"path":"doc/syncData/IDOSyncSleepData.md","ref":"doc/syncData/IDOSyncSleepData.md","articles":[]},{"title":"Sync Spo 2 Data","level":"1.5.9.11","depth":3,"path":"doc/syncData/IDOSyncSpo2Data.md","ref":"doc/syncData/IDOSyncSpo2Data.md","articles":[]},{"title":"Sync Step Count","level":"1.5.9.12","depth":3,"path":"doc/syncData/IDOSyncStepCount.md","ref":"doc/syncData/IDOSyncStepCount.md","articles":[]},{"title":"Sync Swim Data","level":"1.5.9.13","depth":3,"path":"doc/syncData/IDOSyncSwimData.md","ref":"doc/syncData/IDOSyncSwimData.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/syncData/IDOSyncActivityData.md","mtime":"2023-12-28T03:10:20.294Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-16T07:15:30.680Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>

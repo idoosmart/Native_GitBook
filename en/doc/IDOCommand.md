@@ -6,19 +6,11 @@ Bind/unbind devices, obtain data from devices, and send instructions to settings
 
 ## Attributes
 
-### `isBinded`
-
-Binding status
-
 ### `isBinding`
 
 Whether it is in the binding (in the binding, switching devices will be restricted)
 
 ## method
-
-### `make(_:)`
-
-Basic instructions: make first and then send
 
 ### `bind(osVersion:onDeviceInfo:onFuncTable:completion:)`
 
@@ -188,6 +180,20 @@ v2 sends an incoming call reminder status as call rejected, telling the device t
 - [setWalkRemindTimes](set/IDOSetWalkRemindTimes.md) - `Set multiple walk reminder times event number`
 - [setWallpaperDialReply](set/IDOSetWallpaperDialReply.md) - `Set wallpaper dial list event number`
 - [setDateTime](set/IDOSetDateTime.md) - `Set Time`
+- [Set user information](set/IDOSetUserInfo.md) - `setUserInfo`
+- [Reboot the device](set/IDOReboot.md) - `reboot`
+- [Factory reset](set/IDOFactoryReset.md) - `factoryReset`
+- [Control search device start](set/IDOFindDeviceStart.md) - `findDeviceStart`
+- [Control finding device ends](set/IDOFindDeviceStop.md) - `findDeviceStop`
+- [Start taking photos (app -> ble)](set/IDOPhotoStart.md) - `photoStart`
+- [End photo taking (app -> ble)](set/IDOPhotoStop.md) - `photoStop`
+- [Set up left and right hands](set/IDOSetHand.md) - `setHand`
+- [Set screen brightness](set/IDOSetScreenBrightness.md) - `setScreenBrightness`
+- [Enter upgrade mode](set/IDOOtaStart.md) - `otaStart`
+- [Set heart rate zone](set/IDOSetHeartRateInterval.md) - `setHeartRateInterval`
+- [Set calorie and distance goals (set daily three rings)](set/IDOSetCalorieDistanceGoal.md) - `setCalorieDistanceGoal`
+- [Set reminders to move around](set/IDOSetWalkRemind.md) - `setWalkRemind`
+- [Set menstrual period](set/IDOSetMenstruation.md) - `setMenstruation`
 
 
 

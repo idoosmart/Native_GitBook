@@ -6,19 +6,11 @@
 
 ## 属性
 
-### `isBinded`
-
-绑定状态
-
 ### `isBinding`
 
 是否在绑定中 (绑定中，切换设备将受到限制）
 
 ## 方法
-
-### `make(_:)`
-
-基础指令 先make再send
 
 ### `bind(osVersion:onDeviceInfo:onFuncTable:completion:)`
 
@@ -188,6 +180,20 @@ v2发送来电提醒状态为来电已拒, 告诉设备停止提醒用户(部分
 - [设置多个走动提醒的时间点](set/IDOSetWalkRemindTimes.md) - `setWalkRemindTimes`
 - [设置壁纸表盘列表](set/IDOSetWallpaperDialReply.md) - `setWallpaperDialReply`
 - [设置时间](set/IDOSetDateTime.md) - `setDateTime`
+- [设置用户信息](set/IDOSetUserInfo.md) - `setUserInfo`
+- [重启设备](set/IDOReboot.md) - `reboot`
+- [恢复出厂设置](set/IDOFactoryReset.md) - `factoryReset`
+- [控制寻找设备开始](set/IDOFindDeviceStart.md) - `findDeviceStart`
+- [控制寻找设备结束](set/IDOFindDeviceStop.md) - `findDeviceStop`
+- [开始拍照 (app -> ble)](set/IDOPhotoStart.md) - `photoStart`
+- [结束拍照 (app -> ble)](set/IDOPhotoStop.md) - `photoStop`
+- [设置左右手](set/IDOSetHand.md) - `setHand`
+- [设置屏幕亮度](set/IDOSetScreenBrightness.md) - `setScreenBrightness`
+- [进入升级模式](set/IDOOtaStart.md) - `otaStart`
+- [设置心率区间](set/IDOSetHeartRateInterval.md) - `setHeartRateInterval`
+- [设置卡路里和距离目标(设置日常三环)](set/IDOSetCalorieDistanceGoal.md) - `setCalorieDistanceGoal`
+- [设置走动提醒](set/IDOSetWalkRemind.md) - `setWalkRemind`
+- [设置经期](set/IDOSetMenstruation.md) - `setMenstruation`
 
 
 
