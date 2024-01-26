@@ -1301,9 +1301,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.8.24" data-path="../set/IDOSetRRespiRateTurn.html">
+        <li class="chapter " data-level="1.5.8.24" data-path="../set/IDOSetRRespiRateTurn.md">
             
-                <a href="../set/IDOSetRRespiRateTurn.html">
+                <span>
             
                     
                     Respiration rate switch setting event
@@ -4121,6 +4121,8 @@
 </ul>
 </li>
 </ul>
+<h1 id="idoexchangedatadelegate"><code>IDOExchangeDataDelegate</code></h1>
+<h3 id="method">method</h3>
 <h3 id="applistenbleexeccompletion"><code>appListenBleExec(completion:)</code></h3>
 <p>ble initiates movement and app monitors ble</p>
 <ul>
@@ -4159,7 +4161,7 @@
 <ul>
 <li>Parameters:<ul>
 <li>completion: command execution callback<ul>
-<li>type: monitor v3 data exchange entity <a href="IDOExchangeV3Model.html">IDOExchangeV3Model</a></li>
+<li>type: Monitor v3 data exchange entity <a href="IDOExchangeV3Model.html">IDOExchangeV3Model</a></li>
 </ul>
 </li>
 </ul>
@@ -4167,15 +4169,326 @@
 </ul>
 <h2 id="example">Example</h2>
 <p>Swift&#xFF1A;</p>
-<pre><code class="lang-swift">
+<pre><code class="lang-swift"><span class="hljs-comment">//&#x6682;&#x505C;&#x8FD0;&#x52A8;</span>
+ <span class="hljs-keyword">let</span> model = <span class="hljs-type">IDOAppPauseExchangeModel</span>(baseModel: baseModel)
+ sdk.dataExchange.appExec(model: model)
 
+<span class="hljs-comment">//&#x7ED3;&#x675F;&#x8FD0;&#x52A8;</span>
+<span class="hljs-keyword">let</span> model = <span class="hljs-type">IDOAppBleEndReplyExchangeModel</span>(code: <span class="hljs-number">0</span>, duration: duration, calories: calories, <span class="hljs-built_in">distance</span>: <span class="hljs-built_in">distance</span>, baseModel: baseModel)
+sdk.dataExchange.appReplyExec(type: .appBleEndReply(model))
+
+<span class="hljs-keyword">let</span> lastData = sdk.dataExchange.getLastActivityData()
+
+<span class="hljs-keyword">if</span> sdk.dataExchange.supportV3ActivityExchange {
+  sdk.dataExchange.getActivityHrData()
+}
+
+sdk.dataExchange.addExchange(<span class="hljs-type">IDOExchangeDataDelegateImpl</span>())
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IDOExchangeDataDelegateImpl</span>: <span class="hljs-title">IDOExchangeDataOCDelegate</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">appListenBleExec</span><span class="hljs-params">(model: NSObject)</span></span> {
+        <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOBleStartExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOBleStartExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOBleStartReplyExchangeModel</span>(baseModel: obj?.baseModel, operate: obj?.operate, retCode: <span class="hljs-number">0</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOBleIngExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOBleIngExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOBleIngReplyExchangeModel</span>(baseModel: obj?.baseModel, <span class="hljs-built_in">distance</span>: obj?.<span class="hljs-built_in">distance</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOBleEndExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOBleEndExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOBleEndReplyExchangeModel</span>(baseModel: obj?.baseModel, retCode: <span class="hljs-number">0</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOBlePauseExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOBlePauseExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOBlePauseReplyExchangeModel</span>(baseModel: obj?.baseModel, retCode: <span class="hljs-number">0</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOBleRestoreExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOBleRestoreExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOBleRestoreReplyExchangeModel</span>(baseModel: obj?.baseModel, retCode: <span class="hljs-number">0</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppBlePauseExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppBlePauseExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOAppBlePauseReplyExchangeModel</span>(baseModel: obj?.baseModel, errCode: <span class="hljs-number">0</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppBleRestoreExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppBleRestoreExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOBleRestoreReplyExchangeModel</span>(baseModel: obj?.baseModel, retCode: <span class="hljs-number">0</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppBleEndExchangeModel</span>) {
+            <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppBleEndExchangeModel</span>
+            <span class="hljs-keyword">let</span> sendModel = <span class="hljs-type">IDOAppBleEndReplyExchangeModel</span>(baseModel: baseModel,
+                                                           errCode: <span class="hljs-number">0</span>,
+                                                           duration: obj?.duration,
+                                                           calories: obj?.calories,
+                                                           <span class="hljs-built_in">distance</span>: obj?.<span class="hljs-built_in">distance</span>)
+            sdk.dataExchange.appReplyExec(model: sendModel)
+        }
+    }
+
+  <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">appListenAppExec</span><span class="hljs-params">(model: NSObject)</span></span> {
+         <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppStartReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppStartReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;sport started now : <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+             <span class="hljs-comment">//* - 0: Success; 1: The device has entered sports mode and failed;</span>
+             <span class="hljs-comment">//* - 2: Failed due to low device power; 3: The bracelet is charging</span>
+             <span class="hljs-comment">//* - 4: Using Alexa 5: Calling</span>
+             <span class="hljs-keyword">guard</span> obj?.retCode == <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> {
+                 textConsole.text = <span class="hljs-string">&quot;sport failed to launch, because of <span class="hljs-subst">\(String(describing: obj?.retCode)</span>)&quot;</span>
+                 <span class="hljs-keyword">return</span>
+             }
+             textConsole.text = <span class="hljs-string">&quot;sport launched successfully&quot;</span>
+             disposeTimer = <span class="hljs-type">DisposeBag</span>()
+             <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.interval(.seconds(<span class="hljs-type">Constant</span>.intervalExchangeData), scheduler: <span class="hljs-type">MainScheduler</span>.instance)
+                 .subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] value <span class="hljs-keyword">in</span>
+                     <span class="hljs-keyword">self</span>?.exchangeData()
+                 })
+                 .disposed(by: disposeTimer)
+
+             <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.interval(.seconds(<span class="hljs-type">Constant</span>.intervalExchangeCompleteData), scheduler: <span class="hljs-type">MainScheduler</span>.instance)
+                 .subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] value <span class="hljs-keyword">in</span>
+                     <span class="hljs-keyword">self</span>?.exchangeCompleteData()
+                 })
+                 .disposed(by: disposeTimer)
+
+             <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.interval(.seconds(<span class="hljs-type">Constant</span>.intervalExchangeHrData), scheduler: <span class="hljs-type">MainScheduler</span>.instance)
+                 .subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] value <span class="hljs-keyword">in</span>
+                     <span class="hljs-keyword">self</span>?.exchangeV3HrData()
+                 })
+                 .disposed(by: disposeTimer)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppEndReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppEndReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;reply for app&apos;s end reply: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppIngReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppIngReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;data of sport from device: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppPauseReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppPauseReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;reply for app&apos;s pause cmd: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppRestoreReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppRestoreReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;reply for app&apos;s restore cmd: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppIngV3ReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppIngV3ReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;v3 data of sport from device: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppOperatePlanReplyExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppOperatePlanReplyExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;reply for app&apos;s operate plan cmd: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppActivityDataV3ExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppActivityDataV3ExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;appActivityDataReply: ${type.model}&quot;</span>)
+             duration = <span class="hljs-built_in">max</span>(duration, obj?.durations ?? <span class="hljs-number">0</span>)
+             calories = <span class="hljs-built_in">max</span>(calories, obj?.calories ?? <span class="hljs-number">0</span>)
+             <span class="hljs-built_in">distance</span> = <span class="hljs-built_in">max</span>(<span class="hljs-built_in">distance</span>, obj?.<span class="hljs-built_in">distance</span> ?? <span class="hljs-number">0</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppHrDataExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppHrDataExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;appActivityHrReply: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+         <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (model <span class="hljs-keyword">is</span> <span class="hljs-type">IDOAppGpsDataExchangeModel</span>) {
+             <span class="hljs-keyword">let</span> obj = model <span class="hljs-keyword">as</span>? <span class="hljs-type">IDOAppGpsDataExchangeModel</span>
+             <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;appActivityGpsReply: <span class="hljs-subst">\(String(describing: obj)</span>)&quot;</span>)
+         }
+     }
+
+     <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">exchangeV2Data</span><span class="hljs-params">(model: IDOExchangeV2Model)</span></span> {
+
+     }
+
+     <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">exchangeV3Data</span><span class="hljs-params">(model: IDOExchangeV3Model)</span></span> {
+
+     }
+}
 </code></pre>
-<p>Kotlin:</p>
-<pre><code class="lang-kotlin">
+<p>kotlin:</p>
+<pre><code class="lang-kotlin"><span class="hljs-comment">//Pause motion</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOAppPauseExchangeModel(baseModel)
+sdk.dataExchange.appExec(IDOAppExecType.appPause(model))
 
+<span class="hljs-comment">//End movement</span>
+<span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOAppBleEndReplyExchangeModel(<span class="hljs-number">0</span>, duration, calories, distance, baseModel)
+sdk.dataExchange.appReplyExec(IDOAppReplyType.appBleEndReply(model))
+
+sdk.dataExchange.getLastActivityData()
+
+<span class="hljs-keyword">if</span> (sdk.dataExchange.supportV3ActivityExchange) {
+  sdk.dataExchange.getActivityHrData()
+}
+
+sdk.dataExchange.addExchange(<span class="hljs-keyword">object</span> : IDOExchangeDataDelegate {
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">appListenBleExec</span><span class="hljs-params">(type: <span class="hljs-type">IDOBleExecType</span>)</span> {</span>
+    <span class="hljs-keyword">when</span> (type) {
+      <span class="hljs-keyword">is</span> IDOBleExecType.appBleEnd -&gt; {
+        <span class="hljs-comment">//The ble campaign initiated by the app ends. Procedure</span>
+        log(<span class="hljs-string">&quot;appBleEnd: ${type.model}&quot;</span>)
+        mHandler.removeCallbacksAndMessages(<span class="hljs-literal">null</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOAppBleEndReplyExchangeModel(<span class="hljs-number">0</span>, duration, calories, distance, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.appBleEndReply(model))
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.appBlePause -&gt; {
+        <span class="hljs-comment">// The ble campaign initiated by the app is suspended</span>
+        log(<span class="hljs-string">&quot;appBlePause: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOAppBlePauseReplyExchangeModel(<span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.appBlePauseReply(model))
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.appBleRestore -&gt; {
+        <span class="hljs-comment">//The app initiated the ble movement to resume</span>
+        log(<span class="hljs-string">&quot;appBleRestore: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOAppBleRestoreReplyExchangeModel(<span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.appBleRestoreReply(model))
+      }
+      <span class="hljs-comment">//The ble campaign initiated by the app ends. Procedure</span>
+      <span class="hljs-keyword">is</span> IDOBleExecType.bleEnd -&gt; {
+        log(<span class="hljs-string">&quot;bleEnd: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOBleEndReplyExchangeModel(<span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.bleEndReply(model))
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.bleIng -&gt; {
+        <span class="hljs-comment">//ble initiated movements ble initiated exchanges</span>
+        log(<span class="hljs-string">&quot;bleIng: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOBleIngReplyExchangeModel(<span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.bleIngReply(model))
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.bleOperatePlan -&gt; {
+        <span class="hljs-comment">//BLE switch action</span>
+        log(<span class="hljs-string">&quot;bleOperatePlan: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.blePause -&gt; {
+        <span class="hljs-comment">//ble campaign The ble campaign is suspended</span>
+        log(<span class="hljs-string">&quot;blePause: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOBlePauseReplyExchangeModel(<span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.blePauseReply(model))
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.bleRestore -&gt; {
+        <span class="hljs-comment">//ble Initiated a ble initiated recovery</span>
+        log(<span class="hljs-string">&quot;bleRestore: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOBleRestoreReplyExchangeModel(<span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.bleRestoreReply(model))
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleExecType.bleStart -&gt; {
+        <span class="hljs-comment">//The ble campaign begins</span>
+        log(<span class="hljs-string">&quot;bleStart: ${type.model}&quot;</span>)
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = IDOBleStartReplyExchangeModel(type.model.operate, <span class="hljs-number">0</span>, baseModel)
+        sdk.dataExchange.appReplyExec(IDOAppReplyType.bleStartReply(model))
+      }
+    }
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">appListenAppExec</span><span class="hljs-params">(type: <span class="hljs-type">IDOBleReplyType</span>)</span> {</span>
+    <span class="hljs-keyword">when</span> (type) {
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appEndReply -&gt; {
+        <span class="hljs-comment">//The app initiates an end ble reply</span>
+        log(<span class="hljs-string">&quot;reply for app&apos;s end reply: ${type.model}&quot;</span>)
+        mHandler.removeCallbacksAndMessages(<span class="hljs-literal">null</span>)
+      }
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appIngReply -&gt; {
+        <span class="hljs-comment">//The app initiates an exchange ble reply</span>
+        log(<span class="hljs-string">&quot;data of sport from device: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appIngV3Reply -&gt; {
+        <span class="hljs-comment">//The app sends an exchange v3 reply</span>
+        log(<span class="hljs-string">&quot;v3 data of sport from device: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appOperatePlanReply -&gt; {
+        log(<span class="hljs-string">&quot;reply for app&apos;s operate plan cmd: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appPauseReply -&gt; {
+        <span class="hljs-comment">// The app initiates a pause ble reply</span>
+        log(<span class="hljs-string">&quot;reply for app&apos;s pause cmd: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appRestoreReply -&gt; {
+        <span class="hljs-comment">//APP initiated recovery</span>
+        log(<span class="hljs-string">&quot;reply for app&apos;s restore cmd: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appStartReply -&gt; {
+        <span class="hljs-comment">//app initiates start ble reply</span>
+        log(<span class="hljs-string">&quot;sport started now : ${type.model}&quot;</span>)
+        <span class="hljs-keyword">if</span> (type.model?.retCode != <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">//* -0: success; 1: The device fails to enter the motion mode. </span>
+            <span class="hljs-comment">//* -2: The device power is low. 3: The bracelet is charging </span>
+            <span class="hljs-comment">//* -4: Using Alexa 5: On a call</span>
+          tv_response.text = <span class="hljs-string">&quot;sport failed to launch, because of ${type.model?.retCode}&quot;</span>
+          <span class="hljs-keyword">return</span>
+        }
+        tv_response.text = <span class="hljs-string">&quot;sport launched successfully&quot;</span>
+        mHandler.postDelayed(<span class="hljs-keyword">object</span> : Runnable {
+          <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> {</span>
+            mHandler.postDelayed(this, INTERVAL_EXCHANGE_DATA)
+            exchangeData()
+          }
+        }, INTERVAL_EXCHANGE_DATA)
+        mHandler.postDelayed(<span class="hljs-keyword">object</span> : Runnable {
+          <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> {</span>
+            mHandler.postDelayed(this, INTERVAL_EXCHANGE_COMPLETE_DATA)
+            exchangeCompleteData()
+          }
+
+        }, INTERVAL_EXCHANGE_COMPLETE_DATA)
+        mHandler.postDelayed(<span class="hljs-keyword">object</span> : Runnable {
+          <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> {</span>
+            mHandler.postDelayed(this, INTERVAL_EXCHANGE_COMPLETE_DATA)
+            exchangeV3HrData()
+          }
+        }, INTERVAL_EXCHANGE_HR_DATA)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appActivityDataReply -&gt; {
+        <span class="hljs-comment">//result for exchangeCompleteData</span>
+        <span class="hljs-variable"><span class="hljs-keyword">val</span> model</span> = type.model
+        log(<span class="hljs-string">&quot;appActivityDataReply: ${type.model}&quot;</span>)
+        duration = max(duration, model?.durations ?: <span class="hljs-number">0</span>)
+        calories = max(calories, model?.calories ?: <span class="hljs-number">0</span>)
+        distance = max(distance, model?.distance ?: <span class="hljs-number">0</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appActivityGpsReply -&gt; {
+        log(<span class="hljs-string">&quot;appActivityGpsReply: ${type.model}&quot;</span>)
+      }
+
+      <span class="hljs-keyword">is</span> IDOBleReplyType.appActivityHrReply -&gt; {
+        log(<span class="hljs-string">&quot;appActivityHrReply: ${type.model}&quot;</span>)
+      }
+    }
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">exchangeV2Data</span><span class="hljs-params">(model: <span class="hljs-type">IDOExchangeV2Model</span>)</span> {</span>
+            log(<span class="hljs-string">&quot;exchangeV2Data: ${GsonUtil.toJson(model)}&quot;</span>)
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">exchangeV3Data</span><span class="hljs-params">(model: <span class="hljs-type">IDOExchangeV3Model</span>)</span> {</span>
+            log(<span class="hljs-string">&quot;exchangeV3Data: ${GsonUtil.toJson(model)}&quot;</span>)
+  }
+
+})
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Modify Date:
-2023-12-01 09:55:18
+2024-01-25 18:34:19
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -4220,7 +4533,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Data Exchange","level":"1.5.5","depth":2,"next":{"title":"App Activity Data V 3 Exchange Model","level":"1.5.5.1","depth":3,"path":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","ref":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","articles":[]},"previous":{"title":"Tools","level":"1.5.4","depth":2,"path":"doc/IDOTools.md","ref":"doc/IDOTools.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/dataExchange/IDODataExchange.md","mtime":"2023-12-01T01:55:18.189Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-22T02:17:47.373Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Data Exchange","level":"1.5.5","depth":2,"next":{"title":"App Activity Data V 3 Exchange Model","level":"1.5.5.1","depth":3,"path":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","ref":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","articles":[]},"previous":{"title":"Tools","level":"1.5.4","depth":2,"path":"doc/IDOTools.md","ref":"doc/IDOTools.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/dataExchange/IDODataExchange.md","mtime":"2024-01-25T10:34:19.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-01-26T08:25:56.146Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>

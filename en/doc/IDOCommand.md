@@ -250,6 +250,39 @@ sdk.cmd.unbind(macAddress: macAddress, isForceRemove: true, completion: { rs in
 Kotlin:
 
 ```kotlin
+//binding
+ sdk.cmd.bind(15, {
+  println("The device information is obtained state$it");
+}, {
+  println("The function list is obtained functableinterface state$it");
+}, {
+  closeProgressDialog()
+  when (it) {
+    IDOBindStatus.SUCCESSFUL -> {
+      toast("bind ok")
+      //save bind info
+      SPUtil.putAValue(bind_key + device?.macAddress, true)
+    }
+    IDOBindStatus.FAILED,
+    IDOBindStatus.BINDED,
+    IDOBindStatus.NEEDAUTH,
+    IDOBindStatus.REFUSEDBIND -> {
+      println("bind failed: ${it.name}")
+      toast("bind failed: ${it.name}")
+    }
 
+    else -> {
+
+    }
+  }
+})
+// unbundle
+sdk.cmd.unbind(macAddress = macAddress, isForceRemove = true, completion = { rs ->
+  if (rs) {
+    // Unbind successfully
+  } else {
+    // Unbinding failure
+  }
+})
 ```
 

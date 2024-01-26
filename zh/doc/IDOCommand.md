@@ -112,6 +112,9 @@ v2发送来电提醒状态为来电已拒, 告诉设备停止提醒用户(部分
 - [获取表盘列表 v2](get/IDOGetWatchListV2.md) - `getWatchListV2`
 - [获取语言库列表](get/IDOGetLanguageLibrary.md) - `getLanguageLibrary`
 - [获取固件本地提示音文件信息](get/IDOGetBleBeep.md) - `getBleBeep`
+- [获取默认的运动类型](get/IDOGetDefaultSportType.md) - `getDefaultSportType`
+- [获取运动默认的类型 V3](get/IDOGetSportTypeV3.md) - `getSportTypeV3`
+- [获取BT连接手机型号](get/IDOGetBtConnectPhoneModel.md) - `getBtConnectPhoneModel`
 
 
 
@@ -194,6 +197,14 @@ v2发送来电提醒状态为来电已拒, 告诉设备停止提醒用户(部分
 - [设置卡路里和距离目标(设置日常三环)](set/IDOSetCalorieDistanceGoal.md) - `setCalorieDistanceGoal`
 - [设置走动提醒](set/IDOSetWalkRemind.md) - `setWalkRemind`
 - [设置经期](set/IDOSetMenstruation.md) - `setMenstruation`
+- [设置喝水提醒](set/IDOSetDrinkWaterRemind.md) - `setDrinkWaterRemind`
+- [设置经期提醒](set/IDOSetMenstruationRemind.md) - `setMenstruationRemind`
+- [设置压力开关](set/IDOSetStressSwitch.md) - `setStressSwitch`
+- [设置语音助手开关](set/IDOSetVoiceAssistantOnOff.md) - `setVoiceAssistantOnOff`
+- [设置勿扰模式](set/IDOSetNotDisturb.md) - `setNotDisturb`
+- [设置菜单列表](set/IDOSetMenuList.md) - `setMenuList`
+- [设置运动类型排序](set/IDOSetSportSortV3.md) - `setSportSortV3`
+- [设置固件来电快捷回复开关](set/IDOSetCallQuickReplyOnOff.md) - `setCallQuickReplyOnOff`
 
 
 
@@ -252,6 +263,39 @@ sdk.cmd.unbind(macAddress: macAddress, isForceRemove: true, completion: { rs in
 Kotlin:
 
 ```kotlin
+//绑定
+ sdk.cmd.bind(15, {
+  println("获取到设备信息 state$it");
+}, {
+  println("获取到功能表 functableinterface state$it");
+}, {
+  closeProgressDialog()
+  when (it) {
+    IDOBindStatus.SUCCESSFUL -> {
+      toast("bind ok")
+      //save bind info
+      SPUtil.putAValue(bind_key + device?.macAddress, true)
+    }
+    IDOBindStatus.FAILED,
+    IDOBindStatus.BINDED,
+    IDOBindStatus.NEEDAUTH,
+    IDOBindStatus.REFUSEDBIND -> {
+      println("bind failed: ${it.name}")
+      toast("bind failed: ${it.name}")
+    }
 
+    else -> {
+
+    }
+  }
+})
+// 解绑
+sdk.cmd.unbind(macAddress = macAddress, isForceRemove = true, completion = { rs ->
+  if (rs) {
+    // 解绑成功
+  } else {
+    // 解绑失败
+  }
+})
 ```
 
