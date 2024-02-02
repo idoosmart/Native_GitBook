@@ -205,6 +205,9 @@ v2发送来电提醒状态为来电已拒, 告诉设备停止提醒用户(部分
 - [设置菜单列表](set/IDOSetMenuList.md) - `setMenuList`
 - [设置运动类型排序](set/IDOSetSportSortV3.md) - `setSportSortV3`
 - [设置固件来电快捷回复开关](set/IDOSetCallQuickReplyOnOff.md) - `setCallQuickReplyOnOff`
+- [设置运动模式识别开关](set/IDOSetActivitySwitch.md) - `setActivitySwitch`
+- [控制音乐开始](set/IDOMusicStart.md) - `musicStart`
+- [控制音乐停止](set/IDOMusicStop.md) - `musicStop`
 
 
 

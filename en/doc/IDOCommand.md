@@ -194,7 +194,17 @@ v2 sends an incoming call reminder status as call rejected, telling the device t
 - [Set calorie and distance goals (set daily three rings)](set/IDOSetCalorieDistanceGoal.md) - `setCalorieDistanceGoal`
 - [Set reminders to move around](set/IDOSetWalkRemind.md) - `setWalkRemind`
 - [Set menstrual period](set/IDOSetMenstruation.md) - `setMenstruation`
-
+- [Set drinking water reminder](set/IDOSetDrinkWaterRemind.md) - `setDrinkWaterRemind`
+- [Set menstruation reminder](set/IDOSetMenstruationRemind.md) - `setMenstruationRemind`
+- [Set pressure switch](set/IDOSetStressSwitch.md) - `setStressSwitch`
+- [Set voice assistant switch](set/IDOSetVoiceAssistantOnOff.md) - `setVoiceAssistantOnOff`
+- [Set Do Not Disturb mode](set/IDOSetNotDisturb.md) - `setNotDisturb`
+- [Set menu list](set/IDOSetMenuList.md) - `setMenuList`
+- [Set sport type sorting](set/IDOSetSportSortV3.md) - `setSportSortV3`
+- [Set firmware quick reply switch for incoming calls](set/IDOSetCallQuickReplyOnOff.md) - `setCallQuickReplyOnOff`
+- [Set sports mode recognition switch](set/IDOSetActivitySwitch.md) - `setActivitySwitch`
+- [Control music start](set/IDOMusicStart.md) - `musicStart`
+- [Control music stop](set/IDOMusicStop.md) - `musicStop`
 
 
 
