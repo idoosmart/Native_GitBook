@@ -20,6 +20,10 @@
 
 取消绑定
 
+### appMarkBindResult(success: Bool)
+
+APP下发绑定结果(仅限需要app确认绑定结果的设备使用)
+
 ### `unbind(macAddress:isForceRemove:completion:)`
 
 发起解绑
@@ -208,6 +212,7 @@ v2发送来电提醒状态为来电已拒, 告诉设备停止提醒用户(部分
 - [设置运动模式识别开关](set/IDOSetActivitySwitch.md) - `setActivitySwitch`
 - [控制音乐开始](set/IDOMusicStart.md) - `musicStart`
 - [控制音乐停止](set/IDOMusicStop.md) - `musicStop`
+- [APP下发配对结果](set/IDOSendBindResult.md) - `sendBindResult`
 
 
 
@@ -250,6 +255,25 @@ sdk.cmd.bind(osVersion: 15) { devInfo in
           print("\(status)")
       case .failedOnGetDeviceInfo:
           print("\(status)")
+      case .timeout:
+          print("\(status)")
+      case .agreeDeleteDeviceData:
+          print("\(status)")
+      case .denyDeleteDeviceData:
+          print("\(status)")
+      case .timeoutOnNewAccount:
+          print("\(status)")
+      case .needConfirmByApp:
+          print("\(status)")
+          Cmds.sendBindResult(isSuccess: true).send { rs in
+              if case .success(_) = rs {
+                  print("success:")
+                  sdk.cmd.appMarkBindResult(success: true)
+              }else {
+                  print("failure")
+                  sdk.cmd.appMarkBindResult(success: false)
+              }
+          }
       }
   }
 
