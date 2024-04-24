@@ -4491,13 +4491,37 @@ To use CocoaPods, please refer to: <a href="https://guides.cocoapods.org/" targe
 </div></div></div></sec>
 <sec data-title="kotlin" data-id="section2" data-show="false"><div class="panel panel-default hidden"><div class="panel-heading"><h2 id="kotlin">kotlin<a class="pull-right section atTitle btn btn-default" target="section2"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse" id="section2"><div class="panel-body">
 <p><strong>android sdk &#x63A5;&#x5165;</strong></p>
-</div></div></div></sec>
+<p><strong>&#x4F7F;&#x7528;android studio &#x96C6;&#x6210;</strong></p>
+<p>1.Integrated SDK, which can be divided into two types: with Bluetooth and without Bluetooth (users can use their own Bluetooth library), and choose one according to their needs</p>
+<p>&#xFF08;1&#xFF09;The SDK with Bluetooth library is as follows, with a total of 6 files&#xFF08;You can copy from the lib in the example.android demo, which contains the latest version&#xFF09;</p>
+<p>   flutter_bluetooth_release-4.0.25.aar
+  flutter_release-4.0.25.aar
+  native_channel_release-4.0.25.aar
+  path_provider_android_release-4.0.25.aar
+  protocol_channel_release-4.0.25.aar
+  protocol_ffi_release-4.0.25.aar</p>
+<p>&#xFF08;2&#xFF09;SDK without Bluetooth library, consisting of four files&#xFF08;You can copy from the lib in the example.android_lite demo, which contains the latest version&#xFF09;</p>
+<p>flutter_release-4.0.23.aar
+native_channel_release-4.0.23.aar
+protocol_channel_release-4.0.23.aar
+protocol_ffi_release-4.0.23.aar</p>
+<p>Copy the downloaded AAR package to the libs directory
+Modify the build. gradle (app) file</p>
+<p>dependencies {</p>
+<pre><code>    implementation fileTree(include: [&apos;*.jar&apos;, &apos;*.aar&apos;], dir: &apos;libs&apos;)  //Integrated SDK 
+    implementation &quot;io.flutter:flutter_embedding_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;  //SDK requires dependent files
+    implementation &quot;io.flutter:arm64_v8a_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;         //SDK requires dependent files
+    implementation &quot;io.flutter:armeabi_v7a_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;implementation //SDK requires dependent files&#x4EF6;
+</code></pre><p> ....</p>
+<p>}</p>
 <h4 id="&#x6CE8;&#x518C;sdk">&#x6CE8;&#x518C;SDK</h4>
 <p>The SDK is divided into three modules: Protocol library, Bluetooth library, and Alexa library. <em> </em> Registration is required before use <em> </em>, please refer to the demo for details</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> protocol_channel
 
 <span class="hljs-comment">// Register sdk</span>
 func registerSDK() {
+
+    sdk.init(this)
     <span class="hljs-comment">// ble&#xFF08;Only limited to using built-in Bluetooth&#xFF09;</span>
     sdk.ble.addBleDelegate(bleDelegate: IDOBleDelegate)
     sdk.ble.getBluetoothState {
@@ -4553,9 +4577,9 @@ func registerSDK() {
      sdk.tool.xx
 }
 </code></pre>
- 
+</div></div></div></sec> 
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Modify Date:
-2024-02-01 17:50:20
+2024-04-23 10:44:36
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -4600,7 +4624,7 @@ func registerSDK() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDOSDK Interface","level":"1.5","depth":1,"next":{"title":"Synchronization configuration after device binding","level":"1.5.1","depth":2,"path":"doc/logicDescription/syncSettings.md","ref":"doc/logicDescription/syncSettings.md","articles":[]},"previous":{"title":"IDO Alexa","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/IDOSDK.md","mtime":"2024-02-01T09:50:20.891Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-10T07:15:53.001Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"IDOSDK Interface","level":"1.5","depth":1,"next":{"title":"Synchronization configuration after device binding","level":"1.5.1","depth":2,"path":"doc/logicDescription/syncSettings.md","ref":"doc/logicDescription/syncSettings.md","articles":[]},"previous":{"title":"IDO Alexa","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"Modify Date:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"language":"en","gitbook":"*"},"file":{"path":"doc/IDOSDK.md","mtime":"2024-04-23T02:44:36.346Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-04-24T03:28:13.906Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

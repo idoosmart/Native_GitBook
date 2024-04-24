@@ -20,7 +20,7 @@ Cmds.setRRespiRateTurn().send { rs in
 Kotlin
 ```kotlin
 Cmds.setRRespiRateTurn().send {
-    if (it.res != null) {
+    if (it.error.code == 0) {
         // 成功
         // it.res is IDOCmdSetResponseModel
     }else {
