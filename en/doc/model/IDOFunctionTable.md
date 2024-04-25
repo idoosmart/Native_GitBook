@@ -1,10 +1,11 @@
 # Function Table
-### Menu field description
+
+### Function table field description
 
 * IDOFuncTableInterface
 
 | Properties | Type | Description |
-| ----------- | ------- | ----------- |
+| -------------------------------------------------- | - --- | -------------------------------------------------- --------------- |
 | reminderAncs | Bool | Smart notification |
 | reminderSnapchat | Bool | Snapchat |
 | reminderLine | Bool | Line |
@@ -43,7 +44,7 @@
 | reminderMissedCall | Bool | MissedCalls |
 | reminderGetAllContact | Bool | Support synchronization of all address books |
 | reminderWhatsappBusiness | Bool | WhatsappBusiness |
-| reminderEmail | Bool | Email |
+| reminderEmail | Bool | Email|
 | Facebook reminder | Bool | Facebook |
 | reminderMessage | Bool | Message |
 | reminderQq | Bool | QQ |
@@ -84,7 +85,7 @@
 | reminderUberEats | Bool | Uber eats |
 | reminderLfood | Bool | Lfood |
 | reminderRappi | Bool | Rappi |
-| reminderMercadoLivre | Bool | Mercado livre |
+| reminderMercadoLivre | Bool | Mercado livre|
 | reminderMagalu | Bool | Magalu |
 | reminderAmericanas | Bool | Americanas |
 | reminderYahoo | Bool | Yahoo |
@@ -105,7 +106,7 @@
 | sportPushUp | Bool | v2 push-ups |
 | sportDumbbell | Bool | v2 dumbbell |
 | sportWeightlifting | Bool | v2 weightlifting |
-| sportYoga | Bool | v2 yoga |
+| sportYoga | Bool | v2 Yoga |
 | sportRopeSkipping | Bool | v2 skipping |
 | sportTableTennis | Bool | v2 table tennis |
 | sportBasketball | Bool | v2 Basketball |
@@ -126,10 +127,10 @@
 | sportOutdoorCycle | Bool | v3 Outdoor Cycling |
 | sportIndoorCycle | Bool | v3 indoor cycling |
 | sportOutdoorWalk | Bool | v3 outdoor walking |
-| sportIndoorWalk | Bool | v3 indoor walking |
+| sportIndoorWalk | Bool | v3 indoor walking|
 | sportPoolSwim | Bool | v3 Pool Swimming |
 | sportOpenWaterSwim | Bool | v3 Open Water Swimming |
-| sportElliptical | Bool | v3 elliptical trainer |
+| sportElliptical | Bool | v3 Elliptical |
 | sportRower | Bool | v3 rowing machine |
 | sportHiit | Bool | v3 high-intensity interval training method |
 | sportCricket | Bool | v3 cricket |
@@ -147,14 +148,14 @@
 | sportAerobicsBodybuildingExercise | Bool | Aerobics |
 | sportPullUp | Bool | Pull-ups |
 | sportHighBar | Bool | Horizontal Bar |
-| sportParallelBars | Bool | Parallel Bars |
+| sportParallelBars | Bool | Parallel bars |
 | sportTrailRunning | Bool | Trail running |
 | sportPickleBall | Bool | Pickleball |
 | getRealtimeData | Bool | Get real-time data |
 | getLangLibraryV3 | Bool | Get v3 language library |
 | getFindPhone | Bool | Find phone |
 | getFindDevice | Bool | Find device |
-| getUpHandGestureEx | Bool | Get the data when raising your wrist to brighten the screen |
+| getUpHandGestureEx | Bool | Raise your wrist to brighten the screen data acquisition |
 | getUpHandGesture | Bool | Raise your wrist to light up the screen |
 | getWeather | Bool | Weather forecast |
 | getDownloadLanguage | Bool | Downloadable language |
@@ -166,10 +167,10 @@
 | getDoNotDisturbMain3 | Bool | Do Not Disturb |
 | getVoiceTransmission | Bool | Voice function |
 | setDrinkWaterAddNotifyFlag | Bool | Set drinking water switch notification type |
-| getDeviceLogState | Bool | Get restart log error code and flag bit |
-| getNewWatchList | Bool | Supports the interface for getting the watch face list |
+| getDeviceLogState | Bool | Get the restart log error code and flag bit |
+| getNewWatchList | Bool | Supports interface for obtaining watch face list |
 | getNotifyIconAdaptive | Bool | Message reminder icon adaptive |
-| getPressureNotifyFlagMode | Bool | Pressure switch adds notification type and all-day pressure mode settings |
+| getPressureNotifyFlagMode | Bool | Pressure switch increaseNotification types and all-day stress mode settings |
 | getScientificSleep | Bool | Scientific sleep |
 | getSpo2NotifyFlag | Bool | Blood oxygen switch adds notification type |
 | getV3Log | Bool | v3 collection log |
@@ -181,7 +182,7 @@
 | getWalkReminderV3 | Bool | Get walk reminder v3 |
 | getSupportV3BleMusic | Bool | Get support for Bluetooth music v3 |
 | getSupportGetBleBeepV3 | Bool | Supports obtaining firmware local beep file information |
-| getVeryFitNotSupportPhotoWallpaperV3 | Bool | The BIT1 k6 project does not require a corresponding wallpaper dial. VeryFit supports them by default. Add a new unsupported menu. If you do not need to configure this |
+| getVeryFitNotSupportPhotoWallpaperV3 | Bool | The BIT1 k6 project does not require a corresponding wallpaper dial. VeryFit supports them by default. Add a new unsupported menu and configure this if it is not necessary |
 | getSupportUpdateGps | Bool | Support upgrading gps firmware |
 | getUbloxModel | Bool | Support ublox module |
 | getSupportGetBleMusicInfoVerV3 | Bool | Supports obtaining firmware song name and folder command issuance and firmware reply using protocol version number 0x10 |
@@ -213,15 +214,15 @@
 | getSupportSetRepeatTypeOnScheduleReminderV3 | Bool | Repeat reminder type setting |
 | getSupportSetMenstrualReminderOnOff | Bool | Menstrual switch |
 | getVersionInfo | Bool | Version information |
-| getMtu | Bool | Get MTU |
+| getMtu | Bool | Get MTU|
 | getDeviceUpdateState | Bool | Get the upgrade status of the bracelet |
 | getHeartRateModeV2 | Bool | v2 gets heart rate monitoring mode |
 | getStepDataTypeV2 | Bool | The target step type is weekly target |
 | getFastMsgDataV3 | Bool | Fast message |
 | getSupportCallingQuickReply | Bool | Support quick reply |
 | getSupportDataTranGetNewErrorCodeV3 | Bool | New error code v3 |
-| getAutoActivityEndSwitchNotDisplay | Bool | The motion self-recognition end switch is not displayed, set the switch state |
-| getAutoActivityPauseSwitchNotDisplay | Bool | The motion self-recognition pause switch is not displayed, and the switch state is set |
+| getAutoActivityEndSwitchNotDisplay | Bool | The motion self-recognition end switch is not displayed, set the switch status |
+| getAutoActivityPauseSwitchNotDisplay | Bool | The motion self-recognition pause switch is not displayed, set the switch status |
 | getAutoActivitySwitchAddBicycle | Bool | Get the sports mode automatic recognition switch setting and add a new type of cycling |
 | getAutoActivitySwitchAddSmartRope | Bool | Get the sports mode automatic recognition switch setting and add a new type of smart skipping rope |
 | getAutoActivitySetGetUseNewStructExchange | Bool | Motion self-recognition get and set instructions use new version to interact with firmware |
@@ -258,7 +259,7 @@
 | setWeatherCity | Bool | Weather City |
 | setDoNotDisturb | Bool | Anti-disturb |
 | setCalorieGoal | Bool | Calorie goal |
-| setMenstruation | Bool | Female menstrual cycle |
+| setMenstruation | Bool | Female menstrual cycle|
 | setPressureData | Bool | Pressure data |
 | setSpo2Data | Bool | Blood oxygen data |
 | setSportModeSort | Bool | Sports mode sorting |
@@ -292,18 +293,18 @@
 | setSmartHeartRate | Bool | Support app to set smart heart rate |
 | setSpo2AllDayOnOff | Bool | Support app to set blood oxygen switch data throughout the day |
 | setSupportAppSendVoiceToBle | Bool | Support app to send compressed sbc language files to ble |
-| setSupportCyclingUnit | Bool | Set the unit setting for increasing the cycling unit |
+| setSupportCyclingUnit | Bool | Set the unit setting for increasing cycling units |
 | setSupportWalkRunUnit | Bool | Set the unit to increase the unit setting for walking and running |
 | setWalkReminderTimeGoal | Bool | Set the target time in the walk reminder |
 | setWatchCapacitySizeDisplay | Bool | Support display of watch face capacity |
 | setWatchPhotoPositionMove | Bool | Supports wallpaper dial time position movement, control icon color modification, and control function selection |
 | setMenuListMain7 | Bool | Menu settings |
-| setHistoryMenstrual | Bool | v3 menstrual period historical data distribution |
+| setHistoryMenstrual | Bool | Release of v3 menstrual period historical data |
 | setMenstrualAddPregnancy | Bool | v2 menstrual reminder setting to add fertile period and end time |
 | setNotSurportCalling3SDelay | Bool | realme wear customization requirements does not support the "three-second delay" switch for displaying incoming calls |
 | setSetFitnessGuidance | Bool | Supports issuing fitness guidance switch |
 | setSetNotificationStatus | Bool | Notification settings |
-| setSetUnreadAppReminder | Bool | Unread Reminder |
+| setSetUnreadAppReminder| Bool | Unread Reminder |
 | setSetV3Weather | Bool | Support V3 weather |
 | setSetV3WeatherSunrise | Bool | Support weather push to increase sunset and sunrise time |
 | setSetV3WorldTime | Bool | Support world time setting |
@@ -317,7 +318,7 @@
 | setSupportSecondSportIcon | Bool | Support the second set of sports icon menu. Currently only supported by idw05 |
 | setSportMediumIcon | Bool | 100 medium-sized menus required for sports |
 | setWeatherSunTime | Bool | Support weather push to increase sunset and sunrise time |
-| setWeatherAirGrade | Bool | Support V3 weather and issue air quality grade |
+| setWeatherAirGrade | Bool | Support V3 weather to issue air quality grade |
 | setDrinkWaterReminder | Bool | Support setting drinking water reminder |
 | setRespirationRate | Bool | Respiration rate switch setting |
 | setMaxBloodOxygen | Bool | Maximum oxygen uptake |
@@ -328,7 +329,7 @@
 | setOnlyNoDisturbSmartOnOff | Bool | Support setting smart do not disturb switch |
 | setTimeZoneFloat | Bool | The time zone setting value is 100 times the actual time zone value |
 | setTemperatureSwitchSupport | Bool | Set temperature switch |
-| setMsgAllSwitch | Bool | Supports setting the main switch field of the message acquisition application |
+| setMsgAllSwitch | Bool | Supports setting the main switch field for getting message applications |
 | setNotSupperCall3Delay | Bool | The display of the "delay three seconds" switch setting item on the incoming call reminder page is not supported |
 | setNoticeMissedCallV2 | Bool | Support rejected calls |
 | setOverFindPhone | Bool | End finding phone |
@@ -347,7 +348,7 @@
 | languageCzech | Bool | Czech |
 | languageEnglish | Bool | English |
 | languageFrench | Bool | French |
-| languageGerman | Bool | German |
+| languageGerman | Bool | German|
 | languageItalian | Bool | Italian |
 | languageJapanese | Bool | Japanese |
 | languageSpanish | Bool | Spanish |
@@ -389,7 +390,7 @@
 | syncV3Activity | Bool | v3 multi-sport |
 | syncV3Sleep | Bool | v3 sleep |
 | syncV3Sports | Bool | v3 steps |
-| syncV3Gps | Bool | v3 gps |
+| syncV3Gps | Bool | v3 gps|
 | syncV3SyncAlarm | Bool | v3 alarm clock |
 | syncV3BodyPower | Bool | v3 body power |
 | getSupportHrvV3 | Bool | Synchronize hrv |
@@ -427,11 +428,10 @@
 | alexaSetEasyOperateV3 | Bool | alexa simple control command |
 | alexaSetGetAlexaAlarmV3 | Bool | alexa voice alarm clock get setting command use |
 | alexaSetJumpSportUiV3 | Bool | alexa set jump motion interface |
-| alexaSetJumpUiV3 | Bool | alexa set jump ui interface |
+| alexaSetJumpUiV3 | Bool | alexa sets jump ui interface |
 | alexaSetSetOnOffTypeV3 | Bool | alexa app setting switch command |
 | alexaSetWeatherV3 | Bool | alexa voice supports setting weather |
 | alexaTimeNewV3 | Bool | alexa supports setting multiple timers |
 | setAlexaControll100brightness | Bool | Alexa 100-level brightness control |
-| alexaGetSupportGetAlexaDefaultLanguage | Bool | alexa Get the default language of alexa |
+| alexaGetSupportGetAlexaDefaultLanguage | Bool | alexa Get alexa defaultRecognize language |
 | alexaGetUIControllSports | Bool | alexa jump sports interface supports 100 sports type fields |
-

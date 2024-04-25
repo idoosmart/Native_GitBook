@@ -1,29 +1,30 @@
-# Respiration rate switch setting event
+# Set the respiration rate switch
 * [IDOCmdSetResponseModel](../model/IDOCmdSetResponseModel.md)
 
-Function Table：setRespirationRate
+Function table: setRespirationRate
 
-### Sample
+### Example
 
+Swift
 ```swift
-Cmds.setRRespiRateTurn().send { rs in
-    if case .success(let obj) = rs {
-        // success
-        // obj is IDOCmdSetResponseModel
-    }else {
-        // fail
-    }
+Cmds.set RRespiRateTurn().send { rs in
+ if case .success(let obj) = rs {
+ // Success
+ // obj is IDOCmdSetResponseModel
+ }else {
+ // Failure
+ }
 }
 ```
 
 Kotlin
-```kotlin
-Cmds.setRRespiRateTurn().send {
-    if (it.res != null) {
-        // success
-        // it.res is IDOCmdSetResponseModel
-    }else {
-        // fail
-    }
+```kotlin 
+Cmds. setRRespiRateTurn().send {
+ if (it.error.code == 0) {
+ // Success
+ // it.res is IDOCmdSetResponseModel
+ }else {
+ // Failure
+ }
 }
 ```

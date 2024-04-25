@@ -1,6 +1,6 @@
 # `IDOWatchListV2Item`
 
-| Attribute | Type   | Description |
+| Attribute | Type | Description |
 | --------- | ------ | ----------- |
-| fileName  | String | dial name   |
+| fileName | String | Watch face name|
 
