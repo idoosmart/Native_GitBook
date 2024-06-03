@@ -1,0 +1,53 @@
+#### Get command 
+
+- [Get bt Bluetooth name](IDOGetBtName.md) - `getBtName`
+- [Get real-time data](IDOGetLiveData.md) - `getLiveData`
+- [Get error record](IDOGetErrorRecord. md) - `getErrorRecord`
+- [Get HID information](IDOGetHidInfo.md) - `getHidInfo`
+- [Get gps information](IDOGetGpsInfo.md) - `getGpsInfo`
+- [Get version information](IDOGetVersionInfo.md) - `getVersionInfo`
+- [Get mtu information](IDOGetMtuInfo.md) - `getMtuInfo`
+- [Get all health monitoring switches](IDOGetAllHealthSwitchState.md) - `getAllHealthSwitchState`
+- [Get gps status](IDOGetGpsStatus.md ) - `getGpsStatus`
+- [Get the shortcut application list that cannot be deleted by the firmware](IDOGetUnerasableMeunList.md) - `getUnerasableMeunList`
+- [Get the sports mode automatic recognition switch](IDOGetActivitySwitch.md) - `getActivitySwitch`
+- [Get the red Click reminder switch](IDOGetUnreadAppReminder.md) - `getUnreadAppReminder`
+- [Get font information](IDOGetFlashBinInfo.md) - `getFlashBinInfo`
+- [Query bt pairing switch, connection, a2dp connection, hfp connection status (only supports bt Bluetooth device)](IDOGetBtNotice.md) - `getBtNotice`
+- [Get wrist-raising data](IDOGetUpHandGesture.md) - `getUpHandGesture`
+- [Get watch face id](IDOGetWatchDialId.md) - `getWatchDialId`
+- [ Get Do Not Disturb mode status](IDOGetNotDisturbStatus.md) - `getNotDisturbStatus`
+- [Get the set calories/distance/medium and high exercise duration main interface](IDOGetMainSportGoal.md) - `getMainSportGoal`
+- [Get the blood pressure algorithm level 3 version number Information event number](IDOGetBpAlgVersion.md) - `getBpAlgVersion`
+- [Get screen brightness](IDOGetScreenBrightness.md) - `getScreenBrightness`
+- [Get hot start parameters](IDOGetHotStartParam.md) - `getHotStartParam`
+- [Get The maximum number of settings supported by the firmware](IDOGetSupportMaxSetItemsNum.md) - `getSupportMaxSetItemsNum`
+- [Get walking reminder](IDOGetWalkRemind.md) - `getWalkRemind`
+- [Get all-day step goal](IDOGetStepGoal.md) - ` getStepGoal`
+- [Get the watch name](IDOGetDeviceName.md) - `getDeviceName`
+- [Get the modification time of the firmware locally saved contact file](IDOGetContactReviseTime.md) - `getContactReviseTime`
+- [Get the device upgrade status](IDOGetUpdateStatus.md) - `getUpdateStatus`
+- [Get stress value](IDOGetStressVal.md) - `getStressVal`
+- [Get heart rate monitoring mode](IDOGetHeartRateMode.md) - `getHeartRateMode`
+- [Get battery information](IDOGetBatteryInfo. md) - `getBatteryInfo`
+- [Get the log status of the device](IDOGetDeviceLogState.md) - `getDeviceLogState`
+- [Get download language support](IDOGetDownloadLanguage.md) - `getDownloadLanguage`
+- [Get the list of device support](IDOGetMenuList.md) - `getMenuList`
+- [Get notification center switch](IDOGetNoticeStatus.md) - `getNoticeStatus`
+- [app gets ble’s alarm clock](IDOGetAlarm.md) - `getAlarm`
+- [Get user habits Information](IDOGetHabitInfo.md) - `getHabitInfo`
+- [Get the song name and folder of the firmware](IDOGetBleMusicInfo.md) - `getBleMusicInfo`
+- [Get screen information](IDOGetWatchDialInfo.md) - `getWatchDialInfo`
+- [ Get watch face list v3](IDOGetWatchListV3.md) - `getWatchListV3`
+- [Get watch face list v2](IDOGetWatchListV2.md) - `getWatchListV2`
+- [Get language library list](IDOGetLanguageLibrary.md) - `getLanguageLibrary`
+- [Get firmware local beep file information](IDOGetBleBeep.md) - `getBleBeep`
+- [Get the default sports type](IDOGetDefaultSportType.md) - `getDefaultSportType`
+- [Get the default sports type V3](IDOGetSportTypeV3.md ) - `getSportTypeV3`
+- [Get BT connected phone model](IDOGetBtConnectPhoneModel.md) - `getBtConnectPhoneModel`
+- [Get unit](IDOGetUnit.md) - `getUnit`
+- [Get spp mtu length (Android)]( IDOGetMtuLengthSPP.md) - `getMtuLengthSPP`
+- [Get Intelligent Heart Rate Mode](IDOGetHeartRateModeSmart.md) - `getHeartRateModeSmart`
+- [Get blood oxygen switch](IDOGetSpo2Switch.md) - `getSpo2Switch`
+- [Get pressure switch](IDOGetStressSwitch.md) - `getStressSwitch`
+

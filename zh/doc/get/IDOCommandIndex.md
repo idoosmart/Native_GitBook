@@ -1,0 +1,53 @@
+#### 获取指令
+
+- [获取bt蓝牙名称](IDOGetBtName.md) - `getBtName`
+- [获得实时数据](IDOGetLiveData.md) - `getLiveData`
+- [获取错误记录](IDOGetErrorRecord.md) - `getErrorRecord`
+- [获取HID信息](IDOGetHidInfo.md) - `getHidInfo`
+- [获取gps信息](IDOGetGpsInfo.md) - `getGpsInfo`
+- [获取版本信息](IDOGetVersionInfo.md) - `getVersionInfo`
+- [获取mtu信息](IDOGetMtuInfo.md) - `getMtuInfo`
+- [获取所有的健康监测开关](IDOGetAllHealthSwitchState.md) - `getAllHealthSwitchState`
+- [获取gps状态](IDOGetGpsStatus.md) - `getGpsStatus`
+- [获取固件不可删除的快捷应用列表](IDOGetUnerasableMeunList.md) - `getUnerasableMeunList`
+- [运动模式自动识别开关获取](IDOGetActivitySwitch.md) - `getActivitySwitch`
+- [获取红点提醒开关](IDOGetUnreadAppReminder.md) - `getUnreadAppReminder`
+- [获取字库信息](IDOGetFlashBinInfo.md) - `getFlashBinInfo`
+- [查询bt配对开关、连接、a2dp连接、hfp连接状态(仅支持带bt蓝牙的设备)](IDOGetBtNotice.md) - `getBtNotice`
+- [获取抬腕数据](IDOGetUpHandGesture.md) - `getUpHandGesture`
+- [获取表盘id](IDOGetWatchDialId.md) - `getWatchDialId`
+- [获取勿扰模式状态](IDOGetNotDisturbStatus.md) - `getNotDisturbStatus`
+- [获取设置的卡路里/距离/中高运动时长 主界面](IDOGetMainSportGoal.md) - `getMainSportGoal`
+- [获取血压算法三级版本号信息事件号](IDOGetBpAlgVersion.md) - `getBpAlgVersion`
+- [获取屏幕亮度](IDOGetScreenBrightness.md) - `getScreenBrightness`
+- [获取热启动参数](IDOGetHotStartParam.md) - `getHotStartParam`
+- [获取固件支持的详情最大设置数量](IDOGetSupportMaxSetItemsNum.md) - `getSupportMaxSetItemsNum`
+- [获取走动提醒](IDOGetWalkRemind.md) - `getWalkRemind`
+- [获取全天步数目标](IDOGetStepGoal.md) - `getStepGoal`
+- [获取手表名字](IDOGetDeviceName.md) - `getDeviceName`
+- [获取固件本地保存联系人文件修改时间](IDOGetContactReviseTime.md) - `getContactReviseTime`
+- [获取设备升级状态](IDOGetUpdateStatus.md) - `getUpdateStatus`
+- [获取压力值](IDOGetStressVal.md) - `getStressVal`
+- [获取心率监测模式](IDOGetHeartRateMode.md) - `getHeartRateMode`
+- [获取电池信息](IDOGetBatteryInfo.md) - `getBatteryInfo`
+- [获取设备的日志状态](IDOGetDeviceLogState.md) - `getDeviceLogState`
+- [获取下载语言支持](IDOGetDownloadLanguage.md) - `getDownloadLanguage`
+- [获取设备支持的列表](IDOGetMenuList.md) - `getMenuList`
+- [获取通知中心开关](IDOGetNoticeStatus.md) - `getNoticeStatus`
+- [app获取ble的闹钟](IDOGetAlarm.md) - `getAlarm`
+- [获取用户习惯信息](IDOGetHabitInfo.md) - `getHabitInfo`
+- [获取固件的歌曲名和文件夹](IDOGetBleMusicInfo.md) - `getBleMusicInfo`
+- [获取屏幕信息](IDOGetWatchDialInfo.md) - `getWatchDialInfo`
+- [获取表盘列表 v3](IDOGetWatchListV3.md) - `getWatchListV3`
+- [获取表盘列表 v2](IDOGetWatchListV2.md) - `getWatchListV2`
+- [获取语言库列表](IDOGetLanguageLibrary.md) - `getLanguageLibrary`
+- [获取固件本地提示音文件信息](IDOGetBleBeep.md) - `getBleBeep`
+- [获取默认的运动类型](IDOGetDefaultSportType.md) - `getDefaultSportType`
+- [获取运动默认的类型 V3](IDOGetSportTypeV3.md) - `getSportTypeV3`
+- [获取BT连接手机型号](IDOGetBtConnectPhoneModel.md) - `getBtConnectPhoneModel`
+- [获取单位](IDOGetUnit.md) - `getUnit`
+- [获取spp mtu长度(Android)](IDOGetMtuLengthSPP.md) - `getMtuLengthSPP`
+- [获取智能心率模式](IDOGetHeartRateModeSmart.md) - `getHeartRateModeSmart`
+- [获取血氧开关](IDOGetSpo2Switch.md) - `getSpo2Switch`
+- [获取压力开关](IDOGetStressSwitch.md) - `getStressSwitch`
+
