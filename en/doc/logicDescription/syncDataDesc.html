@@ -1,0 +1,5314 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Data exchange implementation logic description · IDO接口说明文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-language-picker/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-click-reveal/click_reveal.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sidebar-style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../syncData/IDOSyncData.html" />
+    
+    
+    <link rel="prev" href="../dataExchange/IDOExchangeV3Model.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    IDOSDK documentation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../IDOBluetooth.html">
+            
+                <a href="../IDOBluetooth.html">
+            
+                    
+                    IDOSDK Bluetooth library
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../IDOBridge.html">
+            
+                <a href="../IDOBridge.html">
+            
+                    
+                    IDOSDK bridge description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../IDOAlexa.html">
+            
+                <a href="../IDOAlexa.html">
+            
+                    
+                    IDOSDK Alexa 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../IDOSDK.html">
+            
+                <a href="../IDOSDK.html">
+            
+                    
+                    IDOSDK interface
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../IDOBindDevice.html">
+            
+                <a href="../IDOBindDevice.html">
+            
+                    
+                    Bind/Unbind
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="syncSettings.html">
+            
+                <a href="syncSettings.html">
+            
+                    
+                    Synchronize configuration after device binding
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../IDODeviceInfo.html">
+            
+                <a href="../IDODeviceInfo.html">
+            
+                    
+                    Device Information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../IDOFunctionTable.html">
+            
+                <a href="../IDOFunctionTable.html">
+            
+                    
+                    Function Table
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../IDODeviceLog.html">
+            
+                <a href="../IDODeviceLog.html">
+            
+                    
+                    Device Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../IDOTools.html">
+            
+                <a href="../IDOTools.html">
+            
+                    
+                    Tool Method 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../IDOCallNotice.html">
+            
+                <a href="../IDOCallNotice.html">
+            
+                    
+                    Incoming call/message reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="quickMsgReplyList.html">
+            
+                <a href="quickMsgReplyList.html">
+            
+                    
+                    Quick message reply process (Android)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../dataExchange/IDODataExchange.html">
+            
+                <a href="../dataExchange/IDODataExchange.html">
+            
+                    
+                    Data exchange
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.8.1" data-path="../dataExchange/IDOAppActivityDataV3ExchangeModel.html">
+            
+                <a href="../dataExchange/IDOAppActivityDataV3ExchangeModel.html">
+            
+                    
+                    Multiple sports summary data entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.2" data-path="../dataExchange/IDOAppExecType.html">
+            
+                <a href="../dataExchange/IDOAppExecType.html">
+            
+                    
+                    APP execution data exchange entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.3" data-path="../dataExchange/IDOAppHrDataExchangeModel.html">
+            
+                <a href="../dataExchange/IDOAppHrDataExchangeModel.html">
+            
+                    
+                    Multiple sports heart rate Data Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.4" data-path="../dataExchange/IDOAppReplyType.html">
+            
+                <a href="../dataExchange/IDOAppReplyType.html">
+            
+                    
+                    Ble Execution Data Exchange Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.5" data-path="../dataExchange/IDOBleExecType.html">
+            
+                <a href="../dataExchange/IDOBleExecType.html">
+            
+                    
+                    App Monitoring Ble Data Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.6" data-path="../dataExchange/IDOBleReplyType.html">
+            
+                <a href="../dataExchange/IDOBleReplyType.html">
+            
+                    
+                    App Execution Ble Response Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.7" data-path="../dataExchange/IDOExchangeStatus.html">
+            
+                <a href="../dataExchange/IDOExchangeStatus.html">
+            
+                    
+                    Exchange Data Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.8" data-path="../dataExchange/IDOExchangeV2Model.html">
+            
+                <a href="../dataExchange/IDOExchangeV2Model.html">
+            
+                    
+                    V2 Data Exchange Entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8.9" data-path="../dataExchange/IDOExchangeV3Model.html">
+            
+                <a href="../dataExchange/IDOExchangeV3Model.html">
+            
+                    
+                    V3 data exchange entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.8.10" data-path="syncDataDesc.html">
+            
+                <a href="syncDataDesc.html">
+            
+                    
+                    Data exchange implementation logic description
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../syncData/IDOSyncData.html">
+            
+                <a href="../syncData/IDOSyncData.html">
+            
+                    
+                    Data synchronization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="../syncData/IDOSyncActivityData.html">
+            
+                <a href="../syncData/IDOSyncActivityData.html">
+            
+                    
+                     Synchronize multi-sport data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="../syncData/IDOSyncBpData.html">
+            
+                <a href="../syncData/IDOSyncBpData.html">
+            
+                    
+                    Synchronize blood pressure data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="../syncData/IDOSyncGpsData.html">
+            
+                <a href="../syncData/IDOSyncGpsData.html">
+            
+                    
+                    Synchronize GPS data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="../syncData/IDOSyncHrData.html">
+            
+                <a href="../syncData/IDOSyncHrData.html">
+            
+                    
+                    Synchronize Heart rate data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="../syncData/IDOSyncHrvData.html">
+            
+                <a href="../syncData/IDOSyncHrvData.html">
+            
+                    
+                    Sync HRV data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="../syncData/IDOSyncNoiseData.html">
+            
+                <a href="../syncData/IDOSyncNoiseData.html">
+            
+                    
+                    Synchronize ambient volume data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="../syncData/IDOSyncPivenData.html">
+            
+                <a href="../syncData/IDOSyncPivenData.html">
+            
+                    
+                    Sync leather Temperature data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="../syncData/IDOSyncPressure.html">
+            
+                <a href="../syncData/IDOSyncPressure.html">
+            
+                    
+                    Synchronized pressure data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="../syncData/IDOSyncRespirRateData.html">
+            
+                <a href="../syncData/IDOSyncRespirRateData.html">
+            
+                    
+                    Synchronized respiration rate data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="../syncData/IDOSyncSleepData.html">
+            
+                <a href="../syncData/IDOSyncSleepData.html">
+            
+                    
+                    Synchronized sleep Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="../syncData/IDOSyncSpo2Data.html">
+            
+                <a href="../syncData/IDOSyncSpo2Data.html">
+            
+                    
+                    Synchronized blood oxygen data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.12" data-path="../syncData/IDOSyncStepCount.html">
+            
+                <a href="../syncData/IDOSyncStepCount.html">
+            
+                    
+                    Synchronized exercise data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.13" data-path="../syncData/IDOSyncSwimData.html">
+            
+                <a href="../syncData/IDOSyncSwimData.html">
+            
+                    
+                    Synchronized swimming data 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../transfer/IDOFileTransfer.html">
+            
+                <a href="../transfer/IDOFileTransfer.html">
+            
+                    
+                    File transfer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.10.1" data-path="../transfer/IDOTransMusicModel.html">
+            
+                <a href="../transfer/IDOTransMusicModel.html">
+            
+                    
+                    Music
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10.2" data-path="../transfer/IDOTransSportModel.html">
+            
+                <a href="../transfer/IDOTransSportModel.html">
+            
+                    
+                    Sports icon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10.3" data-path="../transfer/IDOTransNormalModel.html">
+            
+                <a href="../transfer/IDOTransNormalModel.html">
+            
+                    
+                    Other files
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../delegate/IDOBridgeDelegate.html">
+            
+                <a href="../delegate/IDOBridgeDelegate.html">
+            
+                    
+                    Delegate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.11.1" data-path="../delegate/IDOBleDelegate.html">
+            
+                <a href="../delegate/IDOBleDelegate.html">
+            
+                    
+                    Bluetooth library Delegate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11.2" data-path="../delegate/IDOAlexaDelegate.html">
+            
+                <a href="../delegate/IDOAlexaDelegate.html">
+            
+                    
+                    Alexa Delegate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../messageIcon/IDOMessageIcon.html">
+            
+                <a href="../messageIcon/IDOMessageIcon.html">
+            
+                    
+                    Message icon
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.12.1" data-path="messageIconDesc.html">
+            
+                <a href="messageIconDesc.html">
+            
+                    
+                    Dynamic message icon and notification distribution process
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.2" data-path="../messageIcon/IDOMessageIconModel.html">
+            
+                <a href="../messageIcon/IDOMessageIconModel.html">
+            
+                    
+                    Message icon entity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.3" data-path="messageIconUrl.html">
+            
+                <a href="messageIconUrl.html">
+            
+                    
+                    Query ios package information based on registration and country code
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../get/IDOCommandIndex.html">
+            
+                <a href="../get/IDOCommandIndex.html">
+            
+                    
+                    Get command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.13.1" data-path="../get/IDOGetBtName.html">
+            
+                <a href="../get/IDOGetBtName.html">
+            
+                    
+                    Get bt Bluetooth name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.2" data-path="../get/IDOGetLiveData.html">
+            
+                <a href="../get/IDOGetLiveData.html">
+            
+                    
+                    Get real-time data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.3" data-path="../get/IDOGetErrorRecord.html">
+            
+                <a href="../get/IDOGetErrorRecord.html">
+            
+                    
+                    Get error record
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.4" data-path="../get/IDOGetHidInfo.html">
+            
+                <a href="../get/IDOGetHidInfo.html">
+            
+                    
+                    Get HID information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.5" data-path="../get/IDOGetGpsInfo.html">
+            
+                <a href="../get/IDOGetGpsInfo.html">
+            
+                    
+                    Get gps information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.6" data-path="../get/IDOGetVersionInfo.html">
+            
+                <a href="../get/IDOGetVersionInfo.html">
+            
+                    
+                    Get version information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.7" data-path="../get/IDOGetMtuInfo.html">
+            
+                <a href="../get/IDOGetMtuInfo.html">
+            
+                    
+                    Get mtu information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.8" data-path="../get/IDOGetAllHealthSwitchState.html">
+            
+                <a href="../get/IDOGetAllHealthSwitchState.html">
+            
+                    
+                    Get all health monitoring switches
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.9" data-path="../get/IDOGetGpsStatus.html">
+            
+                <a href="../get/IDOGetGpsStatus.html">
+            
+                    
+                    Get gps status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.10" data-path="../get/IDOGetUnerasableMeunList.html">
+            
+                <a href="../get/IDOGetUnerasableMeunList.html">
+            
+                    
+                    Get the shortcut application list that cannot be deleted by the firmware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.11" data-path="../get/IDOGetActivitySwitch.html">
+            
+                <a href="../get/IDOGetActivitySwitch.html">
+            
+                    
+                    Get the sports mode automatic recognition switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.12" data-path="../get/IDOGetUnreadAppReminder.html">
+            
+                <a href="../get/IDOGetUnreadAppReminder.html">
+            
+                    
+                    Get red dot reminder switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.13" data-path="../get/IDOGetFlashBinInfo.html">
+            
+                <a href="../get/IDOGetFlashBinInfo.html">
+            
+                    
+                    Get font information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.14" data-path="../get/IDOGetBtNotice.html">
+            
+                <a href="../get/IDOGetBtNotice.html">
+            
+                    
+                    Query bt pairing switch, Connection, a2dp connection, hfp connection status (only supports devices with bt Bluetooth)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.15" data-path="../get/IDOGetUpHandGesture.html">
+            
+                <a href="../get/IDOGetUpHandGesture.html">
+            
+                    
+                    Get wrist-raising data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.16" data-path="../get/IDOGetWatchDialId.html">
+            
+                <a href="../get/IDOGetWatchDialId.html">
+            
+                    
+                    Get the watch face id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.17" data-path="../get/IDOGetNotDisturbStatus.html">
+            
+                <a href="../get/IDOGetNotDisturbStatus.html">
+            
+                    
+                    Get the Do Not Disturb mode status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.18" data-path="../get/IDOGetMainSportGoal.html">
+            
+                <a href="../get/IDOGetMainSportGoal.html">
+            
+                    
+                    Get the settings Main interface of calories/distance/moderate and high exercise duration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.19" data-path="../get/IDOGetBpAlgVersion.html">
+            
+                <a href="../get/IDOGetBpAlgVersion.html">
+            
+                    
+                    Get the blood pressure algorithm three-level version number information event number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.20" data-path="../get/IDOGetScreenBrightness.html">
+            
+                <a href="../get/IDOGetScreenBrightness.html">
+            
+                    
+                    Get screen brightness
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.21" data-path="../get/IDOGetHotStartParam.html">
+            
+                <a href="../get/IDOGetHotStartParam.html">
+            
+                    
+                    Get hot start parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.22" data-path="../get/IDOGetSupportMaxSetItemsNum.html">
+            
+                <a href="../get/IDOGetSupportMaxSetItemsNum.html">
+            
+                    
+                    Get the maximum number of settings supported by the firmware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.23" data-path="../get/IDOGetWalkRemind.html">
+            
+                <a href="../get/IDOGetWalkRemind.html">
+            
+                    
+                    Get walk Reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.24" data-path="../get/IDOGetStepGoal.html">
+            
+                <a href="../get/IDOGetStepGoal.html">
+            
+                    
+                    Get the all-day step goal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.25" data-path="../get/IDOGetDeviceName.html">
+            
+                <a href="../get/IDOGetDeviceName.html">
+            
+                    
+                    Get the watch name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.26" data-path="../get/IDOGetContactReviseTime.html">
+            
+                <a href="../get/IDOGetContactReviseTime.html">
+            
+                    
+                    Get the modification time of the firmware locally saved contact file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.27" data-path="../get/IDOGetUpdateStatus.html">
+            
+                <a href="../get/IDOGetUpdateStatus.html">
+            
+                    
+                    Get the device upgrade status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.28" data-path="../get/IDOGetStressVal.html">
+            
+                <a href="../get/IDOGetStressVal.html">
+            
+                    
+                    Get stress value
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.29" data-path="../get/IDOGetHeartRateMode.html">
+            
+                <a href="../get/IDOGetHeartRateMode.html">
+            
+                    
+                    Get heart rate monitoring mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.30" data-path="../get/IDOGetBatteryInfo.html">
+            
+                <a href="../get/IDOGetBatteryInfo.html">
+            
+                    
+                    Get Battery information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.31" data-path="../get/IDOGetDeviceLogState.html">
+            
+                <a href="../get/IDOGetDeviceLogState.html">
+            
+                    
+                    Get the log status of the device
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.32" data-path="../get/IDOGetDownloadLanguage.html">
+            
+                <a href="../get/IDOGetDownloadLanguage.html">
+            
+                    
+                    Get download language support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.33" data-path="../get/IDOGetMenuList.html">
+            
+                <a href="../get/IDOGetMenuList.html">
+            
+                    
+                    Get the list of device support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.34" data-path="../get/IDOGetNoticeStatus.html">
+            
+                <a href="../get/IDOGetNoticeStatus.html">
+            
+                    
+                    Get the notification center switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.35" data-path="../get/IDOGetAlarm.html">
+            
+                <a href="../get/IDOGetAlarm.html">
+            
+                    
+                    app gets ble alarm clock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.36" data-path="../get/IDOGetHabitInfo.html">
+            
+                <a href="../get/IDOGetHabitInfo.html">
+            
+                    
+                    Get user habit information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.37" data-path="../get/IDOGetBleMusicInfo.html">
+            
+                <a href="../get/IDOGetBleMusicInfo.html">
+            
+                    
+                    Get firmware song name and folder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.38" data-path="../get/IDOGetWatchDialInfo.html">
+            
+                <a href="../get/IDOGetWatchDialInfo.html">
+            
+                    
+                    Get screen information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.39" data-path="../get/IDOGetWatchListV3.html">
+            
+                <a href="../get/IDOGetWatchListV3.html">
+            
+                    
+                    Get watch face list v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.40" data-path="../get/IDOGetWatchListV2.html">
+            
+                <a href="../get/IDOGetWatchListV2.html">
+            
+                    
+                    Get watch face list v2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.41" data-path="../get/IDOGetLanguageLibrary.html">
+            
+                <a href="../get/IDOGetLanguageLibrary.html">
+            
+                    
+                    Get language library list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.42" data-path="../get/IDOGetBleBeep.html">
+            
+                <a href="../get/IDOGetBleBeep.html">
+            
+                    
+                    Get firmware local beep file information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.43" data-path="../get/IDOGetDefaultSportType.html">
+            
+                <a href="../get/IDOGetDefaultSportType.html">
+            
+                    
+                    Get the default sport type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.44" data-path="../get/IDOGetSportTypeV3.html">
+            
+                <a href="../get/IDOGetSportTypeV3.html">
+            
+                    
+                    Get the default sport type V3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.45" data-path="../get/IDOGetBtConnectPhoneModel.html">
+            
+                <a href="../get/IDOGetBtConnectPhoneModel.html">
+            
+                    
+                    Get the BT connected phone model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.46" data-path="../get/IDOGetUnit.html">
+            
+                <a href="../get/IDOGetUnit.html">
+            
+                    
+                    Get the unit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.47" data-path="../get/IDOGetMtuLengthSPP.html">
+            
+                <a href="../get/IDOGetMtuLengthSPP.html">
+            
+                    
+                    Get spp mtu length (Android)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.48" data-path="../get/IDOGetHeartRateModeSmart.html">
+            
+                <a href="../get/IDOGetHeartRateModeSmart.html">
+            
+                    
+                    Get Intelligent Heart Rate Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.49" data-path="../get/IDOGetSpo2Switch.html">
+            
+                <a href="../get/IDOGetSpo2Switch.html">
+            
+                    
+                    Get blood oxygen switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.50" data-path="../get/IDOGetStressSwitch.html">
+            
+                <a href="../get/IDOGetStressSwitch.html">
+            
+                    
+                    Get pressure switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../set/IDOCommandIndex.html">
+            
+                <a href="../set/IDOCommandIndex.html">
+            
+                    
+                    Set command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.14.1" data-path="../set/IDOSetBleVoice.html">
+            
+                <a href="../set/IDOSetBleVoice.html">
+            
+                    
+                    Download mobile phone volume to ble
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.2" data-path="../set/IDOSetGpsControl.html">
+            
+                <a href="../set/IDOSetGpsControl.html">
+            
+                    
+                    Set control gps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.3" data-path="../set/IDOSetHeartRateModeSmart.html">
+            
+                <a href="../set/IDOSetHeartRateModeSmart.html">
+            
+                    
+                    Smart heart rate mode Setting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.4" data-path="../set/IDOSetStressCalibration.html">
+            
+                <a href="../set/IDOSetStressCalibration.html">
+            
+                    
+                    Set pressure calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.5" data-path="../set/IDOSetHandWashingReminder.html">
+            
+                <a href="../set/IDOSetHandWashingReminder.html">
+            
+                    
+                    Set hand washing reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.6" data-path="../set/IDOSetSportGoal.html">
+            
+                <a href="../set/IDOSetSportGoal.html">
+            
+                    
+                    Set sports goal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.7" data-path="../set/IDOSetWeatherData.html">
+            
+                <a href="../set/IDOSetWeatherData.html">
+            
+                    
+                    Set weather data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.8" data-path="../set/IDOSetUnreadAppReminder.html">
+            
+                <a href="../set/IDOSetUnreadAppReminder.html">
+            
+                    
+                    Unread Information red dot prompt switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.9" data-path="../set/IDOSetNotificationStatus.html">
+            
+                <a href="../set/IDOSetNotificationStatus.html">
+            
+                    
+                    The mobile app uses this command switch to set the notification application status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.10" data-path="../set/IDOSetScientificSleepSwitch.html">
+            
+                <a href="../set/IDOSetScientificSleepSwitch.html">
+            
+                    
+                    Set scientific sleep switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.11" data-path="../set/IDOSetBpCalibration.html">
+            
+                <a href="../set/IDOSetBpCalibration.html">
+            
+                    
+                    Blood pressure calibration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.12" data-path="../set/IDOSetLostFind.html">
+            
+                <a href="../set/IDOSetLostFind.html">
+            
+                    
+                    Set anti-lost
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.13" data-path="../set/IDOSetWatchDial.html">
+            
+                <a href="../set/IDOSetWatchDial.html">
+            
+                    
+                    Set the dial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.14" data-path="../set/IDOSetWeatherSwitch.html">
+            
+                <a href="../set/IDOSetWeatherSwitch.html">
+            
+                    
+                    Set the weather switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.15" data-path="../set/IDOSetUnit.html">
+            
+                <a href="../set/IDOSetUnit.html">
+            
+                    
+                     Set unit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.16" data-path="../set/IDOSetFindPhone.html">
+            
+                <a href="../set/IDOSetFindPhone.html">
+            
+                    
+                    Set to find a mobile phone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.17" data-path="../set/IDOSetOverFindPhone.html">
+            
+                <a href="../set/IDOSetOverFindPhone.html">
+            
+                    
+                    Set to stop searching for a mobile phone
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.18" data-path="../set/IDOSetOnekeySOS.html">
+            
+                <a href="../set/IDOSetOnekeySOS.html">
+            
+                    
+                    Set a one-touch call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.19" data-path="../set/IDOSetSportModeSelect.html">
+            
+                <a href="../set/IDOSetSportModeSelect.html">
+            
+                    
+                    Set sport mode selection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.20" data-path="../set/IDOSetSportModeSort.html">
+            
+                <a href="../set/IDOSetSportModeSort.html">
+            
+                    
+                    Set sport mode sorting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.21" data-path="../set/IDOSetLongSit.html">
+            
+                <a href="../set/IDOSetLongSit.html">
+            
+                    
+                    Set sitting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.22" data-path="../set/IDOSetHeartRateMode.html">
+            
+                <a href="../set/IDOSetHeartRateMode.html">
+            
+                    
+                    Set heart rate mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.23" data-path="../set/IDOSetBodyPowerTurn.html">
+            
+                <a href="../set/IDOSetBodyPowerTurn.html">
+            
+                    
+                    Set body power switch 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.24" data-path="../set/IDOSetRRespiRateTurn.html">
+            
+                <a href="../set/IDOSetRRespiRateTurn.html">
+            
+                    
+                    Set the respiration rate switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.25" data-path="../set/IDOSetV3Noise.html">
+            
+                <a href="../set/IDOSetV3Noise.html">
+            
+                    
+                    Ambient volume switch and threshold
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.26" data-path="../set/IDOSetWeatherSunTime.html">
+            
+                <a href="../set/IDOSetWeatherSunTime.html">
+            
+                    
+                    Set sunrise and sunset time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.27" data-path="../set/IDOSetShortcut.html">
+            
+                <a href="../set/IDOSetShortcut.html">
+            
+                    
+                    Set shortcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.28" data-path="../set/IDOSetNoticeStatus.html">
+            
+                <a href="../set/IDOSetNoticeStatus.html">
+            
+                    
+                    Set notification center
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.29" data-path="../set/IDOSetTemperatureSwitch.html">
+            
+                <a href="../set/IDOSetTemperatureSwitch.html">
+            
+                    
+                    Set night temperature switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.30" data-path="../set/IDOSetSleepPeriod.html">
+            
+                <a href="../set/IDOSetSleepPeriod.html">
+            
+                    
+                    Set sleep time period
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.31" data-path="../set/IDOSetUpHandGesture.html">
+            
+                <a href="../set/IDOSetUpHandGesture.html">
+            
+                    
+                    Set raising hand to brighten the screen
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.32" data-path="../set/IDOSetTakingMedicineReminder.html">
+            
+                <a href="../set/IDOSetTakingMedicineReminder.html">
+            
+                    
+                    Set medicine reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.33" data-path="../set/IDOSetSpo2Switch.html">
+            
+                <a href="../set/IDOSetSpo2Switch.html">
+            
+                    
+                    Set blood oxygen switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.34" data-path="../set/IDOSetWeatherCityName.html">
+            
+                <a href="../set/IDOSetWeatherCityName.html">
+            
+                    
+                    Set weather city name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.35" data-path="../set/IDOSetAlarm.html">
+            
+                <a href="../set/IDOSetAlarm.html">
+            
+                    
+                    App to set ble alarm clock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.36" data-path="../set/IDOSetFitnessGuidance.html">
+            
+                <a href="../set/IDOSetFitnessGuidance.html">
+            
+                    
+                    Fitness Guidance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.37" data-path="../set/IDOSetDisplayMode.html">
+            
+                <a href="../set/IDOSetDisplayMode.html">
+            
+                    
+                    Display Mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.38" data-path="../set/IDOSetBpMeasurement.html">
+            
+                <a href="../set/IDOSetBpMeasurement.html">
+            
+                    
+                    Blood pressure measurement
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.39" data-path="../set/IDOSetMusicOnOff.html">
+            
+                <a href="../set/IDOSetMusicOnOff.html">
+            
+                    
+                    Music switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.40" data-path="../set/IDOSetSendRunPlan.html">
+            
+                <a href="../set/IDOSetSendRunPlan.html">
+            
+                    
+                    app Send running plan (exercise plan)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.41" data-path="../set/IDOSetWeatherV3.html">
+            
+                <a href="../set/IDOSetWeatherV3.html">
+            
+                    
+                    v3 Send v3 weather protocol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.42" data-path="../set/IDOMusicControl.html">
+            
+                <a href="../set/IDOMusicControl.html">
+            
+                    
+                    Control music 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.43" data-path="../set/IDOSetMusicOperate.html">
+            
+                <a href="../set/IDOSetMusicOperate.html">
+            
+                    
+                    Operate songs or folders
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.44" data-path="../set/IDONoticeMessageV3.html">
+            
+                <a href="../set/IDONoticeMessageV3.html">
+            
+                    
+                    Notification message reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.45" data-path="../set/IDOSetNoticeMessageState.html">
+            
+                <a href="../set/IDOSetNoticeMessageState.html">
+            
+                    
+                    Set message notification status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.46" data-path="../set/IDOSetNoticeAppName.html">
+            
+                <a href="../set/IDOSetNoticeAppName.html">
+            
+                    
+                    Dynamic message notification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.47" data-path="../set/IDOSetWorldTimeV3.html">
+            
+                <a href="../set/IDOSetWorldTimeV3.html">
+            
+                    
+                     Issue v3 world time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.48" data-path="../set/IDOSetSchedulerReminder.html">
+            
+                <a href="../set/IDOSetSchedulerReminder.html">
+            
+                    
+                    Set schedule reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.49" data-path="../set/IDOSetBpCalControlV3.html">
+            
+                <a href="../set/IDOSetBpCalControlV3.html">
+            
+                    
+                    Blood pressure calibration control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.50" data-path="../set/IDOSetWatchFaceData.html">
+            
+                <a href="../set/IDOSetWatchFaceData.html">
+            
+                    
+                    Set watch face
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.51" data-path="../set/IDOSetSyncContact.html">
+            
+                <a href="../set/IDOSetSyncContact.html">
+            
+                    
+                    Synchronize frequently used contacts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.52" data-path="../set/IDOSetSportParamSort.html">
+            
+                <a href="../set/IDOSetSportParamSort.html">
+            
+                    
+                    Set the data arrangement of sports sub-items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.53" data-path="../set/IDOSetSport100Sort.html">
+            
+                <a href="../set/IDOSetSport100Sort.html">
+            
+                    
+                    New 100 sports sorting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.54" data-path="../set/IDOSetMainUISortV3.html">
+            
+                <a href="../set/IDOSetMainUISortV3.html">
+            
+                    
+                    Set the main Interface control sorting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.55" data-path="../set/IDOSetHistoricalMenstruation.html">
+            
+                <a href="../set/IDOSetHistoricalMenstruation.html">
+            
+                    
+                    Distribution of historical menstrual data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.56" data-path="../set/IDOSetLongCityNameV3.html">
+            
+                <a href="../set/IDOSetLongCityNameV3.html">
+            
+                    
+                    Set the sports city name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.57" data-path="../set/IDOSetHeartMode.html">
+            
+                <a href="../set/IDOSetHeartMode.html">
+            
+                    
+                    V3 set heart rate mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.58" data-path="../set/IDOSetVoiceReplyText.html">
+            
+                <a href="../set/IDOSetVoiceReplyText.html">
+            
+                    
+                    Voice reply text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.59" data-path="../set/IDOSetWatchDialSort.html">
+            
+                <a href="../set/IDOSetWatchDialSort.html">
+            
+                    
+                    Set the dial order
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.60" data-path="../set/IDOSetWalkRemindTimes.html">
+            
+                <a href="../set/IDOSetWalkRemindTimes.html">
+            
+                    
+                    Set multiple walking reminder time points
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.61" data-path="../set/IDOSetWallpaperDialReply.html">
+            
+                <a href="../set/IDOSetWallpaperDialReply.html">
+            
+                    
+                    Set wallpaper dial list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.62" data-path="../set/IDOSetDateTime.html">
+            
+                <a href="../set/IDOSetDateTime.html">
+            
+                    
+                    Set time 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.63" data-path="../set/IDOSetUserInfo.html">
+            
+                <a href="../set/IDOSetUserInfo.html">
+            
+                    
+                    Set user information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.64" data-path="../set/IDOReboot.html">
+            
+                <a href="../set/IDOReboot.html">
+            
+                    
+                    Restart the device
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.65" data-path="../set/IDOFactoryReset.html">
+            
+                <a href="../set/IDOFactoryReset.html">
+            
+                    
+                    Restore factory settings
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.66" data-path="../set/IDOFindDeviceStart.html">
+            
+                <a href="../set/IDOFindDeviceStart.html">
+            
+                    
+                    Control the start of finding the device
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.67" data-path="../set/IDOFindDeviceStop.html">
+            
+                <a href="../set/IDOFindDeviceStop.html">
+            
+                    
+                    Control the start of the search for the device End
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.68" data-path="../set/IDOPhotoStart.html">
+            
+                <a href="../set/IDOPhotoStart.html">
+            
+                    
+                    Start taking photos (app -> ble)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.69" data-path="../set/IDOPhotoStop.html">
+            
+                <a href="../set/IDOPhotoStop.html">
+            
+                    
+                    End taking photos (app -> ble))
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.70" data-path="../set/IDOSetHand.html">
+            
+                <a href="../set/IDOSetHand.html">
+            
+                    
+                    Set left and right hands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.71" data-path="../set/IDOSetScreenBrightness.html">
+            
+                <a href="../set/IDOSetScreenBrightness.html">
+            
+                    
+                    Set screen brightness
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.72" data-path="../set/IDOOtaStart.html">
+            
+                <a href="../set/IDOOtaStart.html">
+            
+                    
+                    Enter upgrade mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.73" data-path="../set/IDOSetHeartRateInterval.html">
+            
+                <a href="../set/IDOSetHeartRateInterval.html">
+            
+                    
+                    Set heart rate interval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.74" data-path="../set/IDOSetCalorieDistanceGoal.html">
+            
+                <a href="../set/IDOSetCalorieDistanceGoal.html">
+            
+                    
+                    Set calories and Distance goal (set daily three rings)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.75" data-path="../set/IDOSetWalkRemind.html">
+            
+                <a href="../set/IDOSetWalkRemind.html">
+            
+                    
+                    Set walking reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.76" data-path="../set/IDOSetMenstruation.html">
+            
+                <a href="../set/IDOSetMenstruation.html">
+            
+                    
+                    Set menstrual period
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.77" data-path="../set/IDOSetDrinkWaterRemind.html">
+            
+                <a href="../set/IDOSetDrinkWaterRemind.html">
+            
+                    
+                    Set drinking water reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.78" data-path="../set/IDOSetMenstruationRemind.html">
+            
+                <a href="../set/IDOSetMenstruationRemind.html">
+            
+                    
+                    Set menstruation reminder
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.79" data-path="../set/IDOSetStressSwitch.html">
+            
+                <a href="../set/IDOSetStressSwitch.html">
+            
+                    
+                    Set the pressure switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.80" data-path="../set/IDOSetVoiceAssistantOnOff.html">
+            
+                <a href="../set/IDOSetVoiceAssistantOnOff.html">
+            
+                    
+                    Set the voice assistant switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.81" data-path="../set/IDOSetNotDisturb.html">
+            
+                <a href="../set/IDOSetNotDisturb.html">
+            
+                    
+                    Set the do not disturb mode 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.82" data-path="../set/IDOSetMenuList.html">
+            
+                <a href="../set/IDOSetMenuList.html">
+            
+                    
+                    Set menu list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.83" data-path="../set/IDOSetSportSortV3.html">
+            
+                <a href="../set/IDOSetSportSortV3.html">
+            
+                    
+                    Set motion type sorting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.84" data-path="../set/IDOSetCallQuickReplyOnOff.html">
+            
+                <a href="../set/IDOSetCallQuickReplyOnOff.html">
+            
+                    
+                    Set the firmware quick reply switch for incoming calls
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.85" data-path="../set/IDOSetActivitySwitch.html">
+            
+                <a href="../set/IDOSetActivitySwitch.html">
+            
+                    
+                    Set the sports mode recognition switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.86" data-path="../set/IDOMusicStart.html">
+            
+                <a href="../set/IDOMusicStart.html">
+            
+                    
+                    Control music start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.87" data-path="../set/IDOMusicStop.html">
+            
+                <a href="../set/IDOMusicStop.html">
+            
+                    
+                    Control music stop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.88" data-path="../set/IDOSendBindResult.html">
+            
+                <a href="../set/IDOSendBindResult.html">
+            
+                    
+                    APP issues pairing result
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.89" data-path="../set/IDODefaultQuickMsgReply.html">
+            
+                <a href="../set/IDODefaultQuickMsgReply.html">
+            
+                    
+                    Set the default quick message reply list (Android)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.90" data-path="../set/IDOSendBindResult.html">
+            
+                <a href="../set/IDOSendBindResult.html">
+            
+                    
+                    Quick SMS reply (Android)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14.91" data-path="../set/IDOSetHotStartParam.html">
+            
+                <a href="../set/IDOSetHotStartParam.html">
+            
+                    
+                    Set hot start parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../model/IDOModelIndex.html">
+            
+                <a href="../model/IDOModelIndex.html">
+            
+                    
+                    Model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.15.1" data-path="../model/IDOActivitySwitchModel.html">
+            
+                <a href="../model/IDOActivitySwitchModel.html">
+            
+                    
+                    IDOActivitySwitchModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.2" data-path="../model/IDOBleBeepModel.html">
+            
+                <a href="../model/IDOBleBeepModel.html">
+            
+                    
+                    IDOBleBeepModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.3" data-path="../model/IDOBleVoiceParamModel.html">
+            
+                <a href="../model/IDOBleVoiceParamModel.html">
+            
+                    
+                    IDOBleVoiceParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.4" data-path="../model/IDOBpAlgVersionModel.html">
+            
+                <a href="../model/IDOBpAlgVersionModel.html">
+            
+                    
+                    IDOBpAlgVersionModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.5" data-path="../model/IDOBpCalControlModel.html">
+            
+                <a href="../model/IDOBpCalControlModel.html">
+            
+                    
+                    IDOBpCalControlModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.6" data-path="../model/IDOBpCalibrationModel.html">
+            
+                <a href="../model/IDOBpCalibrationModel.html">
+            
+                    
+                    IDOBpCalibrationModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.7" data-path="../model/IDOBpCalibrationParamModel.html">
+            
+                <a href="../model/IDOBpCalibrationParamModel.html">
+            
+                    
+                    IDOBpCalibrationParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.8" data-path="../model/IDOBpMeasurementModel.html">
+            
+                <a href="../model/IDOBpMeasurementModel.html">
+            
+                    
+                    IDOBpMeasurementModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.9" data-path="../model/IDOBpMeasurementParamModel.html">
+            
+                <a href="../model/IDOBpMeasurementParamModel.html">
+            
+                    
+                     IDOBpMeasurementParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.10" data-path="../model/IDOBtNoticeModel.html">
+            
+                <a href="../model/IDOBtNoticeModel.html">
+            
+                    
+                    IDOBtNoticeModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.11" data-path="../model/IDOCmdGetResponseModel.html">
+            
+                <a href="../model/IDOCmdGetResponseModel.html">
+            
+                    
+                    IDOCmdGetResponseModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.12" data-path="../model/IDOCmdSetResponseModel.html">
+            
+                <a href="../model/IDOCmdSetResponseModel.html">
+            
+                    
+                    IDOCmdSetResponseModel 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.13" data-path="../model/IDOContactItem.html">
+            
+                <a href="../model/IDOContactItem.html">
+            
+                    
+                    IDOContactItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.14" data-path="../model/IDOContactReviseTimeModel.html">
+            
+                <a href="../model/IDOContactReviseTimeModel.html">
+            
+                    
+                    IDOContactReviseTimeModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.15" data-path="../model/IDODataTranConfigModel.html">
+            
+                <a href="../model/IDODataTranConfigModel.html">
+            
+                    
+                    IDODataTranConfigModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.16" data-path="../model/IDODateTimeParamModel.html">
+            
+                <a href="../model/IDODateTimeParamModel.html">
+            
+                    
+                    ID ODateTimeParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.17" data-path="../model/IDODeviceLogStateModel.html">
+            
+                <a href="../model/IDODeviceLogStateModel.html">
+            
+                    
+                    IDODeviceLogStateModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.18" data-path="../model/IDODeviceNotificationModel.html">
+            
+                <a href="../model/IDODeviceNotificationModel.html">
+            
+                    
+                    IDODeviceNotificationModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.19" data-path="../model/IDODisplayModeParamModel.html">
+            
+                <a href="../model/IDODisplayModeParamModel.html">
+            
+                    
+                    IDODisplayModeParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.20" data-path="../model/IDODownloadLanguageModel.html">
+            
+                <a href="../model/IDODownloadLanguageModel.html">
+            
+                    
+                    IDODownloadLanguageModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.21" data-path="../model/IDODownloadLanguageType.html">
+            
+                <a href="../model/IDODownloadLanguageType.html">
+            
+                    
+                    IDODownloadLanguageType
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.22" data-path="../model/IDOErrorRecordModel.html">
+            
+                <a href="../model/IDOErrorRecordModel.html">
+            
+                    
+                    IDOErrorRecordModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.23" data-path="../model/IDOFitnessGuidanceParamModel.html">
+            
+                <a href="../model/IDOFitnessGuidanceParamModel.html">
+            
+                    
+                    IDOFitnessGuidanceParam Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.24" data-path="../model/IDOFlashBinInfoModel.html">
+            
+                <a href="../model/IDOFlashBinInfoModel.html">
+            
+                    
+                    IDOFlashBinInfoModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.25" data-path="../model/IDOFuncSimpleFileOptModel.html">
+            
+                <a href="../model/IDOFuncSimpleFileOptModel.html">
+            
+                    
+                    IDOFuncSimpleFileOptModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.26" data-path="../model/IDOFuncSimpleFileOptParamModel.html">
+            
+                <a href="../model/IDOFuncSimpleFileOptParamModel.html">
+            
+                    
+                    IDOFuncSimpleFileOptParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.27" data-path="../model/IDOGpsControlModel.html">
+            
+                <a href="../model/IDOGpsControlModel.html">
+            
+                    
+                    IDOGpsControlModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.28" data-path="../model/IDOGpsControlParamModel.html">
+            
+                <a href="../model/IDOGpsControlParamModel.html">
+            
+                    
+                    IDOGpsControlParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.29" data-path="../model/IDOGpsInfoModel.html">
+            
+                <a href="../model/IDOGpsInfoModel.html">
+            
+                    
+                    IDOGpsInfoModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.30" data-path="../model/IDOGpsInfoModelItem.html">
+            
+                <a href="../model/IDOGpsInfoModelItem.html">
+            
+                    
+                    IDOGpsInfoModelItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.31" data-path="../model/IDOGpsStatusModel.html">
+            
+                <a href="../model/IDOGpsStatusModel.html">
+            
+                    
+                    IDOGpsStatusModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.32" data-path="../model/IDOHandWashingReminderParamModel.html">
+            
+                <a href="../model/IDOHandWashingReminderParamModel.html">
+            
+                    
+                    IDOHandWashingReminderParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.33" data-path="../model/IDOHeartModeModel.html">
+            
+                <a href="../model/IDOHeartModeModel.html">
+            
+                    
+                    IDOHeartModeModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.34" data-path="../model/IDOHeartModeParamModel.html">
+            
+                <a href="../model/IDOHeartModeParamModel.html">
+            
+                    
+                     IDOHeartModeParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.35" data-path="../model/IDOHeartRateModeModel.html">
+            
+                <a href="../model/IDOHeartRateModeModel.html">
+            
+                    
+                    IDOHeartRateModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.36" data-path="../model/IDOHeartRateModeParamModel.html">
+            
+                <a href="../model/IDOHeartRateModeParamModel.html">
+            
+                    
+                    IDOHeartRateModeParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.37" data-path="../model/IDOHeartRateModeSmartParamModel.html">
+            
+                <a href="../model/IDOHeartRateModeSmartParamModel.html">
+            
+                    
+                    IDOHeartRate ModeSmartParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.38" data-path="../model/IDOHistoricalMenstruationParamItem.html">
+            
+                <a href="../model/IDOHistoricalMenstruationParamItem.html">
+            
+                    
+                    IDOHistoricalMenstruationParamItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.39" data-path="../model/IDOHistoricalMenstruationParamModel.html">
+            
+                <a href="../model/IDOHistoricalMenstruationParamModel.html">
+            
+                    
+                    IDOHistoricalMenstruationParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.40" data-path="../model/IDOHotStartParamModel.html">
+            
+                <a href="../model/IDOHotStartParamModel.html">
+            
+                    
+                    IDOHotStartParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.41" data-path="../model/IDOItemItem.html">
+            
+                <a href="../model/IDOItemItem.html">
+            
+                    
+                    IDOItemItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.42" data-path="../model/IDOLanguageLibraryItem.html">
+            
+                <a href="../model/IDOLanguageLibraryItem.html">
+            
+                    
+                    IDOLanguageLibraryItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.43" data-path="../model/IDOLanguageLibraryModel.html">
+            
+                <a href="../model/IDOLanguageLibraryModel.html">
+            
+                    
+                    IDOLanguageLibraryModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.44" data-path="../model/IDOLiveDataModel.html">
+            
+                <a href="../model/IDOLiveDataModel.html">
+            
+                    
+                    IDOLingDataModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.45" data-path="../model/IDOLongSitParamModel.html">
+            
+                <a href="../model/IDOLongSitParamModel.html">
+            
+                    
+                    IDOLongSitParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.46" data-path="../model/IDOLostFindParamModel.html">
+            
+                <a href="../model/IDOLostFindParamModel.html">
+            
+                    
+                     IDOLostFindParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.47" data-path="../model/IDOMainSportGoalModel.html">
+            
+                <a href="../model/IDOMainSportGoalModel.html">
+            
+                    
+                    IDOMainSportGoalModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.48" data-path="../model/IDOMainUISortItem.html">
+            
+                <a href="../model/IDOMainUISortItem.html">
+            
+                    
+                    IDOMainUISortItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.49" data-path="../model/IDOMainUISortModel.html">
+            
+                <a href="../model/IDOMainUISortModel.html">
+            
+                    
+                    IDOMainUISortModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.50" data-path="../model/IDOMainUISortParamModel.html">
+            
+                <a href="../model/IDOMainUISortParamModel.html">
+            
+                    
+                    IDOMainUISortParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.51" data-path="../model/IDOMainUISortSupportItem.html">
+            
+                <a href="../model/IDOMainUISortSupportItem.html">
+            
+                    
+                    IDOMainUISortSupportItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.52" data-path="../model/IDOMtuInfoModel.html">
+            
+                <a href="../model/IDOMtuInfoModel.html">
+            
+                    
+                    IDOMtuInfoModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.53" data-path="../model/IDOMusicControlParamModel.html">
+            
+                <a href="../model/IDOMusicControlParamModel.html">
+            
+                    
+                    IDOMusicControlParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.54" data-path="../model/IDOMusicFolderItem.html">
+            
+                <a href="../model/IDOMusicFolderItem.html">
+            
+                    
+                    IDOMusicFolderItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.55" data-path="../model/IDOMusicInfoModel.html">
+            
+                <a href="../model/IDOMusicInfoModel.html">
+            
+                    
+                    IDOMusicInfoModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.56" data-path="../model/IDOMusicItem.html">
+            
+                <a href="../model/IDOMusicItem.html">
+            
+                    
+                    IDOMusicItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.57" data-path="../model/IDOMusicOnOffParamModel.html">
+            
+                <a href="../model/IDOMusicOnOffParamModel.html">
+            
+                    
+                    IDOMusicOnOffParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.58" data-path="../model/IDOMusicOpearteParamModel.html">
+            
+                <a href="../model/IDOMusicOpearteParamModel.html">
+            
+                    
+                    IDOMusicOpearteParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.59" data-path="../model/IDOMusicOperateModel.html">
+            
+                <a href="../model/IDOMusicOperateModel.html">
+            
+                    
+                    IDOMusicOperateModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.60" data-path="../model/IDONotDisturbStatusModel.html">
+            
+                <a href="../model/IDONotDisturbStatusModel.html">
+            
+                    
+                    IDONotDisturbStatusModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.61" data-path="../model/IDONoticeMessageStateItem.html">
+            
+                <a href="../model/IDONoticeMessageStateItem.html">
+            
+                    
+                    IDONoticeMessageStateItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.62" data-path="../model/IDONoticeMessageStateModel.html">
+            
+                <a href="../model/IDONoticeMessageStateModel.html">
+            
+                    
+                    IDONoticeMessageStateModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.63" data-path="../model/IDONoticeMessageStateParamModel.html">
+            
+                <a href="../model/IDONoticeMessageStateParamModel.html">
+            
+                    
+                    IDONoticeMessageStateParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.64" data-path="../model/IDONotificationCenterModel.html">
+            
+                <a href="../model/IDONotificationCenterModel.html">
+            
+                    
+                    IDONotificationCenterModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.65" data-path="../model/IDONotificationStatusParamModel.html">
+            
+                <a href="../model/IDONotificationStatusParamModel.html">
+            
+                    
+                    IDONotificationStatusParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.66" data-path="../model/IDORunPlanParamModel.html">
+            
+                <a href="../model/IDORunPlanParamModel.html">
+            
+                    
+                    IDORunPlanParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.67" data-path="../model/IDOSchedulerReminderItem.html">
+            
+                <a href="../model/IDOSchedulerReminderItem.html">
+            
+                    
+                    IDOSchedulerReminderItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.68" data-path="../model/IDOSchedulerReminderModel.html">
+            
+                <a href="../model/IDOSchedulerReminderModel.html">
+            
+                    
+                     IDOSchedulerReminderModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.69" data-path="../model/IDOScientificSleepSwitchParamModel.html">
+            
+                <a href="../model/IDOScientificSleepSwitchParamModel.html">
+            
+                    
+                    IDOScientificSleepSwitchParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.70" data-path="../model/IDOScreenBrightnessModel.html">
+            
+                <a href="../model/IDOScreenBrightnessModel.html">
+            
+                    
+                    IDOScreenBrightnessModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.71" data-path="../model/IDOSendRunPlanModel.html">
+            
+                <a href="../model/IDOSendRunPlanModel.html">
+            
+                    
+                    IDOSendRunP lanModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.72" data-path="../model/IDOSetNoticeStatusModel.html">
+            
+                <a href="../model/IDOSetNoticeStatusModel.html">
+            
+                    
+                    IDOSetNoticeStatusModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.73" data-path="../model/IDOShortcutParamModel.html">
+            
+                <a href="../model/IDOShortcutParamModel.html">
+            
+                    
+                    IDOShortcutParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.74" data-path="../model/IDOSleepPeriodParamModel.html">
+            
+                <a href="../model/IDOSleepPeriodParamModel.html">
+            
+                    
+                    IDOSleepPeriodParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.75" data-path="../model/IDOSpo2SwitchParamModel.html">
+            
+                <a href="../model/IDOSpo2SwitchParamModel.html">
+            
+                    
+                    IDOSpo2SwitchParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.76" data-path="../model/IDOSport100SortItem.html">
+            
+                <a href="../model/IDOSport100SortItem.html">
+            
+                    
+                    IDOSport100SortItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.77" data-path="../model/IDOSport100SortModel.html">
+            
+                <a href="../model/IDOSport100SortModel.html">
+            
+                    
+                    IDOSport100SortModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.78" data-path="../model/IDOSport100SortParamModel.html">
+            
+                <a href="../model/IDOSport100SortParamModel.html">
+            
+                    
+                    IDOSport100SortParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.79" data-path="../model/IDOSportGoalParamModel.html">
+            
+                <a href="../model/IDOSportGoalParamModel.html">
+            
+                    
+                    IDOSportGoalParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.80" data-path="../model/IDOSportModeSelectParamModel.html">
+            
+                <a href="../model/IDOSportModeSelectParamModel.html">
+            
+                    
+                    IDOSportModeSelectParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.81" data-path="../model/IDOSportModeSortParamModel.html">
+            
+                <a href="../model/IDOSportModeSortParamModel.html">
+            
+                    
+                    IDOSportModeSortParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.82" data-path="../model/IDOSportSortModel.html">
+            
+                <a href="../model/IDOSportSortModel.html">
+            
+                    
+                    IDOSportSortModel del
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.83" data-path="../model/IDOSportSortParamModel.html">
+            
+                <a href="../model/IDOSportSortParamModel.html">
+            
+                    
+                    IDOSportSortParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.84" data-path="../model/IDOStressCalibrationModel.html">
+            
+                <a href="../model/IDOStressCalibrationModel.html">
+            
+                    
+                    IDOStepGoalModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.85" data-path="../model/IDOStressCalibrationModel.html">
+            
+                <a href="../model/IDOStressCalibrationModel.html">
+            
+                    
+                    IDOStressCalibrationModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.86" data-path="../model/IDOStressCalibrationParamModel.html">
+            
+                <a href="../model/IDOStressCalibrationParamModel.html">
+            
+                    
+                     IDOStressCalibrationParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.87" data-path="../model/IDOStressValModel.html">
+            
+                <a href="../model/IDOStressValModel.html">
+            
+                    
+                    IDOStressValModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.88" data-path="../model/IDOSupportMaxSetItemsNumModel.html">
+            
+                <a href="../model/IDOSupportMaxSetItemsNumModel.html">
+            
+                    
+                    IDOSupportMaxSetItemsNumModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.89" data-path="../model/IDOSyncContactModel.html">
+            
+                <a href="../model/IDOSyncContactModel.html">
+            
+                    
+                    IDOSyncContactModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.90" data-path="../model/IDOSyncContactParamModel.html">
+            
+                <a href="../model/IDOSyncContactParamModel.html">
+            
+                    
+                    IDOSyncContactParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.91" data-path="../model/IDOTakingMedicineReminderParamModel.html">
+            
+                <a href="../model/IDOTakingMedicineReminderParamModel.html">
+            
+                    
+                    IDOTakingMedicineReminderParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.92" data-path="../model/IDOTemperatureSwitchParamModel.html">
+            
+                <a href="../model/IDOTemperatureSwitchParamModel.html">
+            
+                    
+                    IDOTemperatureSwitchParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.93" data-path="../model/IDOUnitParamModel.html">
+            
+                <a href="../model/IDOUnitParamModel.html">
+            
+                    
+                    IDOUnitParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.94" data-path="../model/IDOUpHandGestureModel.html">
+            
+                <a href="../model/IDOUpHandGestureModel.html">
+            
+                    
+                    IDOUpHandGestureParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.95" data-path="../model/IDOUpHandGestureModel.html">
+            
+                <a href="../model/IDOUpHandGestureModel.html">
+            
+                    
+                    IDOUpHandGestureModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.96" data-path="../model/IDOUpHandGestureParamModel.html">
+            
+                <a href="../model/IDOUpHandGestureParamModel.html">
+            
+                    
+                    IDOUpHandGestureParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.97" data-path="../model/IDOV3NoiseParamModel.html">
+            
+                <a href="../model/IDOV3NoiseParamModel.html">
+            
+                    
+                    IDOV3NoiseParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.98" data-path="../model/IDOVersionInfoModel.html">
+            
+                <a href="../model/IDOVersionInfoModel.html">
+            
+                    
+                    IDOVersionInfoModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.99" data-path="../model/IDOVoiceReplyParamModel.html">
+            
+                <a href="../model/IDOVoiceReplyParamModel.html">
+            
+                    
+                    IDOVoiceReplyParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.100" data-path="../model/IDOWalkRemindModel.html">
+            
+                <a href="../model/IDOWalkRemindModel.html">
+            
+                    
+                    IDOWalkRe mindModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.101" data-path="../model/IDOWalkRemindTimesItem.html">
+            
+                <a href="../model/IDOWalkRemindTimesItem.html">
+            
+                    
+                    IDOWalkRemindTimesItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.102" data-path="../model/IDOWalkRemindTimesParamModel.html">
+            
+                <a href="../model/IDOWalkRemindTimesParamModel.html">
+            
+                    
+                    IDOWalkRemindTimesParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.103" data-path="../model/IDOWallpaperDialReplyV3Model.html">
+            
+                <a href="../model/IDOWallpaperDialReplyV3Model.html">
+            
+                    
+                    IDOWallpaperDialReplyV3Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.104" data-path="../model/IDOWallpaperDialReplyV3ParamModel.html">
+            
+                <a href="../model/IDOWallpaperDialReplyV3ParamModel.html">
+            
+                    
+                    IDOWallpaperDialReplyV3ParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.105" data-path="../model/IDOWatchDialIdModel.html">
+            
+                <a href="../model/IDOWatchDialIdModel.html">
+            
+                    
+                    IDOWatchDialIdModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.106" data-path="../model/IDOWatchDialInfoModel.html">
+            
+                <a href="../model/IDOWatchDialInfoModel.html">
+            
+                    
+                    IDOWatchDialInfoModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.107" data-path="../model/IDOWatchDialParamModel.html">
+            
+                <a href="../model/IDOWatchDialParamModel.html">
+            
+                    
+                    IDOW atchDialParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.108" data-path="../model/IDOWatchDialSortItem.html">
+            
+                <a href="../model/IDOWatchDialSortItem.html">
+            
+                    
+                    IDOWatchDialSortItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.109" data-path="../model/IDOWatchDialSortParamModel.html">
+            
+                <a href="../model/IDOWatchDialSortParamModel.html">
+            
+                    
+                    IDOWatchDialSortParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.110" data-path="../model/IDOWatchFaceModel.html">
+            
+                <a href="../model/IDOWatchFaceModel.html">
+            
+                    
+                    IDOWatchFaceModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.111" data-path="../model/IDOWatchFaceParamModel.html">
+            
+                <a href="../model/IDOWatchFaceParamModel.html">
+            
+                    
+                     IDOWatchFaceParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.112" data-path="../model/IDOWatchItem.html">
+            
+                <a href="../model/IDOWatchItem.html">
+            
+                    
+                    IDOWatchItem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.113" data-path="../model/IDOWatchListModel.html">
+            
+                <a href="../model/IDOWatchListModel.html">
+            
+                    
+                    IDOWatchListModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.114" data-path="../model/IDOWatchListV2Model.html">
+            
+                <a href="../model/IDOWatchListV2Model.html">
+            
+                    
+                    IDOWatchListV2Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.115" data-path="../model/IDOWeatherDataFuture.html">
+            
+                <a href="../model/IDOWeatherDataFuture.html">
+            
+                    
+                    IDOWeatherDataFuture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.116" data-path="../model/IDOWeatherDataParamModel.html">
+            
+                <a href="../model/IDOWeatherDataParamModel.html">
+            
+                    
+                    IDOWeatherDataParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.117" data-path="../model/IDOWeatherSunTimeParamModel.html">
+            
+                <a href="../model/IDOWeatherSunTimeParamModel.html">
+            
+                    
+                    IDOWeatherSunTimeParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.118" data-path="../model/IDOWeatherV3ParamModel.html">
+            
+                <a href="../model/IDOWeatherV3ParamModel.html">
+            
+                    
+                    IDOWeatherV3ParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.119" data-path="../model/IDOWorldTimeParamModel.html">
+            
+                <a href="../model/IDOWorldTimeParamModel.html">
+            
+                    
+                    IDOWorldTimeParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.120" data-path="../model/IDOUserInfoPramModel.html">
+            
+                <a href="../model/IDOUserInfoPramModel.html">
+            
+                    
+                    IDOUserInfoPramModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.121" data-path="../model/IDOMenstruationModel.html">
+            
+                <a href="../model/IDOMenstruationModel.html">
+            
+                    
+                    IDOMenstruationModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.122" data-path="../model/IDOHeartRateIntervalModel.html">
+            
+                <a href="../model/IDOHeartRateIntervalModel.html">
+            
+                    
+                    IDOHeartRateIntervalModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.123" data-path="../model/IDOCmdOTAResponseModel.html">
+            
+                <a href="../model/IDOCmdOTAResponseModel.html">
+            
+                    
+                    IDOCmdOTAResponseModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.124" data-path="../model/IDODefaultSportTypeModel.html">
+            
+                <a href="../model/IDODefaultSportTypeModel.html">
+            
+                    
+                    IDODefaultSportTypeModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.125" data-path="../model/IDODeviceInfo.html">
+            
+                <a href="../model/IDODeviceInfo.html">
+            
+                    
+                    IDODeviceInfo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.126" data-path="../model/IDODrinkWaterRemindModel.html">
+            
+                <a href="../model/IDODrinkWaterRemindModel.html">
+            
+                    
+                    IDODrinkWaterRemindModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.127" data-path="../model/IDOMenstruationModel.html">
+            
+                <a href="../model/IDOMenstruationModel.html">
+            
+                    
+                    IDOMenstruationModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.128" data-path="../model/IDOMenstruationRemindParamModel.html">
+            
+                <a href="../model/IDOMenstruationRemindParamModel.html">
+            
+                    
+                    IDOMenstruationRemindParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.129" data-path="../model/IDOMenuListParamModel.html">
+            
+                <a href="../model/IDOMenuListParamModel.html">
+            
+                    
+                     IDOMenuListParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.130" data-path="../model/IDONotDisturbParamModel.html">
+            
+                <a href="../model/IDONotDisturbParamModel.html">
+            
+                    
+                    IDONotDisturbParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.131" data-path="../model/IDOSportParamModel.html">
+            
+                <a href="../model/IDOSportParamModel.html">
+            
+                    
+                    IDOSportParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.132" data-path="../model/IDOSSwitchParamModel.md">
+            
+                <span>
+            
+                    
+                    IDOStressSwitchParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.133" data-path="../model/IDODeviceModel.html">
+            
+                <a href="../model/IDODeviceModel.html">
+            
+                    
+                    IDOUnerasableMeunListModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.134" data-path="../model/IDOActivitySwitchParamModel.html">
+            
+                <a href="../model/IDOActivitySwitchParamModel.html">
+            
+                    
+                    IDOActivitySwitchParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.135" data-path="../model/IDODeviceModel.html">
+            
+                <a href="../model/IDODeviceModel.html">
+            
+                    
+                    IDODeviceModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.136" data-path="../model/IDOFastMsgSettingModel.html">
+            
+                <a href="../model/IDOFastMsgSettingModel.html">
+            
+                    
+                    IDOFastMsgSettingModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.137" data-path="../model/IDOFastMsgUpdateParamModel.html">
+            
+                <a href="../model/IDOFastMsgUpdateParamModel.html">
+            
+                    
+                    IDOFastMsgUpdateParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.138" data-path="../model/IDOGpsHotStartParamModel.html">
+            
+                <a href="../model/IDOGpsHotStartParamModel.html">
+            
+                    
+                    IDOGpsHotStartParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.139" data-path="../model/IDOSppMtuModel.html">
+            
+                <a href="../model/IDOSppMtuModel.html">
+            
+                    
+                    IDOSppMtuModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.140" data-path="../model/IDOGpsHotStartParamModel.html">
+            
+                <a href="../model/IDOGpsHotStartParamModel.html">
+            
+                    
+                    IDOGpsHotStartParamModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.141" data-path="../model/IDOStatusNotification.html">
+            
+                <a href="../model/IDOStatusNotification.html">
+            
+                    
+                    IDOStatusNotification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.142" data-path="../model/IDOBluetoothStateModel.html">
+            
+                <a href="../model/IDOBluetoothStateModel.html">
+            
+                    
+                    IDOBluetoothStateModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15.143" data-path="../model/IDODeviceStateModel.html">
+            
+                <a href="../model/IDODeviceStateModel.html">
+            
+                    
+                    IDODeviceStateModel
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../enum/IDOEnumIndex.html">
+            
+                <a href="../enum/IDOEnumIndex.html">
+            
+                    
+                    Enumeration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.16.1" data-path="../enum/IDOEvtType.html">
+            
+                <a href="../enum/IDOEvtType.html">
+            
+                    
+                    Event Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.2" data-path="../enum/IDOSportType.html">
+            
+                <a href="../enum/IDOSportType.html">
+            
+                    
+                    Motion Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.3" data-path="../enum/IDOTransType.html">
+            
+                <a href="../enum/IDOTransType.html">
+            
+                    
+                    Transfer file type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.4" data-path="../enum/IDOBindStatus.html">
+            
+                <a href="../enum/IDOBindStatus.html">
+            
+                    
+                    Binding status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.5" data-path="../enum/IDOBluetoothStateType.html">
+            
+                <a href="../enum/IDOBluetoothStateType.html">
+            
+                    
+                    Bluetooth status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.6" data-path="../enum/IDOBluetoothScanType.html">
+            
+                <a href="../enum/IDOBluetoothScanType.html">
+            
+                    
+                    Bluetooth Scan Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.7" data-path="../enum/IDOConnectErrorType.html">
+            
+                <a href="../enum/IDOConnectErrorType.html">
+            
+                    
+                    Connection Error Type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.8" data-path="../enum/IDODeviceStateType.html">
+            
+                <a href="../enum/IDODeviceStateType.html">
+            
+                    
+                    Device Connection Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.9" data-path="../enum/IDOGetValueType.html">
+            
+                <a href="../enum/IDOGetValueType.html">
+            
+                    
+                     Health data type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.10" data-path="../enum/IDOWeek.html">
+            
+                <a href="../enum/IDOWeek.html">
+            
+                    
+                    Weekday
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../evtControl/IDODeviceControlIndex.html">
+            
+                <a href="../evtControl/IDODeviceControlIndex.html">
+            
+                    
+                    Device notification control event
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.17.1" data-path="../evtControl/IDODeviceControlFastMsgUpdate.html">
+            
+                <a href="../evtControl/IDODeviceControlFastMsgUpdate.html">
+            
+                    
+                    Active notification APP SMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17.2" data-path="../evtControl/IDODeviceControlOnekeySOSStart.html">
+            
+                <a href="../evtControl/IDODeviceControlOnekeySOSStart.html">
+            
+                    
+                    Device notification APP one-click call start
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17.3" data-path="../evtControl/IDODeviceControlPhotograph.html">
+            
+                <a href="../evtControl/IDODeviceControlPhotograph.html">
+            
+                    
+                    Device control APP camera
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17.4" data-path="../evtControl/IDODeviceControlSpeakerValue.html">
+            
+                <a href="../evtControl/IDODeviceControlSpeakerValue.html">
+            
+                    
+                    Device notification firmware speaker volume modification (alexa)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17.5" data-path="../evtControl/IDODeviceControlVolumePercentage.html">
+            
+                <a href="../evtControl/IDODeviceControlVolumePercentage.html">
+            
+                    
+                    Device control APP music volume percentage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../IDOLanguageCode.html">
+            
+                <a href="../IDOLanguageCode.html">
+            
+                    
+                    Language code list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../IDOErrorCode.html">
+            
+                <a href="../IDOErrorCode.html">
+            
+                    
+                    Error code
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Data exchange implementation logic description</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="data-exchange-implementation-logic">Data exchange implementation logic</h1>
+<h3 id="function-table-judgment">Function table judgment</h3>
+<p>If the attribute supportV3ActivityExchange = false, the current motion data belongs to v2, otherwise it is v3; </p>
+<p>v2 belongs to the old equipment motion protocol, and relatively little data can be calculated and displayed; </p>
+<p> v3 belongs to the new device motion protocol and can calculate and display relatively much data; (currently new devices fall into this category) </p>
+<h3 id="app-initiates-motion">APP initiates motion</h3>
+<h4 id="app-starts">APP starts</h4>
+<h4 id="idoappstartexchangemodel">IDOAppStartExchangeModel</h4>
+<pre><code class="lang-java"> Time (day, hour, minute, second): The only reference <span class="hljs-keyword">for</span> global management of the current sport. The same time needs to be issued <span class="hljs-keyword">for</span> start, end, pause and resume
+ <span class="hljs-comment">/// Start date</span>
+ startExchangeModel.day = day;
+ / <span class="hljs-comment">// Starting clock</span>
+ startExchangeModel.hour = hour;
+ <span class="hljs-comment">/// Starting minute</span>
+ startExchangeModel.minute = minute;
+ <span class="hljs-comment">/// Starting second</span>
+ startExchangeModel.second = second;
+ <span class="hljs-comment">/// Movement type</span>
+ startExchangeModel. sportType = sportType;
+ <span class="hljs-comment">/// If there are other sports currently in progress, and this parameter is assigned a value to force it on, the previous sport will be forcibly overwritten</span>
+ startExchangeModel.forceStart = forceStart;
+ ... Other attributes are issued based on business needs, and are currently temporarily Not used to
+</code></pre>
+<h4 id="ble-reply">Ble reply</h4>
+<h4 id="idoappstartreplyexchangemodel">IDOAppStartReplyExchangeModel</h4>
+<pre><code class="lang-java"> <span class="hljs-comment">/// 0: Success; </span>
+ <span class="hljs-comment">/// 1: The device has entered sports mode and failed;</span>
+ <span class="hljs-comment">/// 2: Device battery is low and failed; 3: The bracelet is charging</span>
+ <span class="hljs-comment">/// 4: Using Alexa 5: Calling</span>
+ startReplyExchangeModel.retCode;
+</code></pre>
+<h4 id="app-stops">APP stops</h4>
+<h4 id="idoappendexchangemodel">IDOAppEndExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// The start date (refer to the start time) </span>
+endExchangeModel.day = startExchangeModel.day;
+<span class="hljs-comment">/// The start clock (refer to the start time) </span>
+endExchangeModel.hour = startExchangeModel.hour ;
+<span class="hljs-comment">/// The starting minute (refer to the start time) </span>
+endExchangeModel.minute = startExchangeModel.minute;
+<span class="hljs-comment">/// The starting second (refer to the start time) </span>
+endExchangeModel.second = startExchangeModel.second;
+<span class="hljs-comment">/// Movement type </span>
+endExchangeModel.sportType = sportType;
+<span class="hljs-comment">/// The duration of global exercise (unit: seconds) </span>
+endExchangeModel.duration = totalSeconds;
+<span class="hljs-comment">/// The calories accumulated by global exercise (unit: kcal) </span>
+endExchangeModel.calories = numCalories;
+ <span class="hljs-comment">/// The accumulated movement distance of global movement (unit: meters) </span>
+endExchangeModel.distance = mSendDistance;
+<span class="hljs-comment">/// Whether to keep the data (when the exercise duration is too short, you can choose not to store it, the exercise duration must be at least 1 minute or more, select After saving, the data will be synchronized) </span>
+endExchangeModel.isSave = isSave;
+</code></pre>
+<h4 id="ble-reply">Ble reply</h4>
+<h4 id="idoappendreplyexchangemodel">IDOAppEndReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Start date (refer to start time) </span>
+endReplyExchangeModel.day
+<span class="hljs-comment">/// start clock (refer to start time) </span>
+endReplyExchangeModel.hour
+<span class="hljs-comment">/// start minute (refer to start time) </span>
+endReplyExchangeModel.minute
+<span class="hljs-comment">/// start second (refer to start time) Time) </span>
+endReplyExchangeModel.second
+<span class="hljs-comment">/// Exercise type </span>
+endReplyExchangeModel.sportType
+<span class="hljs-comment">/// Global exercise accumulated calories (unit: kcal) </span>
+endReplyExchangeModel.calories 
+<span class="hljs-comment">/// Global exercise accumulated exercise distance (unit: meters) </span>
+endReplyExchangeModel.distance
+<span class="hljs-comment">/// The number of steps accumulated by global movement (unit: step) </span>
+endReplyExchangeModel.step
+<span class="hljs-comment">/// Average heart rate </span>
+endReplyExchangeModel.avgHr
+ <span class="hljs-comment">/// Maximum heart rate </span>
+endReplyExchangeModel.maxHr
+ <span class="hljs-comment">/// Fat burning time Unit minutes</span>
+endReplyExchangeModel.burnFatMins
+ <span class="hljs-comment">/// Cardiovascular exercise duration unit minutes</span>
+endReplyExchangeModel.aerobicMins
+ <span class="hljs-comment">/// Extreme exercise duration unit minutes</span>
+endReplyExchangeModel.limitMins
+</code></pre>
+<h4 id="app-pause">APP pause</h4>
+<h4 id="idoapppauseexchangemodel">IDOAppPauseExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// The start date (refer to the start time) </span>
+pauseExchangeModel.day = startExchangeModel.day;
+<span class="hljs-comment">/// The start clock (refer to the start time) </span>
+pauseExchangeModel.hour = startExchangeModel.hour;
+ <span class="hljs-comment">/// The starting minute (refer to the start time) </span>
+pauseExchangeModel.minute = startExchangeModel.minute;
+<span class="hljs-comment">/// The starting second (refer to the start time) </span>
+pauseExchangeModel.second = startExchangeModel.second;
+</code></pre>
+<h4 id="ble-reply">Ble reply</h4>
+<h4 id="idoapppausereplyexchangemodel">IDOAppPauseReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Pause error code 0: Success not 0: Failure </span>
+pauseReplyExchangeModel.errCode
+</code></pre>
+<h4 id="app-recovery">APP recovery</h4>
+<h4 id="idoapprestoreexchangemodel">IDOAppRestoreExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Start date (reference to start time) </span>
+restoreExchangeModel.day = startExchangeModel.day;
+<span class="hljs-comment">/// Start clock (reference to start time) </span>
+restoreExchangeModel.hour = startExchangeModel. hour;
+<span class="hljs-comment">/// The starting minute (refer to the start time) </span>
+restoreExchangeModel.minute = startExchangeModel.minute;
+<span class="hljs-comment">/// The starting second (refer to the start time) </span>
+restoreExchangeModel.second = startExchangeModel.second;
+</code></pre>
+<h4 id="blereply">BleReply</h4>
+<h4 id="idoapprestorereplyexchangemodel">IDOAppRestoreReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Pause error code 0: Success, not 0: Failure </span>
+pauseRestoreExchangeModel.errCode
+</code></pre>
+<h4 id="v2-data-exchange">v2 Data Exchange</h4>
+<h4 id="idoappingexchangemodel">IDOAppIngExchangeModel</h4>
+<pre><code class="lang-java">Global Execute v2 data exchange every <span class="hljs-number">2</span> seconds 
+<span class="hljs-comment">/// 0: All data is valid, 1: Distance is invalid 2: GPS signal is weak (not used yet) </span>
+v2exchangeModel.status = status;
+<span class="hljs-comment">/// Start date (refer to start time) ) </span>
+v2exchangeModel.day = startExchangeModel.day;
+<span class="hljs-comment">/// Starting clock (referenced to start time) </span>
+v2exchangeModel.hour = startExchangeModel.hour;
+<span class="hljs-comment">/// Starting minute (referenced to start time) </span>
+v2exchangeModel.minute = startExchangeModel. minute;
+<span class="hljs-comment">/// The starting second (refer to the start time) </span>
+v2exchangeModel.second = startExchangeModel.second;
+<span class="hljs-comment">/// The duration of the global movement (in seconds) </span>
+v2exchangeModel.duration = totalSeconds;
+<span class="hljs-comment">/// Global movement Accumulated calories (unit: kcal) </span>
+v2exchangeModel.calories = numCalories;
+<span class="hljs-comment">/// Global exercise accumulated distance (unit: meters) </span>
+v2exchangeModel.distance = mSendDistance;
+</code></pre>
+<h4 id="ble-reply">Ble reply</h4>
+<h4 id="idoappingreplyexchangemodel">IDOAppIngReplyExchangeModel</h4>
+<pre><code class="lang-java">Specific field reference document
+</code></pre>
+<h4 id="v3-data-exchange">v3 Data Exchange</h4>
+<h4 id="idoappingv3exchangemodel">IDOAppIngV3ExchangeModel</h4>
+<pre><code class="lang-java">global every <span class="hljs-number">2</span> seconds Execute v3 data exchange 
+<span class="hljs-comment">/// 0: All data is valid, 1: Distance is invalid 2: GPS signal is weak (not used yet) </span>
+v3exchangeModel.signal = signal; 
+<span class="hljs-comment">/// Start date (refer to start time) </span>
+v3exchangeModel. day = startExchangeModel.day;
+<span class="hljs-comment">/// The starting clock (refer to the start time) </span>
+v3exchangeModel.hour = startExchangeModel.hour;
+<span class="hljs-comment">/// The starting minute (refer to the start time) </span>
+v3exchangeModel.minute = startExchangeModel.minute;
+/ <span class="hljs-comment">// The starting seconds (refer to the start time) </span>
+v3exchangeModel.second = startExchangeModel.second;
+<span class="hljs-comment">/// The duration of global exercise (in seconds) </span>
+v3exchangeModel.duration = totalSeconds;
+<span class="hljs-comment">/// The accumulated calories of global exercise ( Unit: kcal) </span>
+v3exchangeModel.calories = numCalories;
+<span class="hljs-comment">/// The accumulated movement distance of the global movement (unit: meters) </span>
+v3exchangeModel.distance = mSendDistance;
+<span class="hljs-comment">/// The app calculates and displays the real-time pace, in km/h, 100X v3exchangeModel.gpsInfoCount = exchangeLatLng.length;</span>
+ List&lt;Map&lt;String, <span class="hljs-keyword">int</span>&gt;&gt; gps = [];
+ <span class="hljs-keyword">for</span> (var element in exchangeLatLngSDK
+ gps.add(&lt;String, <span class="hljs-keyword">int</span>&gt;{
+ <span class="hljs-string">&quot;latitude&quot;</span>: (element.latitude * <span class="hljs-number">1000000</span>).toint (), 
+ <span class="hljs-string">&quot;Longitude&quot;</span>: (Element.longitude * <span class="hljs-number">1000000</span>).toint (), 
+}); 
+} 
+ v3exchangemodel.gps = gps;
+</code></pre>
+<h1 id="ble-reply">Ble reply</h1>
+<h4 id="idoappingv3replyexchangemodel">IDOAppIngV3ReplyExchangeModel</h4>
+<pre><code class="lang-java">Specific field reference document
+</code></pre>
+<h4 id="obtain-v3-heart-rate-data">Obtain v3 heart rate data</h4>
+<pre><code class="lang-java"> Globally obtain heart rate every <span class="hljs-number">30</span> <span class="hljs-function">seconds Data
+<span class="hljs-title">getActivityHrData</span><span class="hljs-params">(completion:)</span>
+</span></code></pre>
+<h4 id="ble-response">Ble response</h4>
+<h4 id="idoapphrdataexchangemodel">IDOAppHrDataExchangeModel</h4>
+<pre><code class="lang-java">Specific field reference document
+</code></pre>
+<h4 id="get-v3-recent-motion-data-summary">Get v3 recent Motion data summary</h4>
+<pre><code class="lang-java"><span class="hljs-comment">// Get the motion summary globally every 40 seconds</span>
+getLastActivityData(completion: )
+</code></pre>
+<h4 id="ble-response">Ble response</h4>
+<p>IDOAppActivityDataV3ExchangeModel</p>
+<pre><code class="lang-java"> Specific field reference Document
+</code></pre>
+<h4 id="ble-initiates-a-pause-app-replies-responds-to-the-firmware-status-completes-the-entire-command-closed-loop">Ble initiates a pause, APP replies (responds to the firmware status, completes the entire command closed loop)</h4>
+<h4 id="idoappblepausereplyexchangemodel">IDOAppBlePauseReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 0: Success is not 0 : Failed</span>
+replyExchangeModer.errCode = code
+</code></pre>
+<h4 id="ble-initiates-recovery-app-replies-responds-to-firmware-status-completes-the-entire-command-closed-loop">Ble initiates recovery, APP replies (responds to firmware status, completes the entire command closed loop)</h4>
+<h4 id="idoblerestorereplyexchangemodel">IDOBleRestoreReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 0: Success, not 0: Failure </span>
+replyExchangeModer.errCode = code
+</code></pre>
+<h4 id="ble-initiation-ends-app-replies-responds-to-firmware-status-completes-the-entire-command-closed-loop">Ble initiation ends, APP replies (responds to firmware status, completes the entire command closed loop)</h4>
+<h4 id="idobleendreplyexchangemodel">IDOBleEndReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 0: Success, non-0: Failure </span>
+replyExchangeModer.errCode = code
+<span class="hljs-comment">/// The duration of the global exercise (in seconds) </span>
+replyExchangeModer.duration = duration
+<span class="hljs-comment">/// The calories accumulated by the global exercise (Unit: kcal) </span>
+replyExchangeModer.calories = calories
+<span class="hljs-comment">/// Global exercise accumulated exercise distance (unit: meters) </span>
+replyExchangeModer.distance = distance
+</code></pre>
+<h3 id="ble-initiates-exercise-app-project-is-not-enabled-">Ble initiates exercise (APP project is not enabled) )</h3>
+<h4 id="app-listens-for-ble-commands">APP listens for Ble commands</h4>
+<h4 id="ble-response-starts">Ble response starts</h4>
+<h3 id="idoblestartexchangemodel">IDOBleStartExchangeModel</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/// 1: Request app to open gps 2: Initiate motion request </span>
+bleStartExchangeModel. operate
+<span class="hljs-comment">/// Movement type </span>
+bleStartExchangeModel.stportType 
+<span class="hljs-comment">/// Start date (initialized movement start time) </span>
+startExchangeModel.day = bleStartExchangeModel.day
+<span class="hljs-comment">/// Start clock (initial movement start time) </span>
+startExchangeModel.hour = bleStartExchangeModel.hour
+<span class="hljs-comment">/// Start minute (initial movement start time) </span>
+startExchangeModel.minute = bleStartExchangeModel.minute
+ <span class="hljs-comment">/// The starting second (initial movement start time) </span>
+startExchangeModel.second = bleStartExchangeModel.second
+</code></pre>
+<h4 id="app-reply">APP reply</h4>
+<h4 id="idoblestartreplyexchangemodel">IDOBleStartReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 1: Request the app to turn on gps 2: Initiate a motion request </span>
+bleStartReplyExchangeModel.operat = bleStartExchangeModel.operate
+<span class="hljs-comment">/// 0: Success, not 0: Failure </span>
+bleStartReplyExchangeModel.retCode = <span class="hljs-number">0</span>
+</code></pre>
+<h4 id="ble-response-paused">Ble response paused</h4>
+<h4 id="idoblepauseexchangemodel">IDOBlePauseExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Start date </span>
+blePauseReplyExchangeModel.day 
+<span class="hljs-comment">/// Start clock </span>
+blePauseReplyExchangeModel.hour 
+<span class="hljs-comment">/// Start minute </span>
+blePauseReply ExchangeModel.minute 
+<span class="hljs-comment">/// Start seconds </span>
+blePauseReplyExchangeModel.second
+</code></pre>
+<h4 id="app-reply">APP reply</h4>
+<h4 id="idoblepausereplyexchangemodel">IDOBlePauseReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 0: Success non-0: Failure </span>
+blePauseReplyEx changeModel.retCode = <span class="hljs-number">0</span>
+</code></pre>
+<h4 id="bleresponserestore">BleResponseRestore</h4>
+<h4 id="idoblerestoreexchangemodel">IDOBleRestoreExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Start date </span>
+bleRestoreReplyExchangeModel.day 
+<span class="hljs-comment">/// Start clock </span>
+bleRestoreReplyExchangeModel.hour 
+<span class="hljs-comment">// / Starting minute </span>
+bleReplyExchangeModel.minute 
+<span class="hljs-comment">/// Starting second </span>
+bleReplyExchangeModel.second
+</code></pre>
+<h4 id="app-reply">APP reply</h4>
+<h4 id="idoblerestorereplyexchangemodel">IDOBleRestoreReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 0 : Success is not 0: Failure</span>
+</code></pre>
+<h4 id="ble-response-end">Ble response end</h4>
+<h4 id="idobleendexchangemodel">IDOBleEndExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Start date </span>
+bleEndReplyEx changeModel.day 
+ <span class="hljs-comment">/// Starting clock </span>
+bleEndReplyExchangeModel.hour 
+<span class="hljs-comment">/// Starting minute </span>
+bleEndReplyExchangeModel.minute 
+<span class="hljs-comment">/// Starting second </span>
+bleEndReplyExchangeModel.second
+</code></pre>
+<h4 id="app-reply">APP reply</h4>
+<h4 id="idobleendreplyexchangemodel">IDOBleEndReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// 0: Success is not 0: Failure</span>
+bleEndReplyExchangeModel.retCode = <span class="hljs-number">0</span>
+</code></pre>
+<h4 id="ble-response-data">Ble response data</h4>
+<h4 id="idobleingexchangemodel">IDOBleIngExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Starting date </span>
+bleIngReplyExchangeModel.day 
+<span class="hljs-comment">/// Starting clock </span>
+bleIngReplyExchangeModel.hour 
+<span class="hljs-comment">/// Starting minute </span>
+bleIngReplyExchangeModel.minute 
+<span class="hljs-comment">/// Starting second </span>
+bleIngReplyExchangeModel.changeModel.second 
+<span class="hljs-comment">/// Distance unit: 0.01km </span>
+bleIngReplyExchangeModel.distance
+</code></pre>
+<h4 id="app-reply">APP reply</h4>
+<h4 id="idobleingreplyexchangemodel">IDOBleIngReplyExchangeModel</h4>
+<pre><code class="lang-java"><span class="hljs-comment">/// Distance unit: 0.01km</span>
+ble IngReplyExchangeModel.distance = <span class="hljs-number">0</span>
+</code></pre>
+<h3 id="global-monitoring-of-complete-data">Global monitoring of complete data</h3>
+<p>1.sdk has done data management and calculation processing, and the APP can directly display the data UI </p>
+<p>2.The data in response to the execution of the specific instructions above does not need to be processed (as Log record) </p>
+<p>3.app and device data exchange will trigger complete data changes </p>
+<h4 id="v2-data">v2 data</h4>
+<pre><code class="lang-java">exchangeV2Data(completion:)
+</code></pre>
+<h3 id="idoexchangev2model">IDOExchangeV2Model</h3>
+<pre><code class="lang-java">Specific field reference document
+</code></pre>
+<h4 id="v3-data">v3 data</h4>
+<pre><code class="lang-java">exchangeV3Data(completion:)
+</code></pre>
+<h3 id="idoexchangev3model">IDOExchangeV3Model</h3>
+<pre><code class="lang-java">Reference document <span class="hljs-keyword">for</span> specific fields
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
+2024-04-23 14:03:54
+</span></footer>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../dataExchange/IDOExchangeV3Model.html" class="navigation navigation-prev " aria-label="Previous page: V3 data exchange entity">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../syncData/IDOSyncData.html" class="navigation navigation-next " aria-label="Next page: Data synchronization">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Data exchange implementation logic description","level":"1.5.8.10","depth":3,"next":{"title":"Data synchronization","level":"1.5.9","depth":2,"path":"doc/syncData/IDOSyncData.md","ref":"doc/syncData/IDOSyncData.md","articles":[{"title":" Synchronize multi-sport data","level":"1.5.9.1","depth":3,"path":"doc/syncData/IDOSyncActivityData.md","ref":"doc/syncData/IDOSyncActivityData.md","articles":[]},{"title":"Synchronize blood pressure data","level":"1.5.9.2","depth":3,"path":"doc/syncData/IDOSyncBpData.md","ref":"doc/syncData/IDOSyncBpData.md","articles":[]},{"title":"Synchronize GPS data","level":"1.5.9.3","depth":3,"path":"doc/syncData/IDOSyncGpsData.md","ref":"doc/syncData/IDOSyncGpsData.md","articles":[]},{"title":"Synchronize Heart rate data","level":"1.5.9.4","depth":3,"path":"doc/syncData/IDOSyncHrData.md","ref":"doc/syncData/IDOSyncHrData.md","articles":[]},{"title":"Sync HRV data","level":"1.5.9.5","depth":3,"path":"doc/syncData/IDOSyncHrvData.md","ref":"doc/syncData/IDOSyncHrvData.md","articles":[]},{"title":"Synchronize ambient volume data","level":"1.5.9.6","depth":3,"path":"doc/syncData/IDOSyncNoiseData.md","ref":"doc/syncData/IDOSyncNoiseData.md","articles":[]},{"title":"Sync leather Temperature data","level":"1.5.9.7","depth":3,"path":"doc/syncData/IDOSyncPivenData.md","ref":"doc/syncData/IDOSyncPivenData.md","articles":[]},{"title":"Synchronized pressure data","level":"1.5.9.8","depth":3,"path":"doc/syncData/IDOSyncPressure.md","ref":"doc/syncData/IDOSyncPressure.md","articles":[]},{"title":"Synchronized respiration rate data","level":"1.5.9.9","depth":3,"path":"doc/syncData/IDOSyncRespirRateData.md","ref":"doc/syncData/IDOSyncRespirRateData.md","articles":[]},{"title":"Synchronized sleep Data","level":"1.5.9.10","depth":3,"path":"doc/syncData/IDOSyncSleepData.md","ref":"doc/syncData/IDOSyncSleepData.md","articles":[]},{"title":"Synchronized blood oxygen data","level":"1.5.9.11","depth":3,"path":"doc/syncData/IDOSyncSpo2Data.md","ref":"doc/syncData/IDOSyncSpo2Data.md","articles":[]},{"title":"Synchronized exercise data","level":"1.5.9.12","depth":3,"path":"doc/syncData/IDOSyncStepCount.md","ref":"doc/syncData/IDOSyncStepCount.md","articles":[]},{"title":"Synchronized swimming data ","level":"1.5.9.13","depth":3,"path":"doc/syncData/IDOSyncSwimData.md","ref":"doc/syncData/IDOSyncSwimData.md","articles":[]}]},"previous":{"title":"V3 data exchange entity","level":"1.5.8.9","depth":3,"path":"doc/dataExchange/IDOExchangeV3Model.md","ref":"doc/dataExchange/IDOExchangeV3Model.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDO接口说明文档","language":"en","gitbook":"*"},"file":{"path":"doc/logicDescription/syncDataDesc.md","mtime":"2024-04-23T06:03:54.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-03T10:02:17.892Z"},"basePath":"../..","book":{"language":"en"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-language-picker/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-click-reveal/click_reveal.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sidebar-style/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
