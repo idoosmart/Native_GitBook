@@ -1527,6 +1527,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.15.51" data-path="../get/IDOGetAppletControl.html">
+            
+                <a href="../get/IDOGetAppletControl.html">
+            
+                    
+                    Get applet information
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2709,6 +2722,19 @@
             
                     
                     Set hot start parameters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16.91" data-path="../set/IDOSetAppletControl.html">
+            
+                <a href="../set/IDOSetAppletControl.html">
+            
+                    
+                    Applet Operation
             
                 </a>
             
@@ -4672,6 +4698,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.17.150" data-path="../model/IDOAppletControlModel.html">
+            
+                <a href="../model/IDOAppletControlModel.html">
+            
+                    
+                    IDOAppletControlModel
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5001,21 +5040,23 @@
                                 
                                 <h1 id="static-message-notification-delivery-process">Static message notification delivery process</h1>
 <h3 id="android-process">Android process:</h3>
+<p><strong>Step 1:</strong></p>
+<p>Switch control</p>
+<p>Android notification switch status is recorded and controlled by APP</p>
+<p><strong>Step 2:</strong></p>
+<p>Send message content to device</p>
 <h3 id="cmdsnoticemessagev3paramsend"><code>Cmds.noticeMessageV3(param).send</code></h3>
-<p>Execute this <a href="../set/IDONoticeMessageV3.html">interface</a> to deliver the notification message content, and you need to bring <a href="../enum/IDOEvtType.html">evtType</a> (app unique ID, fixed value)</p>
-<p>Note: The notification switch status is recorded by the APP</p>
+<p>Execute this <a href="../set/IDONoticeMessageV3.html">interface</a> to send notification message content</p>
 <h3 id="ios-process">iOS process:</h3>
-<h3 id="cmdssetnoticemessagestateparamsend"><code>Cmds.setNoticeMessageState(param).send</code></h3>
-<p>This <a href="../set/IDOSetNoticeMessageState.html">interface</a> supports setting, modifying, and obtaining</p>
-<ol>
-<li><p>Set the <a href="../enum/IDOEvtType.html">evtType</a> (app unique ID, fixed value) assigned to the delivery, whether the notification switch is turned on, and control the switch status according to the needs</p>
-</li>
-<li><p>Get the switch status of the firmware each time you enter the notification page</p>
-</li>
-</ol>
-<p>Note: iOS message notification is based on Apple Notification Center Service&#xFF08;ANCS&#xFF09;</p>
+<p><strong>Step 1:</strong></p>
+<p>Switch control</p>
+<h3 id="cmdssetnoticestatusparamsend"><code>Cmds.setNoticeStatus(param).send</code></h3>
+<p>Use this <a href="../set/IDOSetNoticeStatus.html">interface</a> to set the message notification switch</p>
+<p><strong>Step 2:</strong></p>
+<p>Send message content to device</p>
+<p>iOS message notification is based on Apple Notification Center Service (ANCS)</p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-07-04 15:24:41
+2024-07-10 16:23:24
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5060,7 +5101,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Static message notification delivery process","level":"1.5.14.2","depth":3,"next":{"title":"Message icon entity","level":"1.5.14.3","depth":3,"path":"doc/messageIcon/IDOMessageIconModel.md","ref":"doc/messageIcon/IDOMessageIconModel.md","articles":[]},"previous":{"title":"Dynamic message icon and notification distribution process","level":"1.5.14.1","depth":3,"path":"doc/logicDescription/messageIconDesc.md","ref":"doc/logicDescription/messageIconDesc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDO接口说明文档","language":"en","gitbook":"*"},"file":{"path":"doc/logicDescription/staticMessage.md","mtime":"2024-07-04T07:24:41.521Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-04T07:31:15.504Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Static message notification delivery process","level":"1.5.14.2","depth":3,"next":{"title":"Message icon entity","level":"1.5.14.3","depth":3,"path":"doc/messageIcon/IDOMessageIconModel.md","ref":"doc/messageIcon/IDOMessageIconModel.md","articles":[]},"previous":{"title":"Dynamic message icon and notification distribution process","level":"1.5.14.1","depth":3,"path":"doc/logicDescription/messageIconDesc.md","ref":"doc/logicDescription/messageIconDesc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDO接口说明文档","language":"en","gitbook":"*"},"file":{"path":"doc/logicDescription/staticMessage.md","mtime":"2024-07-10T08:23:24.084Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-11T10:15:02.054Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>

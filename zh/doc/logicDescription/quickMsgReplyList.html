@@ -1255,6 +1255,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.11.51" data-path="../get/IDOGetAppletControl.html">
+            
+                <a href="../get/IDOGetAppletControl.html">
+            
+                    
+                    获取小程序信息
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2437,6 +2450,19 @@
             
                     
                     设置热启动参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.91" data-path="../set/IDOSetAppletControl.html">
+            
+                <a href="../set/IDOSetAppletControl.html">
+            
+                    
+                    小程序操作
             
                 </a>
             
@@ -4698,6 +4724,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.17.152" data-path="../model/IDOAppletControlModel.html">
+            
+                <a href="../model/IDOAppletControlModel.html">
+            
+                    
+                    IDOAppletControlModel
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5045,31 +5084,7 @@ Cmds.setDefaultQuickMsgReplyList(param).send {
     }
 }
 </code></pre>
-<pre><code class="lang-swift">setCallQuickReplyOnOff(
-</code></pre>
-<h4 id=""> </h4>
 <h4 id="&#x6B65;&#x9AA4;2">&#x6B65;&#x9AA4;2</h4>
-<p>app&#x8BBE;&#x7F6E;&#x9ED8;&#x8BA4;&#x5FEB;&#x901F;&#x6D88;&#x606F;&#x56DE;&#x590D;&#x5217;&#x8868;</p>
-<h3 id="cmdssetdefaultquickmsgreplylistparamsend"><code>Cmds.setDefaultQuickMsgReplyList(param).send</code></h3>
-<pre><code class="lang-kotlin"><span class="hljs-variable"><span class="hljs-keyword">val</span> param</span> = IDOFastMsgSettingModel(<span class="hljs-number">0</span>, listOf(
-            IDOFastMsgItem(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;test1&quot;</span>),
-            IDOFastMsgItem(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;test2&quot;</span>),
-            IDOFastMsgItem(<span class="hljs-number">3</span>, <span class="hljs-string">&quot;test3&quot;</span>),
-            IDOFastMsgItem(<span class="hljs-number">4</span>, <span class="hljs-string">&quot;test4&quot;</span>),
-            IDOFastMsgItem(<span class="hljs-number">5</span>, <span class="hljs-string">&quot;test5&quot;</span>)
-        ))
-Cmds.setDefaultQuickMsgReplyList(param).send {
-    <span class="hljs-keyword">if</span> (it.error.code == <span class="hljs-number">0</span>) {
-        <span class="hljs-comment">// &#x6210;&#x529F;</span>
-        <span class="hljs-comment">// it.res is IDOCmdSetResponseModel</span>
-    }<span class="hljs-keyword">else</span> {
-        <span class="hljs-comment">// &#x5931;&#x8D25;</span>
-    }
-}
-</code></pre>
-<pre><code class="lang-swift">setCallQuickReplyOnOff(
-</code></pre>
-<h4 id="&#x6B65;&#x9AA4;3">&#x6B65;&#x9AA4;3</h4>
 <p>&#x4E0B;&#x53D1;&#x6D88;&#x606F;&#x901A;&#x77E5;&#x5230;&#x8BBE;&#x5907;</p>
 <h3 id="cmdssetnoticeappnameparamsend"><code>Cmds.setNoticeAppName(param).send</code></h3>
 <pre><code class="lang-kotlin"><span class="hljs-comment">// &#x6CE8;&#x610F;&#x5B57;&#x6BB5;msgID&#x5927;&#x4E8E;0&#x65F6;&#x652F;&#x6301;&#x5FEB;&#x6377;&#x56DE;&#x590D;</span>
@@ -5089,7 +5104,7 @@ Cmds.setNoticeAppName(param).send {
     }
 }
 </code></pre>
-<h4 id="&#x6B65;&#x9AA4;4">&#x6B65;&#x9AA4;4</h4>
+<h4 id="&#x6B65;&#x9AA4;3">&#x6B65;&#x9AA4;3</h4>
 <p>&#x624B;&#x8868;&#x6536;&#x5230;&#x6D88;&#x606F;&#x901A;&#x77E5;&#xFF0C;&#x624B;&#x8868;&#x4E2D;&#x67E5;&#x770B;&#x6D88;&#x606F;&#x8BE6;&#x60C5;&#x91CC;&#x51FB;&#x5FEB;&#x6377;&#x56DE;&#x590D;&#xFF0C;app&#x6536;&#x5230;&#x4EE5;&#x4E0B;&#x901A;&#x77E5;&#xFF0C;app&#x6839;&#x636E;&#x901A;&#x77E5;&#x628A;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x56DE;&#x590D;&#x81F3;&#x624B;&#x8868;</p>
 <ul>
 <li><a href="../model/IDODeviceNotificationModel.html">IDODeviceNotificationModel</a></li>
@@ -5121,7 +5136,7 @@ Cmds.setNoticeAppName(param).send {
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-06-19 09:33:52
+2024-07-10 17:08:42
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5166,7 +5181,7 @@ Cmds.setNoticeAppName(param).send {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快捷消息回复流程(Android)","level":"1.5.7","depth":2,"next":{"title":"数据交换","level":"1.5.8","depth":2,"path":"doc/dataExchange/IDODataExchange.md","ref":"doc/dataExchange/IDODataExchange.md","articles":[{"title":"多运动小结数据实体","level":"1.5.8.1","depth":3,"path":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","ref":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","articles":[]},{"title":"APP执行数据交换实体","level":"1.5.8.2","depth":3,"path":"doc/dataExchange/IDOAppExecType.md","ref":"doc/dataExchange/IDOAppExecType.md","articles":[]},{"title":"多运动心率数据实体","level":"1.5.8.3","depth":3,"path":"doc/dataExchange/IDOAppHrDataExchangeModel.md","ref":"doc/dataExchange/IDOAppHrDataExchangeModel.md","articles":[]},{"title":"Ble执行数据交换实体","level":"1.5.8.4","depth":3,"path":"doc/dataExchange/IDOAppReplyType.md","ref":"doc/dataExchange/IDOAppReplyType.md","articles":[]},{"title":"App监听Ble数据实体","level":"1.5.8.5","depth":3,"path":"doc/dataExchange/IDOBleExecType.md","ref":"doc/dataExchange/IDOBleExecType.md","articles":[]},{"title":"App执行Ble响应实体","level":"1.5.8.6","depth":3,"path":"doc/dataExchange/IDOBleReplyType.md","ref":"doc/dataExchange/IDOBleReplyType.md","articles":[]},{"title":"交换数据状态","level":"1.5.8.7","depth":3,"path":"doc/dataExchange/IDOExchangeStatus.md","ref":"doc/dataExchange/IDOExchangeStatus.md","articles":[]},{"title":"V2数据交换实体","level":"1.5.8.8","depth":3,"path":"doc/dataExchange/IDOExchangeV2Model.md","ref":"doc/dataExchange/IDOExchangeV2Model.md","articles":[]},{"title":"V3数据交换实体","level":"1.5.8.9","depth":3,"path":"doc/dataExchange/IDOExchangeV3Model.md","ref":"doc/dataExchange/IDOExchangeV3Model.md","articles":[]},{"title":"据交换实现逻辑说明","level":"1.5.8.10","depth":3,"path":"doc/logicDescription/syncDataDesc.md","ref":"doc/logicDescription/syncDataDesc.md","articles":[]}]},"previous":{"title":"来电/消息提醒","level":"1.5.6","depth":2,"path":"doc/IDOCallNotice.md","ref":"doc/IDOCallNotice.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDO接口说明文档","language":"zh","gitbook":"*"},"file":{"path":"doc/logicDescription/quickMsgReplyList.md","mtime":"2024-06-19T01:33:52.278Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-04T07:31:15.504Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"快捷消息回复流程(Android)","level":"1.5.7","depth":2,"next":{"title":"数据交换","level":"1.5.8","depth":2,"path":"doc/dataExchange/IDODataExchange.md","ref":"doc/dataExchange/IDODataExchange.md","articles":[{"title":"多运动小结数据实体","level":"1.5.8.1","depth":3,"path":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","ref":"doc/dataExchange/IDOAppActivityDataV3ExchangeModel.md","articles":[]},{"title":"APP执行数据交换实体","level":"1.5.8.2","depth":3,"path":"doc/dataExchange/IDOAppExecType.md","ref":"doc/dataExchange/IDOAppExecType.md","articles":[]},{"title":"多运动心率数据实体","level":"1.5.8.3","depth":3,"path":"doc/dataExchange/IDOAppHrDataExchangeModel.md","ref":"doc/dataExchange/IDOAppHrDataExchangeModel.md","articles":[]},{"title":"Ble执行数据交换实体","level":"1.5.8.4","depth":3,"path":"doc/dataExchange/IDOAppReplyType.md","ref":"doc/dataExchange/IDOAppReplyType.md","articles":[]},{"title":"App监听Ble数据实体","level":"1.5.8.5","depth":3,"path":"doc/dataExchange/IDOBleExecType.md","ref":"doc/dataExchange/IDOBleExecType.md","articles":[]},{"title":"App执行Ble响应实体","level":"1.5.8.6","depth":3,"path":"doc/dataExchange/IDOBleReplyType.md","ref":"doc/dataExchange/IDOBleReplyType.md","articles":[]},{"title":"交换数据状态","level":"1.5.8.7","depth":3,"path":"doc/dataExchange/IDOExchangeStatus.md","ref":"doc/dataExchange/IDOExchangeStatus.md","articles":[]},{"title":"V2数据交换实体","level":"1.5.8.8","depth":3,"path":"doc/dataExchange/IDOExchangeV2Model.md","ref":"doc/dataExchange/IDOExchangeV2Model.md","articles":[]},{"title":"V3数据交换实体","level":"1.5.8.9","depth":3,"path":"doc/dataExchange/IDOExchangeV3Model.md","ref":"doc/dataExchange/IDOExchangeV3Model.md","articles":[]},{"title":"据交换实现逻辑说明","level":"1.5.8.10","depth":3,"path":"doc/logicDescription/syncDataDesc.md","ref":"doc/logicDescription/syncDataDesc.md","articles":[]}]},"previous":{"title":"来电/消息提醒","level":"1.5.6","depth":2,"path":"doc/IDOCallNotice.md","ref":"doc/IDOCallNotice.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDO接口说明文档"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDO接口说明文档","language":"zh","gitbook":"*"},"file":{"path":"doc/logicDescription/quickMsgReplyList.md","mtime":"2024-07-10T09:08:42.277Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-11T10:15:02.054Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
