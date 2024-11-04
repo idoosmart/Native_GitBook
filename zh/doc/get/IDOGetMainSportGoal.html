@@ -5068,6 +5068,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.13" data-path="../enum/IDONoticeCallSwitchState.html">
+            
+                <a href="../enum/IDONoticeCallSwitchState.html">
+            
+                    
+                    来电提醒开关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.14" data-path="../enum/IDONoticeMsgAllSwitchState.html">
+            
+                <a href="../enum/IDONoticeMsgAllSwitchState.html">
+            
+                    
+                    消息应用总开关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.15" data-path="../enum/IDONoticeNotifySwitchState.html">
+            
+                <a href="../enum/IDONoticeNotifySwitchState.html">
+            
+                    
+                    通知提醒开关
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5238,13 +5277,26 @@
 <li><a href="../model/IDOMainSportGoalModel.html">IDOMainSportGoalModel</a></li>
 </ul>
 <p>&#x529F;&#x80FD;&#x8868; : getSupportGetMainSportGoalV3 </p>
-<p>setCalorieGoal (&#x4E8C;&#x7EA7;&#x529F;&#x80FD;&#x8868;)&#xFF0C;</p>
-<p>exMain3DistanceGoal (&#x4E8C;&#x7EA7;&#x529F;&#x80FD;&#x8868;)&#xFF0C;</p>
-<p>setMidHighTimeGoal (&#x4E8C;&#x7EA7;&#x529F;&#x80FD;&#x8868;)&#xFF0C;</p>
-<p>getSupportSetGetTimeGoalTypeV2 (&#x4E8C;&#x7EA7;&#x529F;&#x80FD;&#x8868;)</p>
+<h3 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;">&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;</th>
+<th>&#x5B57;&#x6BB5;&#x7C7B;&#x578B;</th>
+<th>&#x5B57;&#x6BB5;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timeGoalType</td>
+<td>int</td>
+<td>0&#xFF1A;&#x65E0;&#x6548; <br>1&#xFF1A;&#x65E5;&#x76EE;&#x6807; <br>2&#xFF1A;&#x5468;&#x76EE;&#x6807; &#x9700;&#x8981;&#x56FA;&#x4EF6;&#x5F00;&#x542F;&#x529F;&#x80FD;&#x8868; <code>getSupportSetGetTimeGoalTypeV2</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h3>
 <p>Swift</p>
-<pre><code class="lang-swift"><span class="hljs-type">Cmds</span>.getMainSportGoal().send { rs <span class="hljs-keyword">in</span>
+<pre><code class="lang-swift"><span class="hljs-type">Cmds</span>.getMainSportGoal(timeGoalType: <span class="hljs-number">1</span>).send { rs <span class="hljs-keyword">in</span>
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">case</span> .success(<span class="hljs-keyword">let</span> obj) = rs {
         <span class="hljs-comment">// &#x6210;&#x529F;</span>
         <span class="hljs-comment">// obj is IDOMainSportGoalModel</span>
@@ -5254,7 +5306,7 @@
 }
 </code></pre>
 <p>Kotlin</p>
-<pre><code class="lang-kotlin">Cmds.getMainSportGoal().send {
+<pre><code class="lang-kotlin">Cmds.getMainSportGoal(timeGoalType: <span class="hljs-number">1</span>).send {
     <span class="hljs-keyword">if</span> (it.error.code == <span class="hljs-number">0</span>) {
         <span class="hljs-comment">// &#x6210;&#x529F;</span>
         <span class="hljs-comment">// it.res is IDOMainSportGoalModel</span>
@@ -5264,7 +5316,7 @@
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-04-12 11:43:50
+2024-11-01 11:41:03
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5309,7 +5361,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"获取设置的卡路里/距离/中高运动时长 主界面","level":"1.5.11.18","depth":3,"next":{"title":"获取血压算法三级版本号信息事件号","level":"1.5.11.19","depth":3,"path":"doc/get/IDOGetBpAlgVersion.md","ref":"doc/get/IDOGetBpAlgVersion.md","articles":[]},"previous":{"title":"获取勿扰模式状态","level":"1.5.11.17","depth":3,"path":"doc/get/IDOGetNotDisturbStatus.md","ref":"doc/get/IDOGetNotDisturbStatus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/get/IDOGetMainSportGoal.md","mtime":"2024-04-12T03:43:50.964Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-25T09:54:10.194Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"获取设置的卡路里/距离/中高运动时长 主界面","level":"1.5.11.18","depth":3,"next":{"title":"获取血压算法三级版本号信息事件号","level":"1.5.11.19","depth":3,"path":"doc/get/IDOGetBpAlgVersion.md","ref":"doc/get/IDOGetBpAlgVersion.md","articles":[]},"previous":{"title":"获取勿扰模式状态","level":"1.5.11.17","depth":3,"path":"doc/get/IDOGetNotDisturbStatus.md","ref":"doc/get/IDOGetNotDisturbStatus.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/get/IDOGetMainSportGoal.md","mtime":"2024-11-01T03:41:03.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-04T01:39:34.538Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>

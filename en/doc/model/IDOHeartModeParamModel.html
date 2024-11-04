@@ -5042,6 +5042,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.13" data-path="../enum/IDONoticeCallSwitchState.html">
+            
+                <a href="../enum/IDONoticeCallSwitchState.html">
+            
+                    
+                    Call reminder switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.14" data-path="../enum/IDONoticeMsgAllSwitchState.html">
+            
+                <a href="../enum/IDONoticeMsgAllSwitchState.html">
+            
+                    
+                    Message application switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.15" data-path="../enum/IDONoticeNotifySwitchState.html">
+            
+                <a href="../enum/IDONoticeNotifySwitchState.html">
+            
+                    
+                    Notification reminder switch
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5225,7 +5264,7 @@
 <tr>
 <td>mode</td>
 <td>Int</td>
-<td>Mode<br>0: Off<br>1: Automatic (5 minutes)<br>2: Continuous monitoring (5 seconds)<br>3: Manual mode (disable automatic) <br>4: Default type, the firmware will automatically set to the default mode after setting<br>5: Set the corresponding measurement interval<br>6: Intelligent heart rate mode (ID206)<br>Note:<br> 1. If the setSetV3HeartInterval function is configured, mode 0, mode 1, and mode 2 are invalid. <br>2. When configuring using quick settings, setting setSetV3HeartInterval will activate mode 5<br>3. When setting continuous heart rate, if the setSetV3HeartInterval function is configured, the corresponding mode is mode 5. <br></td>
+<td>Mode<br>0: Off<br>1: Automatic (5 minutes)<br>2: Continuous monitoring (5 seconds)<br>3: Manual mode (disable automatic) <br>4: Default type, the firmware will automatically set to the default mode after setting<br>5: Set the corresponding measurement interval<br>6: Intelligent heart rate mode (ID206)<br>Note:<br> 1. If the setSetV3HeartInterval function is configured, mode 0, mode 1, and mode 2 are invalid. <br>2. When configuring using quick settings, setting <strong>setSetV3HeartInterval</strong> will activate mode 5<br>3. When setting continuous heart rate, if the <strong>setSetV3HeartInterval</strong> function is configured, the corresponding mode is mode 5. <br></td>
 </tr>
 <tr>
 <td>hasTimeRange</td>
@@ -5260,32 +5299,32 @@
 <tr>
 <td>notifyFlag</td>
 <td>Int</td>
-<td>Notification type:<br>0: Invalid<br>1: Allow notification<br>2: Silent notification&lt; br/&gt;3: Turn off notification<br>Note: If v3HeartSetRateModeCustom is not enabled in the firmware, this function is invalid</td>
+<td>Notification type:<br>0: Invalid<br>1: Allow notification<br>2: Silent notification&lt; br/&gt;3: Turn off notification<br>Note: If <strong>setHeartSetRateModeCustom</strong> is not enabled in the firmware, this function is invalid</td>
 </tr>
 <tr>
 <td>highHeartMode</td>
 <td>Int</td>
-<td>1: Turn on smart high heart rate reminder<br>0: Turn off<br>Note: If the firmware does not enable v3HeartSetRateModeCustom, this function is invalid</td>
+<td>1: Turn on smart high heart rate reminder<br>0: Turn off<br>Note: If the firmware does not enable <strong>setHeartSetRateModeCustom</strong>, this function is invalid</td>
 </tr>
 <tr>
 <td>lowHeartMode</td>
 <td>Int</td>
-<td>1: Enable intelligent low heart rate reminder<br>0: Disable<br>Note: If the firmware does not enable v3HeartSetRateModeCustom, this function is invalid</td>
+<td>1: Enable intelligent low heart rate reminder<br>0: Disable<br>Note: If the firmware does not enable <strong>setHeartSetRateModeCustom</strong>, this function is invalid</td>
 </tr>
 <tr>
 <td>highHeartValue</td>
 <td>Int</td>
-<td>Intelligent high heart rate reminder threshold<br>Note: If v3HeartSetRateModeCustom is not enabled in the firmware, this function is invalid</td>
+<td>Intelligent high heart rate reminder threshold<br>Note: If <strong>setHeartSetRateModeCustom</strong> is not enabled in the firmware, this function is invalid</td>
 </tr>
 <tr>
 <td>lowHeartValue</td>
 <td>Int</td>
-<td>Intelligent low heart rate reminder threshold<br>Note: If v3HeartSetRateModeCustom is not enabled in the firmware, this function is invalid Invalid</td>
+<td>Intelligent low heart rate reminder threshold<br>Note: If <strong>setHeartSetRateModeCustom</strong> is not enabled in the firmware, this function is invalid Invalid</td>
 </tr>
 </tbody>
 </table>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-04-22 17:20:23
+2024-10-31 16:08:17
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5330,7 +5369,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" IDOHeartModeParamModel","level":"1.5.18.34","depth":3,"next":{"title":"IDOHeartRateModel","level":"1.5.18.35","depth":3,"path":"doc/model/IDOHeartRateModeModel.md","ref":"doc/model/IDOHeartRateModeModel.md","articles":[]},"previous":{"title":"IDOHeartModeModel","level":"1.5.18.33","depth":3,"path":"doc/model/IDOHeartModeModel.md","ref":"doc/model/IDOHeartModeModel.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/model/IDOHeartModeParamModel.md","mtime":"2024-04-22T09:20:23.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-25T09:54:10.194Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":" IDOHeartModeParamModel","level":"1.5.18.34","depth":3,"next":{"title":"IDOHeartRateModel","level":"1.5.18.35","depth":3,"path":"doc/model/IDOHeartRateModeModel.md","ref":"doc/model/IDOHeartRateModeModel.md","articles":[]},"previous":{"title":"IDOHeartModeModel","level":"1.5.18.33","depth":3,"path":"doc/model/IDOHeartModeModel.md","ref":"doc/model/IDOHeartModeModel.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/model/IDOHeartModeParamModel.md","mtime":"2024-10-31T08:08:17.090Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-04T01:39:34.538Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>

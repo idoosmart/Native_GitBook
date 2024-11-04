@@ -5042,6 +5042,45 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.13" data-path="../enum/IDONoticeCallSwitchState.html">
+            
+                <a href="../enum/IDONoticeCallSwitchState.html">
+            
+                    
+                    Call reminder switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.14" data-path="../enum/IDONoticeMsgAllSwitchState.html">
+            
+                <a href="../enum/IDONoticeMsgAllSwitchState.html">
+            
+                    
+                    Message application switch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.15" data-path="../enum/IDONoticeNotifySwitchState.html">
+            
+                <a href="../enum/IDONoticeNotifySwitchState.html">
+            
+                    
+                    Notification reminder switch
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5207,34 +5246,51 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="set-sport-mode-sorting">Set sport mode sorting</h1>
+                                <h1 id="set-the-sport-mode-sorting">Set the sport mode sorting</h1>
 <ul>
+<li><a href="../model/IDOSportModeSortParamModel.html">IDOSportModeSortParamModel</a></li>
 <li><a href="../model/IDOCmdSetResponseModel.html">IDOCmdSetResponseModel</a></li>
 </ul>
 <p>Function table: setSportModeSort</p>
+<h3 id="parameter-description">Parameter description:</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Field type</th>
+<th>Field description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>items</td>
+<td>List<idosportmodesortparammodel></idosportmodesortparammodel></td>
+<td>List after sport mode sorting</td>
+</tr>
+</tbody>
+</table>
 <h3 id="example">Example</h3>
 <p>Swift</p>
-<pre><code class="lang-swift"><span class="hljs-type">Cmds</span>.setSportModeSort().send { rs <span class="hljs-keyword">in</span>
- <span class="hljs-keyword">if</span> <span class="hljs-keyword">case</span> .success(<span class="hljs-keyword">let</span> obj) = rs {
- <span class="hljs-comment">// Success</span>
- <span class="hljs-comment">// obj is IDOCmdSetResponseModel</span>
- }<span class="hljs-keyword">else</span> {
- <span class="hljs-comment">// Failure</span>
- }
+<pre><code class="lang-swift"><span class="hljs-type">Cmds</span>.setSportModeSort(items: ...).send { rs <span class="hljs-keyword">in</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">case</span> .success(<span class="hljs-keyword">let</span> obj) = rs {
+<span class="hljs-comment">// Success</span>
+<span class="hljs-comment">// obj is IDOCmdSetResponseModel</span>
+}<span class="hljs-keyword">else</span> {
+<span class="hljs-comment">// Failure</span>
+} 
 }
 </code></pre>
 <p>Kotlin</p>
-<pre><code class="lang-kotlin">Cmds. setSportModeSort().send {
- <span class="hljs-keyword">if</span> (it.error.code == <span class="hljs-number">0</span>) {
- <span class="hljs-comment">// Success</span>
- <span class="hljs-comment">// it.res is IDOCmdSetResponseModel</span>
- }<span class="hljs-keyword">else</span> {
- <span class="hljs-comment">// Failure</span>
- }
-}
+<pre><code class="lang-kotlin">Cmds.setSportModeSort(items: ...).send { 
+<span class="hljs-keyword">if</span> (it.error.code == <span class="hljs-number">0</span>) { 
+<span class="hljs-comment">// Success </span>
+<span class="hljs-comment">// it.res is IDOCmdSetResponseModel </span>
+}<span class="hljs-keyword">else</span> { 
+<span class="hljs-comment">// Failure</span>
+} }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-04-22 17:20:23
+2024-11-01 12:02:11
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5279,7 +5335,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Set sport mode sorting","level":"1.5.17.19","depth":3,"next":{"title":"Set sitting","level":"1.5.17.20","depth":3,"path":"doc/set/IDOSetLongSit.md","ref":"doc/set/IDOSetLongSit.md","articles":[]},"previous":{"title":"Set sport mode selection","level":"1.5.17.18","depth":3,"path":"doc/set/IDOSetSportModeSelect.md","ref":"doc/set/IDOSetSportModeSelect.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/set/IDOSetSportModeSort.md","mtime":"2024-04-22T09:20:23.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-10-25T09:54:10.194Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Set sport mode sorting","level":"1.5.17.19","depth":3,"next":{"title":"Set sitting","level":"1.5.17.20","depth":3,"path":"doc/set/IDOSetLongSit.md","ref":"doc/set/IDOSetLongSit.md","articles":[]},"previous":{"title":"Set sport mode selection","level":"1.5.17.18","depth":3,"path":"doc/set/IDOSetSportModeSelect.md","ref":"doc/set/IDOSetSportModeSelect.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/set/IDOSetSportModeSort.md","mtime":"2024-11-01T04:02:11.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-04T01:39:34.538Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>
