@@ -5246,216 +5246,223 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ido-smart-bracelet-sdk">IDO smart bracelet SDK</h1>
+                                <h1 id="ido-smart-bracelet-sdk">IDO Smart Bracelet SDK</h1>
 <h2 id="functional-overview">Functional Overview</h2>
-<p>Suitable for iOS/Android devices and supports IDO bracelets to implement Bluetooth connection control framework library</p>
-<div style="display:flex;justify-content: flex-end;">
-   <button class="section" target="section1" show="swift" hide="swift"></button>
-   <div style="width:10px"></div>
-   <button class="section" target="section2" show="kotlin" hide="kotlin"></button>
-</div>
-
-
-<sec data-title="swift" data-id="section1" data-show="true"><div class="panel panel-default"><div class="panel-heading"><h2 id="swift">swift<a class="pull-right section atTitle btn btn-default" target="section1"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse in" id="section1"><div class="panel-body">
-<h2 id="quick-integration">Quick integration</h2>
-<h4 id="integrate-using-cocoapods">Integrate using Cocoapods</h4>
-<p>Add the following content to the Podfile:</p>
+<p>Applicable to iOS/Android devices and supports IDO&apos;s bracelets, implementing Bluetooth connection control framework library</p>
+<h2 id="ios-integration-to-android-&#xA0;">iOS Integration (to <a href="#android">Android</a>) <h2 id="ios">&#xA0;</h2></h2>
+<ul>
+<li><h4 id="use-cocoapods-integration">Use Cocoapods Integration</h4>
+</li>
+</ul>
+<p>Add the following content to the Podfile file:</p>
 <pre><code class="lang-ruby">source <span class="hljs-string">&apos;https://github.com/idoosmart/IDOSmartSpec.git&apos;</span>
-<span class="hljs-symbol">platform:</span>ios, <span class="hljs-string">&apos;9.0&apos;</span>
+platform <span class="hljs-symbol">:ios</span>, <span class="hljs-string">&apos;11.0&apos;</span>
 
 target <span class="hljs-string">&apos;your_target_name1&apos;</span> <span class="hljs-keyword">do</span>
-   pod <span class="hljs-string">&apos;IDOSDK-full&apos;</span>, <span class="hljs-string">&apos;~&gt; 4.0.15&apos;</span>
+pod <span class="hljs-string">&apos;IDOSDK-full&apos;</span>, <span class="hljs-string">&apos;~&gt; 4.2.0&apos;</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
 <p>Then execute the pod install command in the project root directory to integrate.
-To use CocoaPods, please refer to: <a href="https://guides.cocoapods.org/" target="_blank">CocoaPods Guides</a></p>
-<h2 id="initialize-sdk">Initialize SDK</h2>
+For more information about CocoaPods, please refer to: <a href="https://guides.cocoapods.org/" target="_blank">CocoaPods Guides</a></p>
+<ul>
+<li><h4 id="manual-integration">Manual Integration</h4>
+</li>
+</ul>
+<p>Please refer to: <a href="https://github.com/idoosmart/Native_Demo/tree/main/example_ios" target="_blank">https://github.com/idoosmart/Native_Demo/tree/main/example_ios</a></p>
+<ul>
+<li><h4 id="swift-package-manager">Swift Package Manager</h4>
+</li>
+</ul>
+<p><a href="https://swift.org/package-manager/" target="_blank">Swift Package Manager</a> (SwiftPM) is a tool for managing Swift code distribution. It simplifies the process of managing Swift package dependencies.</p>
+<p>To integrate <code>IDOSDK-full</code> into your project using SwiftPM:</p>
+<ol>
+<li><p>In Xcode, <strong>File &gt; Add Package Dependency</strong>.</p>
+</li>
+<li><p>Enter the following package repository URL: <a href="https://github.com/idoosmart/ios_sdk_full.git" target="_blank">https://github.com/idoosmart/ios_sdk_full.git</a></p>
+</li>
+<li><p>Select the appropriate version (such as a specific version, branch, or commit).</p>
+</li>
+<li><p>Add <code>IDOSDK-full</code> to your target dependencies.</p>
+</li>
+</ol>
+<p><code>IDOSDK-full</code> requires at least Swift tools version 5.3.</p>
 <h4 id="initialize-flutter">Initialize Flutter</h4>
-<pre><code class="lang-swift"><span class="hljs-keyword">import</span> Flutter
-<span class="hljs-keyword">import</span> FlutterPluginRegistrant
+<pre><code class="lang-swift"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFinishLaunchingWithOptions
+                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?)</span></span> -&gt; <span class="hljs-type">Bool</span> {
+        <span class="hljs-keyword">self</span>.initFlutterEngine()
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppDelegate</span>: <span class="hljs-title">UIResponder</span>, <span class="hljs-title">UIApplicationDelegate</span> </span>{
-     <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> flutterEngine: <span class="hljs-type">FlutterEngine</span>?
+        ...
 
-     <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">application</span><span class="hljs-params">(<span class="hljs-number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)</span></span> -&gt; <span class="hljs-type">Bool</span> {
-         <span class="hljs-keyword">self</span>.initFlutterEngine()
-         ...
-         <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
-     }
-}
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    } 
 
-<span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">AppDelegate</span> </span>{
-   <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">initFlutterEngine</span><span class="hljs-params">()</span></span> {
-       <span class="hljs-keyword">self</span>.flutterEngine = <span class="hljs-type">FlutterEngine</span>(name: <span class="hljs-string">&quot;io.flutter&quot;</span>, project: <span class="hljs-literal">nil</span>)
-       <span class="hljs-keyword">self</span>.flutterEngine?.run(withEntrypoint: <span class="hljs-literal">nil</span>)
-       <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> engine = flutterEngine {
-           <span class="hljs-type">GeneratedPluginRegistrant</span>.register(with: engine)
-           <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;flutterEngine finished&quot;</span>)
-       } <span class="hljs-keyword">else</span> {
-           <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;engine is null&quot;</span>)
-           <span class="hljs-built_in">assert</span>(<span class="hljs-literal">false</span>, <span class="hljs-string">&quot;engine is null&quot;</span>)
-       }
-   }
+
+  <span class="hljs-class"><span class="hljs-keyword">extension</span> <span class="hljs-title">AppDelegate</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">initFlutterEngine</span><span class="hljs-params">()</span></span> {
+        <span class="hljs-keyword">self</span>.flutterEngine = <span class="hljs-type">FlutterEngine</span>(name: <span class="hljs-string">&quot;io.flutter&quot;</span>, project: <span class="hljs-literal">nil</span>)
+        <span class="hljs-keyword">self</span>.flutterEngine?.run(withEntrypoint: <span class="hljs-literal">nil</span>) <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> engine = flutterEngine {
+            <span class="hljs-type">GeneratedPluginRegistrant</span>.register(with: engine) <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;flutterEngine finished&quot;</span>)
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;engine is null&quot;</span>)
+            <span class="hljs-built_in">assert</span>(<span class="hljs-literal">false</span>, <span class="hljs-string">&quot;engine is null&quot;</span>)
+        }
+    }
 }
 </code></pre>
 <h4 id="register-sdk">Register SDK</h4>
-<p>The SDK is divided into three modules: Protocol library, Bluetooth library and Alexa library. <strong>Registration is required before use (register globally once)</strong></p>
+<p>SDK is divided into three modules: Protocol library, Bluetooth library and Alexa library. <strong>Register before use (globally register once)</strong></p>
 <pre><code class="lang-swift"><span class="hljs-keyword">import</span> protocol_channel
 
 <span class="hljs-comment">// Register sdk</span>
 <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">registerSDK</span><span class="hljs-params">()</span></span> {
-     <span class="hljs-comment">// ble (only when using built-in Bluetooth)</span>
-     sdk.ble.addBleDelegate(api: <span class="hljs-keyword">self</span>)
-     sdk.ble.bluetoothRegister(heartPingSecond: <span class="hljs-number">5</span>, outputToConsole: <span class="hljs-literal">false</span>)
-     sdk.ble.getBluetoothState { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] stateModel <span class="hljs-keyword">in</span>
-         <span class="hljs-keyword">self</span>?.bleState = stateModel
-         <span class="hljs-keyword">self</span>?.funcPage?.bleState = stateModel
-     }
+<span class="hljs-comment">// ble (limited to using built-in Bluetooth)</span>
+sdk.ble.addBleDelegate(api: <span class="hljs-keyword">self</span>)
+sdk.ble.bluetoothRegister(heartPingSecond: <span class="hljs-number">5</span>, outputToConsole: <span class="hljs-literal">false</span>)
+sdk.ble.getBluetoothState { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] stateModel <span class="hljs-keyword">in</span>
+<span class="hljs-keyword">self</span>?.bleState = stateModel
+<span class="hljs-keyword">self</span>?.funcPage?.bleState = stateModel
+}
 
-     <span class="hljs-comment">// protocol library</span>
-     sdk.bridge.setupBridge(delegate: <span class="hljs-keyword">self</span>, logType: .release)
+<span class="hljs-comment">// protocol library</span>
+sdk.bridge.setupBridge(delegate: <span class="hljs-keyword">self</span>, logType: .release)
 
-     <span class="hljs-comment">// alexa (no need to connect if you don&#x2019;t have alexa function)</span>
-     sdk.alexa.setupAlexa(delegate: <span class="hljs-keyword">self</span>, clientId: clientId)
+<span class="hljs-comment">// alexa (no need to connect if there is no alexa function)</span>
+sdk.alexa.setupAlexa(delegate: <span class="hljs-keyword">self</span>, clientId: clientId)
 }
 </code></pre>
-<h4 id="using-sdk">Using SDK</h4>
-<p>  The API of the SDK can be called by the globally defined constant <code>sdk</code></p>
+<h4 id="use-sdk">Use SDK</h4>
+<p>SDK API, call it by the global constant <code>sdk</code></p>
 <pre><code class="lang-swift"><span class="hljs-keyword">import</span> protocol_channel
 
 <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">someMethod</span><span class="hljs-params">()</span></span> {
-     <span class="hljs-comment">/// Device Information</span>
-     sdk.device.xx
+<span class="hljs-comment">/// Device information</span>
+sdk.device.xx
 
-     <span class="hljs-comment">/// Menu</span>
-     sdk.funcTable.xx
+<span class="hljs-comment">/// Function table</span>
+sdk.funcTable.xx
 
-     <span class="hljs-comment">/// Command</span>
-     sdk.cmd.xx
+<span class="hljs-comment">/// Command</span>
+sdk.cmd.xx
 
-     <span class="hljs-comment">/// Bridge</span>
-     sdk.bridge.xx
+<span class="hljs-comment">/// Bridge</span>
+sdk.bridge.xx
 
-     <span class="hljs-comment">/// Bluetooth (only when using the built-in Bluetooth library)</span>
-     sdk.ble.xx
+<span class="hljs-comment">/// Bluetooth (only use the built-in Bluetooth library)</span>
+sdk.ble.xx
 
-     <span class="hljs-comment">/// Alexa</span>
-     sdk.alexa.xx
+<span class="hljs-comment">/// Alexa</span>
+sdk.alexa.xx
 
-     <span class="hljs-comment">/// file transfer</span>
-     sdk.transfer.xx
+<span class="hljs-comment">/// File transfer</span>
+sdk.transfer.xx
 
-     <span class="hljs-comment">/// Message icon</span>
-     sdk.messageIcon.xx
+<span class="hljs-comment">/// Message icon</span>
+sdk.messageIcon.xx
 
-     <span class="hljs-comment">/// data synchronization</span>
-     sdk.syncData.xx
+<span class="hljs-comment">/// Data synchronization</span>
+sdk.syncData.xx
 
-     <span class="hljs-comment">/// Data exchange</span>
-     sdk.dataExchange.xx
+<span class="hljs-comment">/// Data exchange</span>
+sdk.dataExchange.xx
 
-     <span class="hljs-comment">/// Device log</span>
-     sdk.deviceLog.xx
+<span class="hljs-comment">/// Device log</span>
+sdk.deviceLog.xx
 
-     <span class="hljs-comment">/// Common tools, cache</span>
-     sdk.tool.xx
+<span class="hljs-comment">/// Common tools, cache</span>
+sdk.tool.xx
 }
 </code></pre>
-</div></div></div></sec>
-<sec data-title="kotlin" data-id="section2" data-show="false"><div class="panel panel-default hidden"><div class="panel-heading"><h2 id="kotlin">kotlin<a class="pull-right section atTitle btn btn-default" target="section2"><span class="fa fa-angle-up"></span></a></h2></div><div class="panel-collapse" id="section2"><div class="panel-body">
-<p><strong>android sdk access</strong></p>
-<p><strong>Use android studio integration</strong></p>
-<ol>
-<li>Integrate SDK. SDK is divided into with Bluetooth and without Bluetooth (you can use your own Bluetooth library). Users can choose one according to their needs.</li>
-</ol>
-<p>(1) The sdk with Bluetooth library is as follows, a total of 6 files (you can copy it from the lib in example_android demo, the lib contains the latest version)</p>
-<pre><code>flutter_bluetooth_release-4.0.25.aar
-</code></pre><p>   flutter_release-4.0.25.aar
-   native_channel_release-4.0.25.aar
-   path_provider_android_release-4.0.25.aar
-   protocol_channel_release-4.0.25.aar
-   protocol_ffi_release-4.0.25.aar</p>
-<p>(2) SDK without Bluetooth library, four files in total (you can copy it from the lib in example_android_lite demo, the latest version is in the lib)</p>
-<p>flutter_release-4.0.23.aar
-native_channel_release-4.0.23.aar
-protocol_channel_release-4.0.23.aar
-protocol_ffi_release-4.0.23.aar</p>
+<h2 id="android-integration&#xFF08;to-ios&#xFF09;&#xA0;">Android integration&#xFF08;to <a href="#ios">iOS</a>&#xFF09;<h2 id="android">&#xA0;</h2></h2>
+<ul>
+<li><h4 id="integrate-using-android-studio"><strong>Integrate using android studio</strong></h4>
+</li>
+<li><p>Integrate sdk, sdk is divided into with Bluetooth and without Bluetooth (you can use your own Bluetooth library), users choose one according to their needs</p>
+</li>
+</ul>
+<p>(1) The sdk with Bluetooth library is as follows, a total of 5 files (you can copy it from the lib in example_android demo, the lib contains the latest version, or you can download it <a href="https://github.com/idoosmart/android_sdk" target="_blank">here</a>)</p>
+<p>protocol_ffi_release-x.x.x.aar
+protocol_channel_release-x.x.x.aar
+native_channel_release-x.x.x.aar
+flutter_release-x.x.x.aar
+flutter_bluetooth_release-x.x.x.aar</p>
+<p>(2) SDK without Bluetooth library, a total of four files (can be copied from the lib in the example_android_lite demo, which contains the latest version, or can be downloaded <a href="https://github.com/idoosmart/android_sdk" target="_blank">here</a>)</p>
+<p>protocol_ffi_release-x.x.x.aar
+protocol_channel_release-x.x.x.aar
+native_channel_release-x.x.x.aar
+flutter_release-x.x.x.aar</p>
 <p>Copy the downloaded AAR package to the libs directory</p>
 <p>Modify the build.gradle(app) file</p>
 <p>dependencies {</p>
-<pre><code>     implementation fileTree(include: [&apos;*.jar&apos;, &apos;*.aar&apos;], dir: &apos;libs&apos;) //Integrate sdk
-     implementation &quot;io.flutter:flutter_embedding_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot; //sdk files that need to be dependent on
-     implementation &quot;io.flutter:arm64_v8a_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot; //sdk files that need to be dependent on
-     implementation &quot;io.flutter:armeabi_v7a_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;implementation //sdk files that need to be dependent on
-</code></pre><p>  ....</p>
+<pre><code> implementation fileTree(include: [&apos;*.jar&apos;, &apos;*.aar&apos;], dir: &apos;libs&apos;)
+ implementation &quot;io.flutter:flutter_embedding_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;  
+ implementation &quot;io.flutter:arm64_v8a_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;
+ implementation &quot;io.flutter:armeabi_v7a_release:1.0.0-0f359063c487ee70787e58b4b011cbb3c2f53fd6&quot;implementation
+ implementation &apos;no.nordicsemi.android:dfu:2.5.0&apos;
+</code></pre><p>....</p>
 <p>}</p>
-</div></div></div></sec>
 <h4 id="register-sdk">Register SDK</h4>
-<p>The SDK is divided into three modules: Protocol library, Bluetooth library and Alexa library. <strong>Registration is required before use</strong>. Please refer to the demo for details.</p>
+<p>SDK is divided into three modules: Protocol library, Bluetooth library and Alexa library. <strong>Registration is required before use</strong>, please refer to demo for details</p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> protocol_channel
 
 <span class="hljs-comment">// Register sdk</span>
 func registerSDK() {
 
-      sdk.init(this) <span class="hljs-comment">//Global registration</span>
-     <span class="hljs-comment">// ble (only when using built-in Bluetooth)</span>
-     sdk.ble.addBleDelegate(bleDelegate: IDOBleDelegate)
-     sdk.ble.getBluetoothState {
+sdk.init(this) <span class="hljs-comment">//Global registration</span>
+<span class="hljs-comment">// ble (limited to using built-in Bluetooth)</span>
+sdk.ble.addBleDelegate(bleDelegate: IDOBleDelegate)
+sdk.ble.getBluetoothState {
 
-     }
+}
 
-     <span class="hljs-comment">// protocol library</span>
-     sdk.bridge.setupBridge( idoBrigeDelegate : IDOBridgeDelegate, type:logType)
+<span class="hljs-comment">// protocol library</span>
+sdk.bridge.setupBridge( idoBrigeDelegate : IDOBridgeDelegate, type:logType)
 
-     <span class="hljs-comment">// alexa (if you don&#x2019;t have alexa function, you don&#x2019;t need to access it)</span>
-     sdk.alexa.setupAlexa(delegate: IDOAlexaDelegate, clientId: clientId)
+<span class="hljs-comment">// alexa (no need to access if there is no alexa function)</span>
+sdk.alexa.setupAlexa(delegate: IDOAlexaDelegate, clientId: clientId)
 }
 </code></pre>
 <h4 id="using-sdk">Using SDK</h4>
-<p>  The API of the SDK can be called by the globally defined constant <code>sdk</code></p>
+<p>SDK APIs can be called by the globally defined constant <code>sdk</code></p>
 <pre><code class="lang-kotlin"><span class="hljs-keyword">import</span> protocol_channel
 
 <span class="hljs-function"><span class="hljs-keyword">fun</span> <span class="hljs-title">someMethod</span><span class="hljs-params">()</span> {</span>
-     <span class="hljs-comment">/// Device Information</span>
-     sdk.device.xx
+<span class="hljs-comment">/// Device information</span>
+sdk.device.xx
 
-     <span class="hljs-comment">/// Menu</span>
-     sdk.funcTable.xx
+<span class="hljs-comment">/// Function table</span>
+sdk.funcTable.xx
 
-     <span class="hljs-comment">/// Command</span>
-     sdk.cmd.xx
+<span class="hljs-comment">/// Command</span>
+sdk.cmd.xx
 
-     <span class="hljs-comment">/// Bridge</span>
-     sdk.bridge.xx
+<span class="hljs-comment">/// Bridge</span>
+sdk.bridge.xx
 
-     <span class="hljs-comment">/// Bluetooth (only when using the built-in Bluetooth library)</span>
-     sdk.ble.xx
+<span class="hljs-comment">/// Bluetooth (only for built-in Bluetooth library)</span>
+sdk.ble.xx
 
-     <span class="hljs-comment">/// Alexa</span>
-     sdk.alexa.xx
+<span class="hljs-comment">/// Alexa</span>
+sdk.alexa.xx
 
-     <span class="hljs-comment">/// file transfer</span>
-     sdk.transfer.xx
+<span class="hljs-comment">/// File transfer</span>
+sdk.transfer.xx
 
-     <span class="hljs-comment">/// Message icon</span>
-     sdk.messageIcon.xx
+<span class="hljs-comment">/// Message icon</span>
+sdk.messageIcon.xx
 
-     <span class="hljs-comment">/// data synchronization</span>
-     sdk.syncData.xx
+<span class="hljs-comment">/// Data synchronization</span>
+sdk.syncData.xx<span class="hljs-comment">/// Data exchange</span>
+sdk.dataExchange.xx
 
-     <span class="hljs-comment">/// Data exchange</span>
-     sdk.dataExchange.xx
+<span class="hljs-comment">/// Device log</span>
+sdk.deviceLog.xx
 
-     <span class="hljs-comment">/// Device log</span>
-     sdk.deviceLog.xx
-
-     <span class="hljs-comment">/// Common tools, cache</span>
-     sdk.tool.xx
+<span class="hljs-comment">/// Common tools, cache</span>
+sdk.tool.xx
 }
 </code></pre>
- 
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-04-25 17:14:59
+2024-11-14 11:29:57
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5500,7 +5507,7 @@ func registerSDK() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDOSDK interface","level":"1.5","depth":1,"next":{"title":"Bind/Unbind","level":"1.5.1","depth":2,"path":"doc/IDOBindDevice.md","ref":"doc/IDOBindDevice.md","articles":[{"title":"Synchronize configuration after device binding","level":"1.5.1.1","depth":3,"path":"doc/logicDescription/syncSettings.md","ref":"doc/logicDescription/syncSettings.md","articles":[]},{"title":"Bind & Reconnect Flowchart","level":"1.5.1.2","depth":3,"path":"doc/logicDescription/bindAndReconnect.md","ref":"doc/logicDescription/bindAndReconnect.md","articles":[]}]},"previous":{"title":"IDOSDK Alexa ","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/IDOSDK.md","mtime":"2024-04-25T09:14:59.265Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-04T01:39:34.538Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"IDOSDK interface","level":"1.5","depth":1,"next":{"title":"Bind/Unbind","level":"1.5.1","depth":2,"path":"doc/IDOBindDevice.md","ref":"doc/IDOBindDevice.md","articles":[{"title":"Synchronize configuration after device binding","level":"1.5.1.1","depth":3,"path":"doc/logicDescription/syncSettings.md","ref":"doc/logicDescription/syncSettings.md","articles":[]},{"title":"Bind & Reconnect Flowchart","level":"1.5.1.2","depth":3,"path":"doc/logicDescription/bindAndReconnect.md","ref":"doc/logicDescription/bindAndReconnect.md","articles":[]}]},"previous":{"title":"IDOSDK Alexa ","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/IDOSDK.md","mtime":"2024-11-14T03:29:57.730Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-19T08:51:18.050Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
