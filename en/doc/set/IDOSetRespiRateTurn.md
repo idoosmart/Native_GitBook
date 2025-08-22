@@ -28,7 +28,6 @@ Kotlin
 Cmds.setRRespiRateTurn().send {
 if (it.error.code == 0) {
 // Success
-// it.res is IDOCmdSetResponseModel
 }else {
 // Failed
 }

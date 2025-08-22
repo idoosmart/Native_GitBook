@@ -27,7 +27,6 @@ val param = IDOWatchDialParamModel(...)
 Cmds.setWatchDial(param).send {
     if (it.error.code == 0) {
         // 成功
-        // it.res is IDOCmdSetResponseModel
     }else {
         // 失败
     }
