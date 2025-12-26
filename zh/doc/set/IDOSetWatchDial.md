@@ -32,3 +32,17 @@ Cmds.setWatchDial(param).send {
     }
 }
 ```
+
+ArkTs
+```ts
+let param = new IDOWatchDialParamModel(...)
+
+Cmds.setWatchDial(param,(res)=>{
+  if(res.success){
+      //成功
+      //it.value is IDOCmdSetResponseModel
+  } else {
+      //失败
+  }
+})
+```

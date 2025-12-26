@@ -1463,6 +1463,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.12.65" data-path="../get/IDOGetBloodGlucoseDataV01.html">
+            
+                <a href="../get/IDOGetBloodGlucoseDataV01.html">
+            
+                    
+                    获取血糖数据(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.66" data-path="../get/IDOGetBikeLockList.html">
+            
+                <a href="../get/IDOGetBikeLockList.html">
+            
+                    
+                    获取车锁列表
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2827,6 +2853,45 @@
             
                     
                     设置菜单列表 v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.105" data-path="IDOSetBloodGlucoseDataV01.html">
+            
+                <a href="IDOSetBloodGlucoseDataV01.html">
+            
+                    
+                    设置血糖数据 (v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.106" data-path="IDOStopBloodGlucoseDataV01.html">
+            
+                <a href="IDOStopBloodGlucoseDataV01.html">
+            
+                    
+                    停止血糖监测(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.107" data-path="IDOSetBikeLockList.html">
+            
+                <a href="IDOSetBikeLockList.html">
+            
+                    
+                    设置车锁列表
             
                 </a>
             
@@ -5400,6 +5465,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.172" data-path="../model/IDOBloodGlucoseV1Model.html">
+            
+                <a href="../model/IDOBloodGlucoseV1Model.html">
+            
+                    
+                    IDOBloodGlucoseV1Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.173" data-path="../model/IDOBikeLockModel.html">
+            
+                <a href="../model/IDOBikeLockModel.html">
+            
+                    
+                    IDOBikeLockModel
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5861,8 +5952,19 @@ Cmds.setFitnessGuidance(param).send {
     }
 }
 </code></pre>
+<p>ArkTs</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> param = <span class="hljs-keyword">new</span> IDOFitnessGuidanceParamModel(...)
+Cmds.setFitnessGuidance(param,(res)=&gt;{
+    <span class="hljs-keyword">if</span>(res.success){
+        <span class="hljs-comment">//&#x6210;&#x529F;</span>
+        <span class="hljs-comment">//it.value is IDOCmdSetResponseModel</span>
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">//&#x5931;&#x8D25;</span>
+    }
+})
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2025-08-19 10:27:40
+2025-12-26 14:30:41
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -5907,7 +6009,7 @@ Cmds.setFitnessGuidance(param).send {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"健身指导","level":"1.5.13.35","depth":3,"next":{"title":"显示模式","level":"1.5.13.36","depth":3,"path":"doc/set/IDOSetDisplayMode.md","ref":"doc/set/IDOSetDisplayMode.md","articles":[]},"previous":{"title":"app设置ble的闹钟","level":"1.5.13.34","depth":3,"path":"doc/set/IDOSetAlarm.md","ref":"doc/set/IDOSetAlarm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/set/IDOSetFitnessGuidance.md","mtime":"2025-08-19T02:27:40.910Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-10T06:58:40.075Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"健身指导","level":"1.5.13.35","depth":3,"next":{"title":"显示模式","level":"1.5.13.36","depth":3,"path":"doc/set/IDOSetDisplayMode.md","ref":"doc/set/IDOSetDisplayMode.md","articles":[]},"previous":{"title":"app设置ble的闹钟","level":"1.5.13.34","depth":3,"path":"doc/set/IDOSetAlarm.md","ref":"doc/set/IDOSetAlarm.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/set/IDOSetFitnessGuidance.md","mtime":"2025-12-26T06:30:41.761Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-26T08:16:24.060Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
@@ -5974,6 +6076,10 @@ Cmds.setFitnessGuidance(param).send {
     
         
         <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

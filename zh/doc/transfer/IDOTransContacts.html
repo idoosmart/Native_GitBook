@@ -1463,6 +1463,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.12.65" data-path="../get/IDOGetBloodGlucoseDataV01.html">
+            
+                <a href="../get/IDOGetBloodGlucoseDataV01.html">
+            
+                    
+                    获取血糖数据(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.66" data-path="../get/IDOGetBikeLockList.html">
+            
+                <a href="../get/IDOGetBikeLockList.html">
+            
+                    
+                    获取车锁列表
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2827,6 +2853,45 @@
             
                     
                     设置菜单列表 v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.105" data-path="../set/IDOSetBloodGlucoseDataV01.html">
+            
+                <a href="../set/IDOSetBloodGlucoseDataV01.html">
+            
+                    
+                    设置血糖数据 (v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.106" data-path="../set/IDOStopBloodGlucoseDataV01.html">
+            
+                <a href="../set/IDOStopBloodGlucoseDataV01.html">
+            
+                    
+                    停止血糖监测(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.107" data-path="../set/IDOSetBikeLockList.html">
+            
+                <a href="../set/IDOSetBikeLockList.html">
+            
+                    
+                    设置车锁列表
             
                 </a>
             
@@ -5400,6 +5465,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.172" data-path="../model/IDOBloodGlucoseV1Model.html">
+            
+                <a href="../model/IDOBloodGlucoseV1Model.html">
+            
+                    
+                    IDOBloodGlucoseV1Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.173" data-path="../model/IDOBikeLockModel.html">
+            
+                <a href="../model/IDOBikeLockModel.html">
+            
+                    
+                    IDOBikeLockModel
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5956,8 +6047,36 @@ items.add(IDOTransNormalModel(fileType: IDOTransType.ML, filePath: <span class="
         }
     }})
 </code></pre>
+<p>ArkTs</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> items = <span class="hljs-built_in">Array</span>&lt;IDOTransBaseModel&gt;()
+
+<span class="hljs-comment">// &#x8054;&#x7CFB;&#x4EBA;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransNormalModel(IDOTransType.ml,<span class="hljs-string">&quot;/xx/xx/x.json&quot;</span>,<span class="hljs-string">&quot;contacts&quot;</span>,<span class="hljs-number">0</span>))
+
+<span class="hljs-comment">// &#x8C03;&#x7528;&#x4F20;&#x8F93;</span>
+<span class="hljs-keyword">let</span> cancellable = sdk.transfer.transferFiles(items,cancelPrevTranTask,
+  (currentIndex, totalCount, currentProgress, totalProgress) =&gt;{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x4F20;&#x8F93;&#x4E2D; <span class="hljs-subst">${currentIndex+1}</span>/<span class="hljs-subst">${totalCount}</span>`</span>)
+  },
+  (currentIndex, status, errorCode, finishingTime) =&gt;{
+      <span class="hljs-keyword">if</span>(status != IDOTransStatus.finished || errorCode != <span class="hljs-number">0</span>){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x4F20;&#x8F93;&#x5931;&#x8D25;&#xFF1A;<span class="hljs-subst">${errorCode}</span>`</span>)
+      }
+  },
+  (results: <span class="hljs-built_in">boolean</span>[]) =&gt;{
+    <span class="hljs-built_in">console</span>.debug(<span class="hljs-string">`trans rs: <span class="hljs-subst">${results}</span>`</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> res of results) {
+      <span class="hljs-keyword">if</span>(res){
+        <span class="hljs-comment">//&#x4F20;&#x8F93;&#x6210;&#x529F;</span>
+      } <span class="hljs-keyword">else</span>{
+        <span class="hljs-comment">//&#x4F20;&#x8F93;&#x5931;&#x8D25;</span>
+      }
+    }
+  }
+)
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-08-21 11:55:28
+2025-12-26 14:30:41
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -6002,7 +6121,7 @@ items.add(IDOTransNormalModel(fileType: IDOTransType.ML, filePath: <span class="
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"通讯录","level":"1.5.15.4","depth":3,"next":{"title":"其它文件","level":"1.5.15.5","depth":3,"path":"doc/transfer/IDOTransNormalModel.md","ref":"doc/transfer/IDOTransNormalModel.md","articles":[]},"previous":{"title":"设备传文件到APP","level":"1.5.15.3","depth":3,"path":"doc/transfer/IDODeviceFileToAppTask.md","ref":"doc/transfer/IDODeviceFileToAppTask.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/transfer/IDOTransContacts.md","mtime":"2024-08-21T03:55:28.615Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-10T06:58:40.075Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"通讯录","level":"1.5.15.4","depth":3,"next":{"title":"其它文件","level":"1.5.15.5","depth":3,"path":"doc/transfer/IDOTransNormalModel.md","ref":"doc/transfer/IDOTransNormalModel.md","articles":[]},"previous":{"title":"设备传文件到APP","level":"1.5.15.3","depth":3,"path":"doc/transfer/IDODeviceFileToAppTask.md","ref":"doc/transfer/IDODeviceFileToAppTask.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/transfer/IDOTransContacts.md","mtime":"2025-12-26T06:30:41.799Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-26T08:16:24.060Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
@@ -6069,6 +6188,10 @@ items.add(IDOTransNormalModel(fileType: IDOTransType.ML, filePath: <span class="
     
         
         <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

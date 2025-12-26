@@ -1463,6 +1463,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.12.65" data-path="get/IDOGetBloodGlucoseDataV01.html">
+            
+                <a href="get/IDOGetBloodGlucoseDataV01.html">
+            
+                    
+                    获取血糖数据(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.66" data-path="get/IDOGetBikeLockList.html">
+            
+                <a href="get/IDOGetBikeLockList.html">
+            
+                    
+                    获取车锁列表
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2827,6 +2853,45 @@
             
                     
                     设置菜单列表 v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.105" data-path="set/IDOSetBloodGlucoseDataV01.html">
+            
+                <a href="set/IDOSetBloodGlucoseDataV01.html">
+            
+                    
+                    设置血糖数据 (v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.106" data-path="set/IDOStopBloodGlucoseDataV01.html">
+            
+                <a href="set/IDOStopBloodGlucoseDataV01.html">
+            
+                    
+                    停止血糖监测(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.107" data-path="set/IDOSetBikeLockList.html">
+            
+                <a href="set/IDOSetBikeLockList.html">
+            
+                    
+                    设置车锁列表
             
                 </a>
             
@@ -5400,6 +5465,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.172" data-path="model/IDOBloodGlucoseV1Model.html">
+            
+                <a href="model/IDOBloodGlucoseV1Model.html">
+            
+                    
+                    IDOBloodGlucoseV1Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.173" data-path="model/IDOBikeLockModel.html">
+            
+                <a href="model/IDOBikeLockModel.html">
+            
+                    
+                    IDOBikeLockModel
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -5833,7 +5924,7 @@
                                 
                                 <h1 id="ido-&#x667A;&#x80FD;&#x624B;&#x73AF;-sdk">IDO &#x667A;&#x80FD;&#x624B;&#x73AF; SDK</h1>
 <h2 id="&#x529F;&#x80FD;&#x6982;&#x8FF0;">&#x529F;&#x80FD;&#x6982;&#x8FF0;</h2>
-<p>&#x9002;&#x7528;&#x4E8E;iOS/Android&#x8BBE;&#x5907;&#x5E76;&#x652F;&#x6301;IDO&#x516C;&#x53F8;&#x7684;&#x624B;&#x73AF;&#xFF0C;&#x5B9E;&#x73B0;&#x84DD;&#x7259;&#x8FDE;&#x63A5;&#x63A7;&#x5236;&#x6846;&#x67B6;&#x5E93;</p>
+<p>&#x9002;&#x7528;&#x4E8E;iOS/Android/Harmony&#x8BBE;&#x5907;&#x5E76;&#x652F;&#x6301;IDO&#x516C;&#x53F8;&#x7684;&#x624B;&#x73AF;&#xFF0C;&#x5B9E;&#x73B0;&#x84DD;&#x7259;&#x8FDE;&#x63A5;&#x63A7;&#x5236;&#x6846;&#x67B6;&#x5E93;</p>
 <h2 id="ios&#x96C6;&#x6210;">iOS&#x96C6;&#x6210;</h2>
 <ul>
 <li><h4 id="&#x4F7F;&#x7528;-cocoapods-&#x96C6;&#x6210;">&#x4F7F;&#x7528; Cocoapods &#x96C6;&#x6210;</h4>
@@ -6063,8 +6154,85 @@ func registerSDK() {
     sdk.tool.xx
 }
 </code></pre>
+<h2 id="harmony&#x96C6;&#x6210;">harmony&#x96C6;&#x6210;</h2>
+<p><strong>&#x4F7F;&#x7528;DevEco studio &#x96C6;&#x6210;</strong></p>
+<p>1.&#x96C6;&#x6210;sdk
+ &#x5C06;har&#x5305;&#x62F7;&#x8D1D;&#x5230;&#x5DE5;&#x7A0B;&#x4E0B;&#x9762;&#x7684;har&#x76EE;&#x5F55;
+ flutter.har
+ flutter_blue_plus_ohos.har
+ fluttter_bluetooth.har
+ flutter_module.har
+ native_channel.har
+ protocol_channel.har
+ protocol_ffi.har
+ &#x6DFB;&#x52A0;&#x4F9D;&#x8D56;,&#x5EFA;&#x8BAE;&#x653E;&#x5728;&#x5DE5;&#x7A0B;&#x76EE;&#x5F55;&#x4E0B;&#x7684;oh-package.json5
+ dependencies: {</p>
+<pre><code>    &quot;@ohos/flutter_ohos&quot;: &quot;file:./har/flutter.har&quot;,
+    &quot;@ohos/flutter_module&quot;: &quot;file:./har/flutter_module.har&quot;,
+    &quot;protocol_channel&quot;: &quot;file:./har/protocol_channel.har&quot;,
+    &quot;protocol_ffi&quot;: &quot;file:./har/protocol_ffi.har&quot;,
+    &quot;flutter_blue_plus_ohos&quot;: &quot;file:./har/flutter_blue_plus_ohos.har&quot;,
+    &quot;flutter_bluetooth&quot;: &quot;file:./har/flutter_bluetooth.har&quot;,
+    &quot;native_channel&quot;: &quot;file:./har/native_channel.har&quot;
+  },
+</code></pre><p>overrides :  {</p>
+<pre><code>    &quot;@ohos/flutter_ohos&quot;: &quot;file:./har/flutter.har&quot;,
+    &quot;protocol_channel&quot;: &quot;file:./har/protocol_channel.har&quot;,
+    &quot;protocol_ffi&quot;: &quot;file:./har/protocol_ffi.har&quot;,
+    &quot;flutter_bluetooth&quot;: &quot;file:./har/flutter_bluetooth.har&quot;,
+    &quot;native_channel&quot;: &quot;file:./har/native_channel.har&quot;,
+    &quot;flutter_blue_plus_ohos&quot;: &quot;file:./har/flutter_blue_plus_ohos.har&quot;,
+</code></pre><p>}</p>
+<h4 id="&#x6CE8;&#x518C;sdk">&#x6CE8;&#x518C;SDK</h4>
+<p>EntryAbility &#x9700;&#x8981;&#x7EE7;&#x627F;FlutterAbility</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { GeneratedPluginRegistrant } from <span class="hljs-string">&apos;@ohos/flutter_module&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">class</span> EntryAbility extends FlutterAbility {
+  configureFlutterEngine(flutterEngine: FlutterEngine) {
+    <span class="hljs-keyword">super</span>.configureFlutterEngine(flutterEngine)
+    GeneratedPluginRegistrant.registerWith(flutterEngine)
+    <span class="hljs-keyword">this</span>.initSDK()
+  }
+</code></pre>
+<h4 id="&#x4F7F;&#x7528;sdk">&#x4F7F;&#x7528;SDK</h4>
+<p>SDK&#x7684;API&#xFF0C;&#x7531;&#x5168;&#x5C40;&#x5B9A;&#x4E49;&#x5E38;&#x91CF;sdk&#x8FDB;&#x884C;&#x8C03;&#x7528;&#x5373;&#x53EF;</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span>{sdk} from <span class="hljs-string">&quot;protocol_channel&quot;</span>
+
+    <span class="hljs-comment">/// &#x8BBE;&#x5907;&#x4FE1;&#x606F;</span>
+    sdk.device.xx
+
+    <span class="hljs-comment">/// &#x529F;&#x80FD;&#x8868;</span>
+    sdk.funcTable.xx
+
+    <span class="hljs-comment">/// &#x6307;&#x4EE4;</span>
+    sdk.cmd.xx
+
+    <span class="hljs-comment">/// &#x6865;&#x63A5;</span>
+    sdk.bridge.xx
+
+    <span class="hljs-comment">/// &#x84DD;&#x7259; &#xFF08;&#x4EC5;&#x9650;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x84DD;&#x7259;&#x5E93;&#xFF09;</span>
+    sdk.ble.xx
+
+    <span class="hljs-comment">/// &#x6587;&#x4EF6;&#x4F20;&#x8F93;</span>
+    sdk.transfer.xx
+
+    <span class="hljs-comment">/// &#x6D88;&#x606F;&#x56FE;&#x6807;</span>
+    sdk.messageIcon.xx
+
+    <span class="hljs-comment">/// &#x6570;&#x636E;&#x540C;&#x6B65;</span>
+    sdk.syncData.xx
+
+    <span class="hljs-comment">/// &#x6570;&#x636E;&#x4EA4;&#x6362;</span>
+    sdk.dataExchange.xx
+
+    <span class="hljs-comment">/// &#x8BBE;&#x5907;&#x65E5;&#x5FD7;</span>
+    sdk.deviceLog.xx
+
+    <span class="hljs-comment">/// &#x5E38;&#x7528;&#x5DE5;&#x5177;&#x3001;&#x7F13;&#x5B58;</span>
+    sdk.tool.xx
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2025-11-10 16:40:47
+2025-12-26 14:30:41
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -6109,7 +6277,7 @@ func registerSDK() {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"IDOSDK接口","level":"1.5","depth":1,"next":{"title":"绑定/解绑","level":"1.5.1","depth":2,"path":"doc/IDOBindDevice.md","ref":"doc/IDOBindDevice.md","articles":[{"title":"设备绑定后同步配置","level":"1.5.1.1","depth":3,"path":"doc/logicDescription/syncSettings.md","ref":"doc/logicDescription/syncSettings.md","articles":[]},{"title":"绑定&重连流程图","level":"1.5.1.2","depth":3,"path":"doc/logicDescription/bindAndReconnect.md","ref":"doc/logicDescription/bindAndReconnect.md","articles":[]}]},"previous":{"title":"IDOSDK Alexa","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/IDOSDK.md","mtime":"2025-11-10T08:40:47.239Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-10T06:58:40.075Z"},"basePath":"..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"IDOSDK接口","level":"1.5","depth":1,"next":{"title":"绑定/解绑","level":"1.5.1","depth":2,"path":"doc/IDOBindDevice.md","ref":"doc/IDOBindDevice.md","articles":[{"title":"设备绑定后同步配置","level":"1.5.1.1","depth":3,"path":"doc/logicDescription/syncSettings.md","ref":"doc/logicDescription/syncSettings.md","articles":[]},{"title":"绑定&重连流程图","level":"1.5.1.2","depth":3,"path":"doc/logicDescription/bindAndReconnect.md","ref":"doc/logicDescription/bindAndReconnect.md","articles":[]}]},"previous":{"title":"IDOSDK Alexa","level":"1.4","depth":1,"path":"doc/IDOAlexa.md","ref":"doc/IDOAlexa.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/IDOSDK.md","mtime":"2025-12-26T06:30:41.725Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-26T08:16:24.060Z"},"basePath":"..","book":{"language":"zh"}});
         });
     </script>
 </div>
@@ -6176,6 +6344,10 @@ func registerSDK() {
     
         
         <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

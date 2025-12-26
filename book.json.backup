@@ -1,0 +1,53 @@
+{
+    "title": "IDOSDK",
+    "plugins": [
+        "chapter-fold",
+        "expandable-chapters-small",
+        "back-to-top-button",
+        "code",
+        "github",
+        "tbfed-pagefooter",
+        "copy-code-button",
+        "pageview-count",
+        "-lunr",
+        "-search",
+        "search-pro",
+        "language-picker",
+        "popup",
+        "click-reveal",
+        "sidebar-style",
+        "splitter",
+        "sectionx"
+    ],
+
+    "pluginsConfig": {
+        "code": {
+          "copyButtons": false
+        },
+        "github": {
+            "url": "https://github.com/idoosmart/"
+        },
+        "sidebar-style": {
+            "title": "IDOSDK",
+            "author": "idoosmart.com"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"Copyright © 2023-2024 IDO. All rights reserved.",
+            "modify_label": "修改日期:",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "language-picker": {
+            "langs": [
+                {
+                    "label": "English",
+                    "id": "en"
+                },
+                {
+                    "label": "简体中文",
+                    "id": "zh"
+                }
+            ]
+        }
+
+    }
+}

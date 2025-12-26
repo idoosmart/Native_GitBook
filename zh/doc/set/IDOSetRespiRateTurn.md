@@ -37,3 +37,17 @@ Cmds.setRRespiRateTurn().send {
     }
 }
 ```
+
+ArkTs
+
+```ts
+let isOpen = true
+Cmds.setRRespiRateTurn(isOpen,(res)=>{
+    if(res.success){
+        //成功
+        //it.value is IDOCmdSetResponseModel
+    } else {
+        //失败
+    }
+})
+```

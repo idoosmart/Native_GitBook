@@ -1463,6 +1463,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.12.65" data-path="../get/IDOGetBloodGlucoseDataV01.html">
+            
+                <a href="../get/IDOGetBloodGlucoseDataV01.html">
+            
+                    
+                    获取血糖数据(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12.66" data-path="../get/IDOGetBikeLockList.html">
+            
+                <a href="../get/IDOGetBikeLockList.html">
+            
+                    
+                    获取车锁列表
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2827,6 +2853,45 @@
             
                     
                     设置菜单列表 v3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.105" data-path="../set/IDOSetBloodGlucoseDataV01.html">
+            
+                <a href="../set/IDOSetBloodGlucoseDataV01.html">
+            
+                    
+                    设置血糖数据 (v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.106" data-path="../set/IDOStopBloodGlucoseDataV01.html">
+            
+                <a href="../set/IDOStopBloodGlucoseDataV01.html">
+            
+                    
+                    停止血糖监测(v01)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13.107" data-path="../set/IDOSetBikeLockList.html">
+            
+                <a href="../set/IDOSetBikeLockList.html">
+            
+                    
+                    设置车锁列表
             
                 </a>
             
@@ -5400,6 +5465,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.19.172" data-path="../model/IDOBloodGlucoseV1Model.html">
+            
+                <a href="../model/IDOBloodGlucoseV1Model.html">
+            
+                    
+                    IDOBloodGlucoseV1Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19.173" data-path="../model/IDOBikeLockModel.html">
+            
+                <a href="../model/IDOBikeLockModel.html">
+            
+                    
+                    IDOBikeLockModel
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -6039,8 +6130,77 @@ sdk.transfer.registerDeviceTranFileToApp {
         sdk.transfer.unregisterDeviceTranFileToApp()
     }
 </code></pre>
+<p>ArkTs</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">let</span> cancelPrevTranTask  = <span class="hljs-literal">true</span>
+<span class="hljs-keyword">let</span> items = <span class="hljs-built_in">Array</span>&lt;IDOTransBaseModel&gt;()
+
+<span class="hljs-comment">//&#x97F3;&#x4E50;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransMusicModel(<span class="hljs-string">&quot;\(mp3Path)/1.mp3&quot;</span>,<span class="hljs-string">&quot;m1.mp3&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-string">&quot;singer1&quot;</span>))
+items.push(<span class="hljs-keyword">new</span> IDOTransMusicModel(<span class="hljs-string">&quot;\(mp3Path)/2.mp3&quot;</span>,<span class="hljs-string">&quot;m2.mp3&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&quot;singer2&quot;</span>))
+items.push(<span class="hljs-keyword">new</span> IDOTransMusicModel(<span class="hljs-string">&quot;\(mp3Path)/3.mp3&quot;</span>,<span class="hljs-string">&quot;m3.mp3&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&quot;singer3&quot;</span>))
+
+<span class="hljs-comment">//&#x8FD0;&#x52A8;&#x56FE;&#x6807; -&#x56FE;&#x7247;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransSportModel(<span class="hljs-string">&quot;x.png&quot;</span>,<span class="hljs-string">&quot;icon_sport1&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-literal">false</span>))
+items.push(<span class="hljs-keyword">new</span> IDOTransSportModel(<span class="hljs-string">&quot;x.png&quot;</span>,<span class="hljs-string">&quot;icon_sport2&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-literal">false</span>))
+
+<span class="hljs-comment">//&#x8FD0;&#x52A8;&#x56FE;&#x6807; -&#x52A8;&#x753B;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransSportModel(<span class="hljs-string">&quot;x.bmp&quot;</span>,<span class="hljs-string">&quot;icon_sport1&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-literal">false</span>))
+items.push(<span class="hljs-keyword">new</span> IDOTransSportModel(<span class="hljs-string">&quot;x.bmp&quot;</span>,<span class="hljs-string">&quot;icon_sport2&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-literal">false</span>))
+
+<span class="hljs-comment">//&#x58C1;&#x7EB8;&#x8868;&#x76D8;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransNormalModel(IDOTransType.wallpaperZ,<span class="hljs-string">&quot;xx/xx.png&quot;</span>,<span class="hljs-string">&quot;wallpaper.z&quot;</span>,xx))
+
+<span class="hljs-comment">// &#x4E91;&#x8868;&#x76D8;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransNormalModel(IDOTransType.iwfLz,<span class="hljs-string">&quot;noise_w96.zip&quot;</span>,<span class="hljs-string">&quot;noise_w96&quot;</span>,xx))
+<span class="hljs-comment">// &#x56FA;&#x4EF6;</span>
+items.push(<span class="hljs-keyword">new</span> IDOTransNormalModel(IDOTransType.fw,<span class="hljs-string">&quot;xx.fw&quot;</span>,<span class="hljs-string">&quot;xx&quot;</span>,xx))
+
+<span class="hljs-keyword">let</span> cancellable = sdk.transfer.transferFiles(items,cancelPrevTranTask,
+  (currentIndex, totalCount, currentProgress, totalProgress) =&gt;{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x4F20;&#x8F93;&#x4E2D; <span class="hljs-subst">${currentIndex+1}</span>/<span class="hljs-subst">${totalCount}</span>`</span>)
+  },
+  (currentIndex, status, errorCode, finishingTime) =&gt;{
+      <span class="hljs-keyword">if</span>(status != IDOTransStatus.finished || errorCode != <span class="hljs-number">0</span>){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x4F20;&#x8F93;&#x5931;&#x8D25;&#xFF1A;<span class="hljs-subst">${errorCode}</span>`</span>)
+      }
+  },
+  (results: <span class="hljs-built_in">boolean</span>[]) =&gt;{
+    <span class="hljs-built_in">console</span>.debug(<span class="hljs-string">`trans rs: <span class="hljs-subst">${results}</span>`</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> res of results) {
+      <span class="hljs-keyword">if</span>(res){
+        <span class="hljs-comment">//&#x4F20;&#x8F93;&#x6210;&#x529F;</span>
+      } <span class="hljs-keyword">else</span>{
+        <span class="hljs-comment">//&#x4F20;&#x8F93;&#x5931;&#x8D25;</span>
+      }
+    }
+  }
+)
+
+<span class="hljs-comment">// Cancel transfer</span>
+cancellable?.cancel()
+
+sdk.transfer.registerDeviceTranFileToApp((task: IDODeviceFileToAppTask)=&gt;{
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x6536;&#x5230;&#x8BBE;&#x5907;&#x4F20;&#x8F93;&#x6587;&#x4EF6; &#x540D;&#x79F0;&#xFF1A;<span class="hljs-subst">${task.deviceTransItem.fileName}</span> &#x5927;&#x5C0F;&#xFF1A;<span class="hljs-subst">${task.deviceTransItem.fileSize}</span> &#x5230;App`</span>)
+task.acceptReceiveFile((progress: <span class="hljs-built_in">number</span>)=&gt;{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Progress: <span class="hljs-subst">${progress}</span>`</span>)
+},
+    (isCompleted: <span class="hljs-built_in">boolean</span>, receiveFilePath: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span>)=&gt;{
+    <span class="hljs-keyword">if</span>(isCompleted){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File received successfully at: <span class="hljs-subst">${receiveFilePath}</span>`</span>)
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`File transfer failed`</span>)
+    }
+    }
+)
+})
+
+<span class="hljs-comment">// &#x53D6;&#x6D88;&#x76D1;&#x542C;</span>
+aboutToDisappear(): <span class="hljs-built_in">void</span> {
+    sdk.transfer.unregisterDeviceTranFileToApp()
+}
+</code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2024-08-21 11:21:00
+2025-12-26 14:30:41
 </span></footer>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -6085,7 +6245,7 @@ sdk.transfer.registerDeviceTranFileToApp {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"文件传输","level":"1.5.15","depth":2,"next":{"title":"音乐","level":"1.5.15.1","depth":3,"path":"doc/transfer/IDOTransMusicModel.md","ref":"doc/transfer/IDOTransMusicModel.md","articles":[]},"previous":{"title":"同步身体电量数据","level":"1.5.14.14","depth":3,"path":"doc/syncData/IDOSyncBodyPowerData.md","ref":"doc/syncData/IDOSyncBodyPowerData.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/transfer/IDOFileTransfer.md","mtime":"2024-08-21T03:21:00.855Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-10T06:58:40.075Z"},"basePath":"../..","book":{"language":"zh"}});
+            gitbook.page.hasChanged({"page":{"title":"文件传输","level":"1.5.15","depth":2,"next":{"title":"音乐","level":"1.5.15.1","depth":3,"path":"doc/transfer/IDOTransMusicModel.md","ref":"doc/transfer/IDOTransMusicModel.md","articles":[]},"previous":{"title":"同步身体电量数据","level":"1.5.14.14","depth":3,"path":"doc/syncData/IDOSyncBodyPowerData.md","ref":"doc/syncData/IDOSyncBodyPowerData.md","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","expandable-chapters-small","back-to-top-button","code","github","tbfed-pagefooter","copy-code-button","pageview-count","-lunr","-search","search-pro","language-picker","popup","click-reveal","sidebar-style","splitter","sectionx"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"sidebar-style":{"author":"idoosmart.com","title":"IDOSDK"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"livereload":{},"splitter":{},"search-pro":{},"popup":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"click-reveal":{},"sectionx":{},"highlight":{},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"zh","gitbook":"*"},"file":{"path":"doc/transfer/IDOFileTransfer.md","mtime":"2025-12-26T06:30:41.799Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-12-26T08:16:24.060Z"},"basePath":"../..","book":{"language":"zh"}});
         });
     </script>
 </div>
@@ -6152,6 +6312,10 @@ sdk.transfer.registerDeviceTranFileToApp {
     
         
         <script src="../../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
