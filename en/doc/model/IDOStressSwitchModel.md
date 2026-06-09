@@ -12,4 +12,5 @@
 | highThreshold   | int          | High pressure threshold                                      |
 | stressThreshold | int          | Pressure calibration threshold, default is 80 <br/>Requires firmware to enable menu support setSendCalibrationThreshold |
 | notifyFlag      | int          | Notification type <br/>0: Invalid <br/>1: Allow notification<br/>2: Silent notification<br/>3: Close notification <br/>Requires firmware to enable menu support getPressureNotifyFlagMode |
+| measurementInterval | int        | Measurement interval in minutes<br/>Optional, default `0` |
 | repeats         | Set<IDOWeek> | Repeat[IDOWeek](../enum/IDOWeek.md)                          |

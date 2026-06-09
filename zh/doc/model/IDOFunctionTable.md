@@ -408,6 +408,7 @@
 | syncRealTimeV3 | Bool | v3多运动同步支持实时速度显示 |
 | syncExchangeDataReplyAddRealTimeSpeedPaceV3 | Bool | 数据交换增加实时的配速字段 |
 | syncHealthSyncV3ActivityEndTimeUseUtcMode | Bool | 多运行结束时间使用UTC模式 |
+| supportSyncHealthDataWithTimeZone | Bool | 健康数据同步返回数据产生时间的时区字段；`time_zone` 为时区扩大 100 倍（如东八区 800） |
 | syncSupportSetFastModeWhenSyncConfig | Bool | 支持数据同步时开启快速模式 |
 | alarmCount | Int | 闹钟个数 |
 | alarmBrushTeeth | Bool | 刷牙 |

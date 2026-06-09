@@ -409,6 +409,7 @@
 | syncRealTimeV3 | Bool | v3 multi-sport synchronization supports real-time speed display |
 | syncExchangeDataReplyAddRealTimeSpeedPaceV3 | Bool | Data exchange adds real-time pace field |
 | syncHealthSyncV3ActivityEndTimeUseUtcMode | Bool | Multiple run end times use UTC mode |
+| supportSyncHealthDataWithTimeZone | Bool | Health sync includes time_zone (timezone offset ×100, e.g. UTC+8 → 800) |
 | syncSupportSetFastModeWhenSyncConfig | Bool | Turn on fast mode when supporting data synchronization |
 | alarmCount | Int | Number of alarm clocks |
 | alarmBrushTeeth | Bool | Brush Teeth |
