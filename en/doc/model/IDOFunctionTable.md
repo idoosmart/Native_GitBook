@@ -90,6 +90,30 @@
 | reminderAmericanas | Bool | Americanas |
 | reminderYahoo | Bool | Yahoo |
 | reminderMessageIcon | Bool | Message icon and name update |
+| reminderOther | Bool | Other |
+| reminderFacebook | Bool | Facebook |
+| reminderInstagram | Bool | Instagram |
+| reminderWeibo | Bool | Sina Weibo (China) |
+| reminderTaobao | Bool | Taobao |
+| reminderDingding | Bool | DingTalk |
+| reminderAlipay | Bool | Alipay |
+| reminderToutiao | Bool | Toutiao |
+| reminderDouyin | Bool | Douyin |
+| reminderTmall | Bool | TMall |
+| reminderJd | Bool | JD |
+| reminderPinduoduo | Bool | Pinduoduo |
+| reminderBaidu | Bool | Baidu |
+| reminderMeituan | Bool | Meituan |
+| reminderEleme | Bool | ele.me |
+| reminderGoogleMessages | Bool | Notification support Google Messages (type 0x7B, table62 BIT_3) |
+| reminderAppleCalendar | Bool | Notification support Apple Calendar (type 0x7C, table62 BIT_4) |
+| reminderAppleMail | Bool | Notification support Apple Mail (type 0x7D, table62 BIT_5) |
+| reminderGoogleCalendar | Bool | Notification support Google Calendar (type 0x7E, table62 BIT_6) |
+| reminderHealthU | Bool | Notification support Health &U (type 0x7F, table62 BIT_7) |
+| reminderZalo | Bool | Notification support Zalo V3 (type 0x80, table66) |
+| reminderDidiTaxi | Bool | Notification support DiDi Taxi (type 0x81, table67) |
+| reminderZoomWorkplace | Bool | Notification support Zoom Workplace (type 0x82, table71 BIT_5) |
+| reminderBuzud | Bool | Notification support BUZUD (type 0x83, table72 BIT_0) |
 | sportWalk | Bool | v2 walk |
 | sportRun | Bool | v2 running |
 | sportByBike | Bool | v2 Cycling |
@@ -436,3 +460,143 @@
 | setAlexaControll100brightness | Bool | Alexa 100-level brightness control |
 | alexaGetSupportGetAlexaDefaultLanguage | Bool | alexa Get alexa defaultRecognize language |
 | alexaGetUIControllSports | Bool | alexa jump sports interface supports 100 sports type fields |
+| sportBodybuildingExercise | Bool | v2 健身操 |
+| sportFootballl | Bool | v2 足球 |
+| mountaineering | Bool | 登山 |
+| squat | Bool | 深蹲 |
+| parachuting | Bool | 跳伞 |
+| orienteering | Bool | 定向越野 |
+| snowboard | Bool | snowboard |
+| lunge | Bool | 弓步 |
+| sportSnowboard | Bool | 滑板 |
+| sportCrossCountrySkiing | Bool | 越野滑板 |
+| setSpo2LowValueRemindAddNotifyFlag | Bool | 血氧过低提醒通知提醒类型 |
+| notSupportSmartHeartNotifyFlag | Bool | 智能心率提醒通知提醒类型 |
+| getV3AutoActivitySwitch | Bool | 运动模式自动识别开关设置获取 新增类型椭圆机 划船机 游泳 |
+| supportDevReturnMeasuringValue | Bool | 设备是否支持返回正在测量的值 |
+| getSupportDisturbHaveRangRepeat | Bool | 勿扰支持事件范围开关和重复 |
+| getSupportCalendarReminder | Bool | 日历提醒 |
+| getWatchDailSetAddSize | Bool | 表盘传输需要对应的传输原始的没有压缩的大小给固件,增加字段watch_file_size |
+| getSupportSyncOverHighLowHeartData | Bool | 支持同步过高过低时心率数据 |
+| getSupportPerMinuteOne | Bool | 间隔一分钟同步新增（206设备） |
+| getSupportAchievedRemindOnOff | Bool | 支持全天步数目标达成提醒开关 |
+| getSupportDrinkPlan | Bool | 支持喝水计划 |
+| getSupportMakeWatchDialDecodeJpg | Bool | 支持表盘包打包jpg图片 |
+| getSupportSleepPlan | Bool | 支持睡眠计划 |
+| getSupportDeviceOperateAlgFile | Bool | 支持获取设备算法文件 |
+| getSupportSportRecordShowConfig | Bool | 支持获取运动记录的显示项配置 |
+| supportHistoricalMenstruationExchange | Bool | 经期历史数据支持交互 |
+| supportSetHistoricalMenstruationExchangeVersion21 | Bool | v3经期历史数据支持交互、支持固件删除 |
+| supportHistoricalMenstruationExchangeVersion31 | Bool | v3经期历史数据支持交互、支持固件删除 |
+| supportPhysiologicalRecord | Bool | v3女性生理日常记录设置 |
+| supportBatteryReminderSwitch | Bool | 支持设备电量提醒开关 |
+| supportPetInfo | Bool | 支持宠物信息设置获取（SET:03 0A / GET:02 0A） |
+| supportGetFindPhoneSwitch | Bool | 支持获取寻找手机开关（GET:0x02/0x26） |
+| supportSyncHealthDataUseUtcTime | Bool | 健康数据同步使用 UTC 时间 |
+| getNotSupportAppSendRunPlan | Bool | 支持屏蔽跑步计划入口 |
+| getSupportDisplayNapSleep | Bool | 支持APP展示零星小睡睡眠数据 |
+| getSupportGetSmartHeartRate | Bool | 支持app获取智能心率 |
+| getSupportGetPressureSwitchInfo | Bool | 支持app获取压力开关 |
+| getSupportECardOperate | Bool | 支持电子卡片功能 |
+| getSupportVoiceMemoOperate | Bool | 支持语音备忘录功能 |
+| getSupportMorningEdition | Bool | 支持晨报功能 |
+| getSupportGetSpo2SwitchInfo | Bool | 支持app获取血氧饱和度开关 |
+| getSupportSyncHealthHrUseVersionCompatible | Bool | 支持同步心率使用version字段兼容 |
+| getSupportSyncSpo2UseVersionCompatible | Bool | 支持同步血氧使用version字段兼容 |
+| getSupportSyncPressureUseVersionCompatible | Bool | 支持同步压力使用version字段兼容 |
+| getSupportSetV3Add48HourWeatherData | Bool | v3天气设置增加下发48小时天气数据 |
+| getNotSupportIndoorRunGetVo2max | Bool | 功能表开启后,室内跑步不支持获取最大摄氧量,app室内跑步不展示此数据 |
+| getSupportSetEcgReminder | Bool | 支持app设置心电图测量提醒 |
+| getSupportSyncEcg | Bool | 支持同步心电图(ecg)数据 |
+| getSupportSetGameTimeReminder | Bool | 支持游戏时间设置 |
+| getSupportConfigDefaultMegApplicationList | Bool | 支持配置默认的消息应用列表 |
+| getSupportSetEciReminder | Bool | 支持app设置eci |
+| setSupportNoiseSetNotifyFlag | Bool | 环境音量支持设置通知类型 |
+| setSupportNoiseSetOverWarning | Bool | 环境音量支持设置过高提醒 |
+| setSupportSetVersionInformation | Bool | 支持设置版本信息 |
+| setSupportControlMiniProgram | Bool | 支持小程序操作 |
+| getSupportSetWeatherHistoryFutureAqi | Bool | 支持下发未来和历史空气质量数据 |
+| setBrightScreenTime | Bool | 支持设置亮屏亮度时间 |
+| setHeartSetRateModeCustom | Bool | 支持设置心率过高过低提醒 |
+| supportProtocolV3MenuList | Bool | 支持查询、设置 v3菜单列表 |
+| languageHebrew | Bool | 希伯来语 |
+| languageSerbian | Bool | 塞尔维亚语 |
+| languageBulgaria | Bool | 保加利亚 |
+| syncV3PetSleep | Bool | v3 宠物睡眠 |
+| getSupportAppBaseInformation | Bool | 支持获取app基本信息 |
+| alarmBath | Bool | 洗澡 |
+| alarmCourse | Bool | 课程 |
+| alarmLearn | Bool | 学习 |
+| alarmPlayTime | Bool | 玩耍 |
+| supportOperateSetSportScreen | Bool | 支持设置运动中屏幕显示 |
+| supportOperateListStyle | Bool | 支持设置应用列表样式 |
+| supportEmotionHealth | Bool | 支持情绪健康 |
+| supportV3SyncContactVersion20 | Bool | 支持v3同步通讯录版本20 |
+| supportGetSosCallRecord | Bool | 支持SOS通话记录查询 |
+| getLeftRightHandWearSettings | Bool | 支持获取左右手佩戴设置 |
+| supportSettingsDuringExercise | Bool | 支持支持运动中设置提示音 |
+| supportHeightLengthUnit | Bool | 支持身高单位设置(厘米/英寸) |
+| supportSportingRemindSetting | Bool | 支持运动中提醒设置 |
+| supportSportGetAutoPauseEnd | Bool | 支持获取运动是否支持自动暂停结束 |
+| supportSetStrideLengthUnit | Bool | 支持步幅长度的单位设置(公制/英制) |
+| supportSimpleHrZoneSetting | Bool | 支持简单心率区间 |
+| notSupportSmartLowHeartReatRemind | Bool | 开启功能表则关闭智能心率过低提醒 |
+| notSupportSmartHighHeartReatRemind | Bool | 开启功能表则关闭智能心率过高提醒 |
+| notSupportPhotoPreviewControl | Bool | 设备是否不支持拍照推流 |
+| supportGetUserInfo | Bool | 支持获取用户信息 |
+| supportMissedCallMsgTypeUseFixed | Bool | 支持未接来电消息类型为485 |
+| supportAppNotDisplayAlarmName | Bool | 支持闹钟不显示闹钟名称 |
+| supportSetSleepRemind | Bool | 支持设置睡眠提醒 |
+| supportBloodGlucose | Bool | 支持血糖 |
+| supportBloodGlucoseV01 | Bool | 支持血糖(v01) |
+| supportBikeLockManager | Bool | 车锁管理 |
+| supportCgmPhoneCommand | Bool | CGM 手机下发指令（15.107） |
+| supportAlgorithmRawDataCollect | Bool | 支持算法数据的采集 |
+| supportOfflineMapInformation | Bool | 支持离线地图 |
+| supportHeartRateReserveZones | Bool | 开启则⽀持储备⼼率区间,关闭默认⽀持的最⼤⼼率区间 |
+| supportHeartRateZonesHrMaxSet | Bool | 开启则⽀持⼼率区间⼼率最⼤值设置 |
+| supportSyncMultiActivityNew | Bool | 支持新的同步多运动数据（同步多运动/游泳/跑步课程/跑步计划/跑后拉伸数据） |
+| supportContactFileUseFirmwareReturnSize | Bool | 联系人存储支持使用固件返回大小 |
+| supportDisplayCameraEntry | Bool | 控制APP是否显示相机入口 |
+| supportOperateFamilyCareReminder3376 | Bool | 支持家庭关心提醒设置 |
+| supportProtocolV3MenstruationConfig3377 | Bool | 支持设置获取经期配置，使用v3长包指令 |
+| supportOperateHabitFormation | Bool | 支持习惯养成设置 |
+| supportOperateHabitFormationV01 | Bool | 支持版本v01习惯养成设置 |
+| supportOperateFamilySteps | Bool | 支持家庭步数下发 |
+| supportOperateSetGame | Bool | 支持游戏设置 |
+| supportOperateGestureControl | Bool | 支持手势控制功能 |
+| supportTakeMedicineReminder | Bool | 设置吃药提醒 |
+| supportSetSportRecordName | Bool | Support setting sport record name (15.108, table71 BIT_6) |
+| supportAppNotDisplaySportTypeSetting | Bool | App hides sport type settings entry (table71 BIT_7) |
+| supportPhoneCalendarReminder | Bool | Phone calendar reminder (15.110, 0x33/0x98, table71 BIT_4) |
+| supportGetDeviceStatus | Bool | 支持获取设备状态（V2 02 49，table71 BIT_0） |
+| supportGetDeviceSportStatus | Bool | 支持获取设备运动状态（V2 02 49，table71 BIT_1） |
+| supportBedtimeStory | Bool | 支持睡前故事（table71 BIT_2） |
+| supportThirdSportIcon | Bool | 支持第三套运动图标（table71 BIT_3） |
+| supportControlMeasureBp | Bool | 控制测量血压（06 06，table70 BIT_0） |
+| supportControlMeasureHr | Bool | 控制测量心率（06 06，table70 BIT_1） |
+| supportControlMeasureSpo2 | Bool | 控制测量血氧（06 06，table70 BIT_2） |
+| supportControlMeasureBodyComposition | Bool | 控制测量体成分（06 06，table70 BIT_3） |
+| supportControlMeasureStress | Bool | 控制测量压力（06 06，table70 BIT_4） |
+| supportControlMeasureOneClick | Bool | 控制一键测量（06 06，table70 BIT_5） |
+| supportControlMeasureTemperature | Bool | 控制测量体温（06 06，table70 BIT_6） |
+| supportAppSleepMode | Bool | 睡眠模式设置获取（SET:03 4C / GET:02 4C，table70 BIT_7） |
+| supportSyncActivityDataBodyAge | Bool | 多运动同步 body_age（table69 BIT_0） |
+| supportIdb05UseLocaltimeForStepGoalCmd | Bool | idb05 步数目标用本地时间（table69 BIT_1） |
+| supportGetSportTypesRequiringWristSideSetting | Bool | 查询需设置佩戴手的运动类型（table69 BIT_2） |
+| supportTrainingPlan | Bool | 支持训练计划同步（table69 BIT_3） |
+| supportExchangeActivityUseV21 | Bool | 多运动交互使用 v21（table69 BIT_4） |
+| supportDeviceVibrationRingtone | Bool | 设备振动与铃声（table69 BIT_5） |
+| v3AlarmNotSupportDelayMin | Bool | V3闹钟不支持延时分钟（table68 BIT_0） |
+| supportThreeRingGoalBasedOnFirmware | Bool | 三环目标基于固件（table68 BIT_1） |
+| supportGetFirmwareSupportedConfig | Bool | 获取固件配置上限（table68 BIT_6） |
+| supportV3ActivityExchangeFullSnapshot | Bool | 运动中全量快照（table68 BIT_7） |
+| supportPetDevice | Bool | 支持宠物设备（table66） |
+| supportUpHandGestureTimeRange | Bool | 支持抬腕亮屏时间段（table67） |
+| supportQueryCustomWallpaperDialState | Bool | 支持查询自定义壁纸表盘状态（table67） |
+| supportAppMetronome | Bool | 支持 APP 节拍器（table67） |
+| supportVibrationSetting | Bool | 支持振动设置（table67） |
+| supportAlarmVolumeSetting | Bool | 支持闹钟音量设置（table67） |
+| supportCallReminderVolumeSetting | Bool | 支持来电提醒音量设置（table67） |
+| v3AlarmNotSupportRepeat | Bool | V3闹钟不支持重复（table67） |
+

@@ -12,6 +12,6 @@
 | highThreshold   | int          | 压力过高阈值                                                 |
 | stressThreshold | int          | 压力校准阈值，默认是80 <br/>需要固件开启功能表支持 setSendCalibrationThreshold |
 | notifyFlag      | int          | 通知类型 <br/>0：无效 <br/>1：允许通知<br/>2：静默通知<br/>3：关闭通知 <br/>需要固件开启功能表支持 getPressureNotifyFlagMode |
-| measurementInterval | int      | 测量间隔，单位：分钟<br/>可选，默认 `0` |
+| measurementInterval | int      | 测量间隔，单位：分钟<br/>可选，默认 `0`<br/>可选择间隔10min/20min/30min（默认30min） |
 | repeats         | Set<IDOWeek> | 重复[IDOWeek](../enum/IDOWeek.md)                            |
 

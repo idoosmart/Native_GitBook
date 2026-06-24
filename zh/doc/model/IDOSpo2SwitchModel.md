@@ -10,5 +10,5 @@
 | lowSpo2OnOff | Int  | 低 SpO2 开关<br/>1 开<br/>0 关<br/>需要菜单 `setSpo2AllDayOnOff` 的支持 |
 | lowSpo2Value | Int  | 低 SpO2 阈值<br/>需要菜单“v3SupportSetSpo2LowValueRemind”的支持 |
 | notifyFlag   | Int  | 通知类型<br/>0：无效<br/>1：允许通知<br/>2：静默通知<br/>3：禁用通知<br/>需要菜单“getSpo2NotifyFlag”的支持 |
-| measurementInterval | Int  | 测量间隔，单位：分钟<br/>可选，默认 `0`<br/>IDR01 项目支持 App 设置测量间隔 |
+| measurementInterval | Int  | 测量间隔，单位：分钟<br/>可选，默认 `0`<br/>可选30/60/120min，开启后默认值为60min<br/>IDR01 项目支持 App 设置测量间隔 |
 
