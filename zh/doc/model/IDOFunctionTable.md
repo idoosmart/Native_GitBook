@@ -522,7 +522,8 @@
 | languageSerbian | Bool | 塞尔维亚语 |
 | languageBulgaria | Bool | 保加利亚 |
 | syncV3PetSleep | Bool | v3 宠物睡眠 |
-| getSupportAppBaseInformation | Bool | 支持获取app基本信息 |
+| getSupportAppBaseInformation | Bool | 支持获取/下发 APP 基本信息 |
+| supportGetAppBaseInformationVersion10 | Bool | APP 基本信息扩展字段（token、domain、app_key 等） |
 | alarmBath | Bool | 洗澡 |
 | alarmCourse | Bool | 课程 |
 | alarmLearn | Bool | 学习 |
