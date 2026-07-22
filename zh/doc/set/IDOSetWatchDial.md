@@ -27,9 +27,22 @@ val param = IDOWatchDialParamModel(...)
 Cmds.setWatchDial(param).send {
     if (it.error.code == 0) {
         // 成功
-        // it.res is IDOCmdSetResponseModel
     }else {
         // 失败
     }
 }
+```
+
+ArkTs
+```ts
+let param = new IDOWatchDialParamModel(...)
+
+Cmds.setWatchDial(param,(res)=>{
+  if(res.success){
+      //成功
+      //it.value is IDOCmdSetResponseModel
+  } else {
+      //失败
+  }
+})
 ```

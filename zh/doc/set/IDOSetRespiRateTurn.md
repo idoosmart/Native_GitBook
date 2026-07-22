@@ -3,6 +3,16 @@
 
 功能表：setRespirationRate
 
+
+
+### 参数说明：
+
+| 字段名 | 字段类型 | 字段说明         |
+| ------ | -------- | ---------------- |
+| open   | Bool     | 0：关<br />1：开 |
+
+
+
 ### 示例
 
 Swift
@@ -22,9 +32,22 @@ Kotlin
 Cmds.setRRespiRateTurn().send {
     if (it.error.code == 0) {
         // 成功
-        // it.res is IDOCmdSetResponseModel
     }else {
         // 失败
     }
 }
+```
+
+ArkTs
+
+```ts
+let isOpen = true
+Cmds.setRRespiRateTurn(isOpen,(res)=>{
+    if(res.success){
+        //成功
+        //it.value is IDOCmdSetResponseModel
+    } else {
+        //失败
+    }
+})
 ```
