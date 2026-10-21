@@ -6819,22 +6819,22 @@
 <tr>
 <td>hr_data_count</td>
 <td>int</td>
-<td>The number of heart rate data when it is too high or too low <br>When the <code>getSupportSyncOverHighLowHeartData</code> menu is not opened, it returns 0</td>
+<td>Count of high/low heart rate samples<br>0 if <code>getSupportSyncOverHighLowHeartData</code> is not enabled</td>
 </tr>
 <tr>
 <td>hr_interval</td>
 <td>Collection</td>
-<td>5 heart rate zones:<br>Warm-up heart rate zone<br>Ultimate heart rate zone<br>Fat-burning heart rate zone<br>Aerobic endurance heart rate zone<br>Anaerobic endurance heart rate zone <br>Collection of <code>threshold</code> &amp; <code>minute</code></td>
+<td>Five heart rate zones<br>Warm-up / Ultimate / Fat-burning / Aerobic / Anaerobic<br>Collection of <code>threshold</code> &amp; <code>minute</code></td>
 </tr>
 <tr>
 <td>items</td>
 <td>Collection</td>
-<td>Collection of heart rate data <code>offset</code> &amp; <code>heart_rateVal</code></td>
+<td>Heart rate samples<br>Collection of <code>offset</code> &amp; <code>heart_rateVal</code></td>
 </tr>
 <tr>
 <td>hr_data</td>
 <td>Collection</td>
-<td>Collection of high and low heart rate data <code>hour</code> &amp; <code>minute</code> &amp; <code>type</code> &amp; <code>heart_rate</code><br> Returns 0 when the <code>getSupportSyncOverHighLowHeartData</code> menu is not opened</td>
+<td>High/low heart rate samples<br>Collection of <code>hour</code> &amp; <code>minute</code> &amp; <code>type</code> &amp; <code>heart_rate</code><br>0 if <code>getSupportSyncOverHighLowHeartData</code> is not enabled</td>
 </tr>
 </tbody>
 </table>
@@ -6895,22 +6895,22 @@
 <tr>
 <td>hour</td>
 <td>int</td>
-<td>The heart rate data time when it is too high or too low. Returns 0 when the <code>getSupportSyncOverHighLowHeartData</code> menu is not opened</td>
+<td>Hour of high/low HR sample<br>0 if <code>getSupportSyncOverHighLowHeartData</code> is not enabled</td>
 </tr>
 <tr>
 <td>minute</td>
 <td>int</td>
-<td>The heart rate data time minute when it is too high or too low<br> Returns 0 when the <code>getSupportSyncOverHighLowHeartData</code> menu is not opened</td>
+<td>Minute of high/low HR sample<br>0 if <code>getSupportSyncOverHighLowHeartData</code> is not enabled</td>
 </tr>
 <tr>
 <td>type</td>
 <td>int</td>
-<td>Heart rate value type <br>0: Heart rate value when the heart rate is too low <br>1: Heart rate value when the heart rate is too high<br> Returns 0 when the <code>getSupportSyncOverHighLowHeartData</code> menu is not opened</td>
+<td>Sample type<br>0: too low<br>1: too high<br>0 if <code>getSupportSyncOverHighLowHeartData</code> is not enabled</td>
 </tr>
 <tr>
 <td>heart_rate</td>
 <td>int</td>
-<td>Heart rate value Unit: beats/minute<br> Returns 0 when the <code>getSupportSyncOverHighLowHeartData</code> menu is not opened</td>
+<td>Heart rate<br>Unit: beats/minute<br>0 if <code>getSupportSyncOverHighLowHeartData</code> is not enabled</td>
 </tr>
 </tbody>
 </table>
@@ -6982,7 +6982,7 @@
 }
 </code></pre>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; 2023-2024 IDO. All rights reserved. all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x6539;&#x65E5;&#x671F;:
-2026-07-27 09:20:46
+2026-10-20 07:53:20
 </span></footer>
                                 
                                 </section>
@@ -7026,7 +7026,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Synchronize heart rate data","level":"1.5.14.5","depth":3,"next":{"title":"Sync HRV data","level":"1.5.14.6","depth":3,"path":"doc/syncData/IDOSyncHrvData.md","ref":"doc/syncData/IDOSyncHrvData.md","articles":[]},"previous":{"title":"Synchronize GPS data","level":"1.5.14.4","depth":3,"path":"doc/syncData/IDOSyncGpsData.md","ref":"doc/syncData/IDOSyncGpsData.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","-lunr","expandable-chapters-small","github","tbfed-pagefooter","copy-code-button","search-pro","language-picker"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"title":"IDOSDK","author":"idoosmart.com"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"search-pro":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/syncData/IDOSyncHrData.md","mtime":"2026-07-27T09:20:46.532Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-20T04:48:38.895Z"},"basePath":"../..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Synchronize heart rate data","level":"1.5.14.5","depth":3,"next":{"title":"Sync HRV data","level":"1.5.14.6","depth":3,"path":"doc/syncData/IDOSyncHrvData.md","ref":"doc/syncData/IDOSyncHrvData.md","articles":[]},"previous":{"title":"Synchronize GPS data","level":"1.5.14.4","depth":3,"path":"doc/syncData/IDOSyncGpsData.md","ref":"doc/syncData/IDOSyncGpsData.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","-lunr","expandable-chapters-small","github","tbfed-pagefooter","copy-code-button","search-pro","language-picker"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"sidebar-style":{"title":"IDOSDK","author":"idoosmart.com"},"tbfed-pagefooter":{"copyright":"Copyright © 2023-2024 IDO. All rights reserved.","modify_label":"修改日期:","modify_format":"YYYY-MM-DD HH:mm:ss"},"language-picker":{"grid-columns":3,"langs":[{"label":"English","id":"en"},{"label":"简体中文","id":"zh"}]},"github":{"url":"https://github.com/idoosmart/"},"search-pro":{},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"IDOSDK","language":"en","gitbook":"*"},"file":{"path":"doc/syncData/IDOSyncHrData.md","mtime":"2026-10-20T07:53:20.690Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-21T09:28:51.687Z"},"basePath":"../..","book":{"language":"en"}});
         });
     </script>
 </div>
